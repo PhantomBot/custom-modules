@@ -8,8 +8,9 @@ These are custom modules made by the PhantomBot Community.
 - We will not merge or approve changes to a module from another user unless the original author provides a approval message.
 
 # Disclaimer
--	These are user made modules. PhantomBot developers *will not* provide support for these modules.
--	We are not responsible if these modules corrupts, breaks or does anything unexpected to your database.
+-	These are user made modules. PhantomBot developers **will not** provide support for these modules.
+-	We are not responsible if any module should corrupt, break or does anything unexpected to your database.
+- We are not responsible if any module should provide a negative user experience in your chat.
 
 # Suggested README File Format
 While the README file that you provide does not have to be in this format, it might help by understanding some basic items that most users will be wondering about after installing your module:
