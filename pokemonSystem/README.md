@@ -1,4 +1,5 @@
 # PokemonSystem
+by PhantomIndex  
 Tested on Phantombot 2.3.4
 This is basically my Waifu Script, but converted to use Pokemon
 
