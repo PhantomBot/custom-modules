@@ -18,6 +18,9 @@ While the README file that you provide does not have to be in this format, it mi
     My Cool Module
     coolModule.js
     
+    Author
+    <However you want to reference yourself>
+    
     Module Directory Requirement
     Ensure that coolModule.js is installed in ./scripts/systems
     
