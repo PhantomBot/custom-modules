@@ -6,7 +6,7 @@ Hey GW2 streamers, I have made a plugin for the PhantomBot (phantombot.net) that
 --------------
 ## Chat commands
 
-Command | function
+Command | Description of function
 ------------ | -------------
 **!gw2 setkey [*GW2apiKey*]** | Sets a Guild Wars 2 api key. Required permissions: account, wallet, characters, pvp, builds, progression. Created at: https://account.arena.net/applications
 **!gw2 rank [*integer*]** | Displays your current league placement or the best of a season if given.
@@ -35,8 +35,8 @@ Command | function
 1. Rightclick [Download](https://raw.githubusercontent.com/PhantomBot/custom-modules/master/guildwars2/games/guildwars2.js) -> Save Target As - "guildwars2.js"
 2. Place it here: "[...]/scripts/games/".
 3. Rightclick one of the language files below -> Save Target As - "games-guildwars2.js":
-* [English](https://raw.githubusercontent.com/PhantomBot/custom-modules/master/guildwars2/lang/english/games/games-guildwars2.js)  
-* [Deutsch](https://raw.githubusercontent.com/PhantomBot/custom-modules/master/guildwars2/lang/deutsch/games/games-guildwars2.js)  
+   * [English](https://raw.githubusercontent.com/PhantomBot/custom-modules/master/guildwars2/lang/english/games/games-guildwars2.js)  
+   * [Deutsch](https://raw.githubusercontent.com/PhantomBot/custom-modules/master/guildwars2/lang/deutsch/games/games-guildwars2.js)  
 4. Place your choosen language file here: "[...]/scripts/lang/english/games/". (Or whatever language your bot uses)  
   
 * [...] is your local path to your root phantombot folder.  
