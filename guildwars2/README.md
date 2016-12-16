@@ -27,16 +27,20 @@ Hey GW2 streamers, I have made a plugin for the PhantomBot (phantombot.net) that
 * The brackets **[] mark parameters** to input! (Ex. '!gw2 build [game mode] [character]' becomes '!gw2 build pvp Nekres')
 
  --------------
-# Installation
+# Installation  
 
- (0). Shutdown your bot if its running.
- 1. Rightclick [Download](https://raw.githubusercontent.com/PhantomBot/custom-modules/master/guildwars2/games/guildwars2.js) -> Save Target As - "guildwars2.js"
- 2. Place it here: "[...]/scripts/games/".
- 3. Rightclick one of the language files below -> Save Target As - "games-guildwars2.js":
- * [English](https://raw.githubusercontent.com/PhantomBot/custom-modules/master/guildwars2/lang/english/games/games-guildwars2.js)
- * [Deutsch](https://raw.githubusercontent.com/PhantomBot/custom-modules/master/guildwars2/lang/deutsch/games/games-guildwars2.js)
- 4. Place your choosen language file here: "[...]/scripts/lang/english/games/". (Or whatever language your bot uses)
- * [...] is your local path to your root phantombot folder.
+(0). Shutdown your bot if its running.  
+ 
+1. Rightclick [Download](https://raw.githubusercontent.com/PhantomBot/custom-modules/master/guildwars2/games/guildwars2.js) -> Save Target As - "guildwars2.js"  
+2. Place it here: "[...]/scripts/games/".  
+3. Rightclick one of the language files below -> Save Target As - "games-guildwars2.js":  
+  
+* [English](https://raw.githubusercontent.com/PhantomBot/custom-modules/master/guildwars2/lang/english/games/games-guildwars2.js)  
+* [Deutsch](https://raw.githubusercontent.com/PhantomBot/custom-modules/master/guildwars2/lang/deutsch/games/games-guildwars2.js)  
+  
+4. Place your choosen language file here: "[...]/scripts/lang/english/games/". (Or whatever language your bot uses)  
+  
+* [...] is your local path to your root phantombot folder.  
 
  **You are done!**
 
@@ -46,23 +50,23 @@ Hey GW2 streamers, I have made a plugin for the PhantomBot (phantombot.net) that
  The API is purely for "viewing" ressources!
  
  --------------
-# !gw2 goldcounter - The gold counter display explained:
+# !gw2 goldcounter - The gold counter display explained
 
-**Example:**
+**Example:**  
 
-10g 52s 70c - Your initial gold when starting the gold counter.
-+0g 00s 00c - Session profit calculated via losses/earnings updated every 5 minutes.
+10g 52s 70c - Your initial gold when starting the gold counter.  
++0g 00s 00c - Session profit calculated via losses/earnings updated every 5 minutes.  
 
-**2. Example**
+**2. Example**  
 
-8g 52s 70c
--2g 00s 00c (You made a loss of -2g since your initial gold counter start.)
+8g 52s 70c  
+-2g 00s 00c (You made a loss of -2g since your initial gold counter start.)  
 
-**3. Example**
+**3. Example**  
 
-13g 52s 70c
-+3g 00s 00c (You made a profit of +3g since your initial gold counter start.)
-
-(You can change the formatting via !gw2 coinsformat into ‘####.00,00g’.)
-
-(written to session_gold.txt for file monitoring by OBS/XSplit and so forth.)
+13g 52s 70c  
++3g 00s 00c (You made a profit of +3g since your initial gold counter start.)  
+  
+(You can change the formatting via !gw2 coinsformat into ‘####.00,00g’.)  
+  
+(written to session_gold.txt for file monitoring by OBS/XSplit and so forth.)  
