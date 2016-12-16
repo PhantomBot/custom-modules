@@ -3,9 +3,9 @@ by Andreas "Nekres" G.
 
 Hey GW2 streamers, I have made a plugin for the PhantomBot (phantombot.net) that connects in detail with the GW2 API.
 
-Chat commands:
-
 --------------
+# Chat commands
+
 **!gw2 setkey [*GW2apiKey*]** - Sets a Guild Wars 2 api key. Required permissions: account, wallet, characters, pvp, builds, progression. Created at: https://account.arena.net/applications
 **!gw2 rank [*integer*]** - Displays your current league placement or the best of a season if given.  
 **!gw2 stats [*profession*]** - Displays your overall pvp matches played or stats of a profession if given.
@@ -18,7 +18,7 @@ Chat commands:
 **!gw2 fractals/fracs** - Displays your current fractal level.  
 **!gw2 wvw** - Displays your current WvW level.  
 **!gw2 wiki [*article*]** - Returns an official wiki search link for the item specified.  
-**!gw2 build [*game mode*] [*character*]** - Returns a gw2tool.net link that will forward to the gw2skills.net build editor which will be adjusted to your current equipped build in a specified game mode on a specified character. (Game modes are: 'pve', 'pvp', 'wvw'.)
+**!gw2 build [*game mode*] [*character*]** - Returns a gw2tool.net link that will forward to the gw2skills.net build editor which will be adjusted to your current equipped build in a specified game mode on a specified character. (Game modes are: 'pve', 'pvp', 'wvw'.)  
 **!gw2 deathcounter/deaths [*character*]** - Toggles a death counter for a specific character and writes its value to '*[...]/addons/guildwars2/session_deaths.txt*' followed by a skull and crossbones symbol '☠'.  
 **!gw2 goldcounter** - Toggles a gold counter and writes initial gold, earnings plus losses to '*[...]/addons/guildwars2/session_gold.txt*'.  
 **!gw2 coinsformat** - Toggles between two different currency formats: '####.00,00g' or '####g 00s 00c' (default).  
@@ -26,9 +26,9 @@ Chat commands:
 * The slash **/ separates synonyms** to choose from!!
 * The brackets **[] mark parameters** to input! (Ex. '!gw2 build [game mode] [character]' becomes '!gw2 build pvp Nekres')
 
-# Installation:
-
  --------------
+# Installation
+
  (0). Shutdown your bot if its running.
  1. Rightclick [Download](https://raw.githubusercontent.com/PhantomBot/custom-modules/master/guildwars2/games/guildwars2.js) -> Save Target As - "guildwars2.js"
  2. Place it here: "[...]/scripts/games/".
@@ -45,9 +45,9 @@ Chat commands:
  Do not worry! ArenaNet will never make an API with which third-party tools would be able to edit something on your account from outside of the game!  
  The API is purely for "viewing" ressources!
  
+ --------------
 # !gw2 goldcounter - The gold counter display explained:
 
- --------------
 **Example:**
 
 10g 52s 70c - Your initial gold when starting the gold counter.
