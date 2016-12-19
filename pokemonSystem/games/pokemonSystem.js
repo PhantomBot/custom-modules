@@ -190,7 +190,7 @@
     * @param username
     */
     function catchPokemon(username) {
-        var random = $.randRange(1, totalpokemons),
+        var random = $.randRange(1, 802),
             pokemon = String(getrandompokemon(random)),
             link = (google + url(pokemon)),
             unlock = 1,
@@ -245,7 +245,7 @@
     * @param username
     */
     function randompokemon(username) {
-        var random = $.randRange(1, totalpokemons),
+        var random = $.randRange(1, 802),
             pokemon = getPokemon(random),
             link = (google + url(pokemon)),
             rare = '';
