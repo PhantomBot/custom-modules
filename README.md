@@ -1,3 +1,5 @@
+# <img alt="PhantomBot" src="http://i.imgur.com/ABFOizj.png" width="600px"/>
+
 # Community Provided Custom Modules for PhantomBot
 These are custom modules made by the PhantomBot Community.
 
