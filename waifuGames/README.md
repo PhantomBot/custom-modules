@@ -13,7 +13,7 @@ This is a full rewrite of the Waifu Collection script with new features!
  
 ##**Seducing Waifus**
 Type **!seduce** and it will seduce one random Waifu from the list. You have a chance of a waifu getting away and dropping candy.  
-If have a small chance to encounter and catch a rare waifu. Rare waifus come with higher stats than common ones.  
+You have a small chance to encounter and catch a rare waifu. Rare waifus come with higher stats than common ones.  
 ___
 ##**Waifu Lookup**  
 You can type **!waifu (name or id)** to look up information about that waifu.  
