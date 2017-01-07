@@ -12,17 +12,19 @@ This is a full rewrite of the Waifu Collection script with new features!
 #**Features** 
  
 ##**Seducing Waifus**
-Type !catchwaifu and it will seduce one random Waifu from the list. You have a chance of a waifu getting away and dropping candy.
+Type **!seduce** and it will seduce one random Waifu from the list. You have a chance of a waifu getting away and dropping candy.
 If you happen to catch a Rare waifu it will reward you with points, but rare waifus are harder to catch.  
 ___
 ##**Waifu Lookup**  
-You can type !waifu (name or id) to look up information about that waifu.  
-If that waifu is in your harem the message will show it's stats: Level, Atk, Def, and Love.  
+You can type **!waifu (name or id)** to look up information about that waifu.  
+If that waifu is in your harem the message will show their stats: Level, Atk, Def, and Love.  
 ```
 Example:   
 !waifu juri = You own 2 of:  Juri Han (Street Fighter) #400.  https://goo.gl/44Z4oR!  
 OR  
 !waifu 400 = You own 2 of:  Juri Han (Street Fighter) #400.  https://goo.gl/44Z4oR!  
+OR (in harem)  
+!waifu juri = You own 2 of:  Juri Han (Street Fighter) #400. Level: 1, Atk: 5, Def: 7, Love: 2% https://goo.gl/44Z4oR!
 ```
 ___
 ##**Marriage**
@@ -37,7 +39,8 @@ You can remove any character from your harem using **!kickHarem (waifu)**.
 ___
 ##**Fights**
 Using **!fight (player) (waifu)** you can battle anyone to train and level up your waifu's stats such as: EXP, Attack, Defense, and Love.
-If you type **!fight (player)** it will use a random waifu in your harem.  
+If you type **!fight (player)** it will use a random waifu in your harem. 
+Battles are calculated by your and your opponent's waifu stats.  
 ***Requirements:*** Both players must have a harem for a fight.
 ___
 ##**Candy**
