@@ -12,8 +12,8 @@ This is a full rewrite of the Waifu Collection script with new features!
 #**Features** 
  
 ##**Seducing Waifus**
-Type **!seduce** and it will seduce one random Waifu from the list. You have a chance of a waifu getting away and dropping candy.
-If you happen to catch a Rare waifu it will reward you with points, but rare waifus are harder to catch.  
+Type **!seduce** and it will seduce one random Waifu from the list. You have a chance of a waifu getting away and dropping candy.  
+If have a small chance to encounter and catch a rare waifu. Rare waifus come with higher stats than common ones.  
 ___
 ##**Waifu Lookup**  
 You can type **!waifu (name or id)** to look up information about that waifu.  
@@ -39,9 +39,9 @@ You can remove any character from your harem using **!kickHarem (waifu)**.
 ___
 ##**Fights**
 Using **!fight (player) (waifu)** you can battle anyone to train and level up your waifu's stats such as: EXP, Attack, Defense, and Love.
-If you type **!fight (player)** it will use a random waifu in your harem. 
+If you type **!fight (player)** it will use a random waifu in your harem.   
 Battles are calculated by your and your opponent's waifu stats.  
-***Requirements:*** Both players must have a harem for a fight.
+***Requirements:*** Both players must have a harem with at least one character in it.
 ___
 ##**Candy**
 You unlock candy randomly when you try to seduce waifus, this candy can be used to increase your waifu's EXP, Attack, Defense and Love all at once.  
