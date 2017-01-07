@@ -1,4 +1,4 @@
-$.lang.register('waifugames.waifuhelp', 'Usage: !waifu, !profile, !catchwaifu, !setwaifu <waifu>, !resetwaifu, !buywaifu <waifu>, !giftwaifu <name> <waifu>, !harem, !addharem <waifu>, !kickharem <waifu>, !resetharem, !fight <name> <waifu>, !candy <waifu>, !waifureward.');
+$.lang.register('waifugames.waifuhelp', 'Usage: !waifu, !profile, !seduce, !setwaifu <waifu>, !resetwaifu, !buywaifu <waifu>, !giftwaifu <name> <waifu>, !harem, !addharem <waifu>, !kickharem <waifu>, !resetharem, !fight <name> <waifu>, !candy <waifu>, !waifureward.');
 $.lang.register('waifugames.split.success', '$1 divorced $2 and is now single!');
 $.lang.register('waifugames.split.404', '$1 you are not married yet!');
 $.lang.register('waifugames.marry.success', '$1 married $2! Congratulations!');
@@ -24,7 +24,8 @@ $.lang.register('waifugames.random.0', '$1 you haven\'t collected any waifus. St
 $.lang.register('waifugames.random.success', 'Random Waifu: $2 #$3. $4!');
 $.lang.register('waifugames.random.married', '$1 you are married to $2 #$3. Level: $4, Atk: $5, Def: $6, Love: $7%. $8.');
 $.lang.register('waifugames.online.404', '$1 you can\'t seduce any new waifus when $2 is offline.');
-
+$.lang.register('waifugames.rare.chance', '[EVENT] A pack of rare waifus are hiding in the bushes, now\'s your chance to seduce and catch one! Type !seduce');
+$.lang.register('waifugames.rare.over', 'It seems the herd of waifus fled!');
 $.lang.register('waifugames.buywaifu.new', '$1 bought $2 #$3, $4!');
 $.lang.register('waifugames.harem.null', '$1 you must specify a waifu.');
 $.lang.register('waifugames.harem.repeat', '$1 that waifu is already in your harem!');
@@ -33,7 +34,7 @@ $.lang.register('waifugames.harem.success', '$1 you\'ve added $2 to your harem!'
 $.lang.register('waifugames.harem.get', '$1 your current harem is: $2.');
 $.lang.register('waifugames.harem.denied', 'You\'ve hit the maximum of 6 waifus in your harem! !kickharem <waifu> to make room.');
 $.lang.register('waifugames.harem.kick', 'kicked $1 from the harem!');
-$.lang.register('waifugames.harem.kick404', 'that waifu is not in your harem!');
+$.lang.register('waifugames.harem.kick404', '$1 that waifu is not in your harem!');
 $.lang.register('waifugames.harem.reset', 'your harem has been disbanded!');
 $.lang.register('waifugames.harem.404', 'You don\'t have a harem yet! Usage: !addharem <waifu>');
 $.lang.register('waifugames.harem.nostock', 'You haven\'t unlocked that waifu or she doesn\'t exist!');
@@ -1381,9 +1382,9 @@ $.lang.register('waifugames.waifu.1299', 'Dead Master =Black Rock Shooter=');
 $.lang.register('waifugames.waifu.1300', 'Chariot =Black Rock Shooter=');
 $.lang.register('waifugames.waifu.1301', 'Black★Gold Saw =Black Rock Shooter=');
 $.lang.register('waifugames.waifu.1302', 'White★Rock Shooter =Black Rock Shooter=');
-$.lang.register('waifucommand.waifu.1303', '[Rare] Nana =Akiba\'s Trip: Undead and Undressed=');
-$.lang.register('waifucommand.waifu.1304', 'Kati Raikkonen =Akiba\'s Trip: Undead and Undressed=');
-$.lang.register('waifucommand.waifu.1305', 'Shizuku Tokikaze =Akiba\'s Trip: Undead and Undressed=');
-$.lang.register('waifucommand.waifu.1306', 'Touko Sagisaka =Akiba\'s Trip: Undead and Undressed=');
-$.lang.register('waifucommand.waifu.1307', 'Rin Tokikaze =Akiba\'s Trip: Undead and Undressed=');
-$.lang.register('waifucommand.waifu.1308', 'Shion Kasugai =Akiba\'s Trip: Undead and Undressed=');
+$.lang.register('waifugames.waifu.1303', '[Rare] Nana =Akiba\'s Trip: Undead and Undressed=');
+$.lang.register('waifugames.waifu.1304', 'Kati Raikkonen =Akiba\'s Trip: Undead and Undressed=');
+$.lang.register('waifugames.waifu.1305', 'Shizuku Tokikaze =Akiba\'s Trip: Undead and Undressed=');
+$.lang.register('waifugames.waifu.1306', 'Touko Sagisaka =Akiba\'s Trip: Undead and Undressed=');
+$.lang.register('waifugames.waifu.1307', 'Rin Tokikaze =Akiba\'s Trip: Undead and Undressed=');
+$.lang.register('waifugames.waifu.1308', 'Shion Kasugai =Akiba\'s Trip: Undead and Undressed=');
