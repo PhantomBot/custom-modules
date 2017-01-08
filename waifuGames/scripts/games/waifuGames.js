@@ -3,9 +3,9 @@
         reGetUrl = new RegExp(/(\[Rare\]\s)?(.*)\s=(.*)=/),
         reGetTitle = new RegExp(/(\[Rare\]\s)?(.*)\s=(.*)=.*/),
         responses = {
-            win: 0,
-            lost: 0,
-            stalemate: 0
+            win: 1,
+            lost: 1,
+            stalemate: 1
         },
         totalWaifus = 0,
         navigatorImg = 'navigator.png';
