@@ -20,7 +20,7 @@ $.lang.register('waifugames.catch.rare', 'Latest [Rare] Waifu caught: $3 #$4 by 
 $.lang.register('waifugames.giftwaifu.nouser', '$1 you must specify a user, !sendwaifu <name> <waifu>');
 $.lang.register('waifugames.giftwaifu.404', '$1 you don\'t own enough of that waifu or it does not exist.');
 $.lang.register('waifugames.giftwaifu.success', '$1 sent waifu: $2 to $3. $4!');
-$.lang.register('waifugames.random.0', '$1 you haven\'t collected any waifus. Start collecting waifus with !catchwaifu.');
+$.lang.register('waifugames.random.0', '$1 you haven\'t collected any waifus. Start collecting waifus with !seduce.');
 $.lang.register('waifugames.random.success', 'Random Waifu: $2 #$3. $4!');
 $.lang.register('waifugames.random.married', '$1 you are married to $2 #$3. Level: $4, Atk: $5, Def: $6, Love: $7%. $8.');
 $.lang.register('waifugames.online.404', '$1 you can\'t seduce any new waifus when $2 is offline.');

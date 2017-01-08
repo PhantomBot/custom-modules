@@ -409,13 +409,19 @@
     }
 
     function rareChance(action) {
-        if (action == 'off') {
+      var toggle = $.inidb.get('settings', 'rChance');
+
+        if (toggle == 'true') {
             $.say($.lang.get('waifugames.rare.over'));
             $.inidb.set('settings', 'rChance', 'false');
-        } else {
-            $.panelsocketserver.alertImage('rarechance.png' + ',5');
+
+        } else if (toggle == 'false') {
+            $.panelsocketserver.alertImage('rarechance.gif' + ',4');
             $.say($.lang.get('waifugames.rare.chance'));
             $.inidb.set('settings', 'rChance', 'true');
+
+        } else {
+          return;
         }
     }
 
@@ -437,7 +443,7 @@
 
         if (waifu.includes('[Rare]') && !hasWaifu(username, id)) {
             rare = ('/me +' + $.getPointsString(reward) + ' ');
-            if (rareChance(action) == true) {
+            if (rareChance(action) == 'true') {
                 chance = $.randRange(1, 4);
             } else {
                 chance = $.randRange(1, 15);
