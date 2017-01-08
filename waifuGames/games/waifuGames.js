@@ -257,7 +257,7 @@
             temp = [];
 
         for (var i = 0; i < keys.length; i++) {
-            temp.push(keys[0]);
+            temp.push(keys[i]);
         }
         if (temp.length > 0) {
             return $.randElement(temp);
@@ -442,7 +442,7 @@
             } else {
                 chance = $.randRange(1, 15);
             }
-            consoleLn(chance);
+
             $.panelsocketserver.alertImage(navigatorImg + ',5');
             $.inidb.incr('points', username, reward);
         }
@@ -585,7 +585,6 @@
     function buyWaifu(username, id) {
         if (!waifuExists(id)) {
             $.say($.lang.get('waifugames.exist.404', $.whisperPrefix(username)));
-            consoleLn($.inidb.get('pricecom', 'buywaifu'));
             $.inidb.incr('points', username, $.inidb.get('pricecom', 'buywaifu'));
             return;
         }
@@ -776,7 +775,6 @@
         }
 
         if ($.randRange((getAttack(username, id) / 20), getAttack(username, id)) > getDefense(opponent, id2)) {
-            consoleLn($.randRange((getAttack(username, id) / 20), getAttack(username, id)) + ' ' + getDefense(opponent, id2));
             updateBattleStats(username, ['wLove', 'wDefense'], id, true);
             updateBattleStats(username, ['wLewdness', 'wAttack'], id, false);
             updateBattleStats(opponent, ['wLewdness', 'wLove', 'wDefense'], id2, false);
