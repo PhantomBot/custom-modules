@@ -859,7 +859,7 @@
         }
 
         if (command.equalsIgnoreCase('seduce')) {
-            if (!$.isOnline($.channelName)) {
+            if ($.isOnline($.channelName)) {
                 catchWaifu(sender);
             } else {
                 $.say($.lang.get('waifugames.online.404', $.whisperPrefix(sender), $.channelName));
