@@ -257,9 +257,8 @@
             temp = [];
 
         for (var i = 0; i < keys.length; i++) {
-            temp.push(keys[i]);
+            temp.push(keys[0]);
         }
-
         if (temp.length > 0) {
             return $.randElement(temp);
         } else {
@@ -744,22 +743,23 @@
      * @param opponent
      * @return Battle with another waifu
      */
-    function startBattle(username, opponent, waifu) {
+    function startBattle(username, opponent, action) {
         var random1 = $.randRange(1, responses.win),
             random2 = $.randRange(1, responses.stalemate),
             random3 = $.randRange(1, responses.lost),
-            id = getWaifuId(waifu),
+            id,
             id2 = getRandomHaremIdFromUser(opponent),
-            player1 = getWaifu(id),
+            player1,
             player2 = getWaifu(id2),
             attacked = $.userPrefix(opponent),
             attacker = $.userPrefix(username);
 
-        if (waifu === undefined) {
+        if (!action == '') {
+            id =getWaifuId(action);
+            player1 = getWaifu(getWaifuId(action));
+        } else {
             id = getRandomHaremIdFromUser(username);
-        } else if (!hasHarem(username, id)) {
-            $.say($.lang.get('waifugames.harem.kick404', $.whisperPrefix(username)));
-            return;
+            player1 = getWaifu(id);
         }
 
         if (opponent.equalsIgnoreCase(username)) {
