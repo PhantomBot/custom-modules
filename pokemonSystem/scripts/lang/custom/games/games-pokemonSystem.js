@@ -13,7 +13,7 @@ $.lang.register('waifugames.candy.nostock', '$1 you don\'t have any candy left!'
 $.lang.register('waifugames.candy.dropped', ' Candy dropped');
 $.lang.register('waifugames.checkwaifu.success', '$1 You own $2 of: $3 #$4. $5 $6!');
 $.lang.register('waifugames.checkwaifu.stats', 'Level: $1, Atk: $2, Def: $3, Bond: $4%');
-$.lang.register('waifugames.catch.miss', '$1 $2 #$3 noticed you and slapped you before running away!');
+$.lang.register('waifugames.catch.miss', '$1 $2 #$3 noticed you and dodged the Pokéball! It got away.');
 $.lang.register('waifugames.catch.own', '$1 caught another +$2: $3 #$4. $5!');
 $.lang.register('waifugames.catch.new', '$1 caught +$2: $3 #$4. $5!');
 $.lang.register('waifugames.catch.rare', 'Latest [Legendary] Pokémon caught: $3 #$4 by $1!');

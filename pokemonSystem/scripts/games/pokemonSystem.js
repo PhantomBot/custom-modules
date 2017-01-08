@@ -443,7 +443,7 @@
 
         if (waifu.includes('[Legendary]') && !hasWaifu(username, id)) {
             rare = ('/me +' + $.getPointsString(reward) + ' ');
-            if (rareChance(action) == 'true') {
+            if ($.inidb.get('settings', 'rChance') == 'true') {
                 chance = $.randRange(1, 4);
             } else {
                 chance = $.randRange(1, 15);
