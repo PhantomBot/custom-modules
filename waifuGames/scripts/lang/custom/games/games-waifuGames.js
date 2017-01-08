@@ -17,7 +17,7 @@ $.lang.register('waifugames.catch.miss', '$1 $2 #$3 noticed you and slapped you 
 $.lang.register('waifugames.catch.own', '$1 seduced another +$2: $3 #$4. $5!');
 $.lang.register('waifugames.catch.new', '$1 seduced +$2: $3 #$4. $5!');
 $.lang.register('waifugames.catch.rare', 'Latest [Rare] Waifu caught: $3 #$4 by $1!');
-$.lang.register('waifugames.giftwaifu.nouser', '$1 you must specify a user, !sendwaifu <name> <waifu>');
+$.lang.register('waifugames.giftwaifu.nouser', '$1 you must specify a user, !giftwaifu <name> <waifu>');
 $.lang.register('waifugames.giftwaifu.404', '$1 you don\'t own enough of that waifu or it does not exist.');
 $.lang.register('waifugames.giftwaifu.success', '$1 sent waifu: $2 to $3. $4!');
 $.lang.register('waifugames.random.0', '$1 you haven\'t collected any waifus. Start collecting waifus with !seduce.');
@@ -41,9 +41,9 @@ $.lang.register('waifugames.harem.nostock', 'You haven\'t unlocked that waifu or
 $.lang.register('waifugames.harem.fight404', 'You don\'t have a harem yet! Usage: !addharem <waifu>');
 $.lang.register('waifugames.harem.fight4042', 'Wrong username or your opponent doesn\'t have a harem yet!');
 $.lang.register('waifugames.harem.same', 'Can\'t start a battle with yourself!');
-$.lang.register('waifugames.fight.usage', 'Usage: !fight <name> - Performs a fight race, which is like a battle with another player\'s waifu (requires both players to have a harem)!');
+$.lang.register('waifugames.fight.usage', 'Usage: !fight <name> - Performs a fight with another player\'s waifu (requires both players to have a harem)!');
 $.lang.register('waifugames.addharem.usage', 'Usage: !addharem <waifu> - adds a waifu to your harem.');
-$.lang.register('waifugames.kickharem.usage', 'Usage: !kickharem <waifu> - removes a waifu to your harem.');
+$.lang.register('waifugames.kickharem.usage', 'Usage: !kickharem <waifu> - removes a waifu from your harem.');
 $.lang.register('waifugames.reward.get', 'The current reward for catching Rare waifus is: $1! Usage: !waifureward <amount>');
 $.lang.register('waifugames.reward.set', 'The reward for Rare waifus has been set to: $1!');
 
