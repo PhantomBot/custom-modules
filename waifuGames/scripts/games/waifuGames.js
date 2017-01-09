@@ -358,7 +358,7 @@
      * @return {String}
      */
     function replace(str) {
-        return str.replace(/=/, '(').replace('[Rare]', '(Rare)').replace(/=/g, ')');
+        return str.replace(/=/, '(').replace('[Rare]', '').replace(/=/g, ')');
     }
 
     /*
@@ -442,7 +442,7 @@
             rare = '';
 
         if (waifu.includes('[Rare]')) {
-            rare = ('/me +' + $.getPointsString(reward) + ' ');
+            rare = ('/me RARE! +' + $.getPointsString(reward) + ' ');
             if ($.inidb.get('settings', 'rChance') == 'true') {
                 chance = $.randRange(1, 4);
             } else {
@@ -456,6 +456,7 @@
         if (chance >= 4) {
             $.inidb.incr(username, 'candy', 1);
             candy = $.lang.get('waifugames.candy.dropped');
+            candy2 = $.lang.get('waifugames.candy.dropped2');
         }
 
         if (chance <= 4) {
@@ -467,7 +468,7 @@
                 $.say($.lang.get('waifugames.catch.new', rare + $.userPrefix(username, true), unlock, replace(waifu), id, $.shortenURL.getShortURL(link) + candy));
             }
         } else {
-            $.say($.lang.get('waifugames.catch.miss', $.userPrefix(username, true), replace(waifu), id) + candy);
+            $.say($.lang.get('waifugames.catch.miss', $.userPrefix(username, true), replace(waifu), id, candy2));
             return;
         }
     }
@@ -747,7 +748,7 @@
         $.inidb.incr(username, 'wLove', id, 1*amount);
         $.inidb.incr(username, 'wLewdness', id, 1*amount);
         $.inidb.decr(username, 'candy', 1*amount);
-        $.say($.lang.get('waifuGames.candy.use', $.whisperPrefix(username), replace(getWaifu(id)), replace2(getWaifu(id)), (25*amount), getEXP(username, id), getLevel(username, id), getCandy(username, id)));
+        $.say($.lang.get('waifuGames.candy.use', $.whisperPrefix(username), replace(getWaifu(id)), replace2(getWaifu(id)), (100*amount), getEXP(username, id), getLevel(username, id), getCandy(username, id)));
     }
 
     /*
@@ -828,7 +829,9 @@
                 $.say($.lang.get('waifugames.fight.usage'));
                 return;
             }
+            if ($.isOnline($.channelName)) {
             startBattle(sender, action.toLowerCase(), args.slice(1).join(' '));
+          }
         }
 
         if (command.equalsIgnoreCase('candy')) {
