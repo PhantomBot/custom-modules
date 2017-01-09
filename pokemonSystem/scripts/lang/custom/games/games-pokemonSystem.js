@@ -6,9 +6,9 @@ $.lang.register('waifugames.marry.null', '$1 you must specify a Pokémon you own
 $.lang.register('waifugames.marry.already', '$1 you are already married to $2!');
 $.lang.register('waifugames.exist.404', '$1 that Pokémon does not exist!');
 $.lang.register('waifugames.profile.success', '$1 you own $2 out of $3 Pokémon characters and you have $4 pieces of candy. $5% Progress');
-$.lang.register('waifugames.candy.get', '$1 you have $2 of XP Candy! Each candy increases your waifu\'s EXP by 25.');
+$.lang.register('waifugames.candy.get', '$1 you have $2 of XP Candy! Each candy increases your waifu\'s EXP by 100.');
 $.lang.register('waifugames.candy.missing', 'That Pokémon is not in your harem!');
-$.lang.register('waifugames.candy.use', '$1 increased $2\'s EXP by 25! $3 now has $4 EXP at (level: $5). You have $6 candy left!');
+$.lang.register('waifugames.candy.use', '$1 increased $2\'s EXP by $3! $4 now has $5 EXP at (level: $6). You have $7 candy left!');
 $.lang.register('waifugames.candy.nostock', '$1 you don\'t have any candy left!');
 $.lang.register('waifugames.candy.dropped', ' Candy dropped');
 $.lang.register('waifugames.checkwaifu.success', '$1 You own $2 of: $3 #$4. $5 $6!');
