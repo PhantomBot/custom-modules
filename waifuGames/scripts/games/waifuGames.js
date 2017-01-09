@@ -207,7 +207,7 @@
         if (getEXP(username, id) <= 0) {
             return 1;
         }
-        return Math.round((Math.sqrt(getEXP(username, id) / 50)));
+        return Math.round((Math.sqrt(getEXP(username, id) / 12)));
     }
 
     /*
@@ -717,8 +717,19 @@
      *
      * @param {String} sender
      */
-    function useCandy(username, id) {
-        var id = getWaifuId(id);
+    function useCandy(username, amount, id) {
+
+      if (getCandy(username) < 1) {
+          $.say($.lang.get('waifugames.candy.nostock', $.whisperPrefix(username)));
+          return;
+      }
+        if (id === undefined) {
+          id = getWaifuId(amount);
+          amount = 1;
+        } else {
+          id = getWaifuId(id);
+        }
+
         if (!waifuExists(id)) {
             $.say($.lang.get('waifugames.exist.404', $.whisperPrefix(username)));
             return;
@@ -729,18 +740,14 @@
             return;
         }
 
-        if (getCandy(username) <= 0) {
-            $.say($.lang.get('waifugames.candy.nostock', $.whisperPrefix(username)));
-            return;
-        }
 
-        $.inidb.incr(username, 'harem', id, 25);
-        $.inidb.incr(username, 'wAttack', id, 1);
-        $.inidb.incr(username, 'wDefense', id, 1);
-        $.inidb.incr(username, 'wLove', id, 1);
-        $.inidb.incr(username, 'wLewdness', id, 1);
-        $.inidb.decr(username, 'candy', 1);
-        $.say($.lang.get('waifuGames.candy.use', $.whisperPrefix(username), replace(getWaifu(id)), replace2(getWaifu(id)), getEXP(username, id), getLevel(username, id), getCandy(username, id)));
+        $.inidb.incr(username, 'harem', id, 100*amount);
+        $.inidb.incr(username, 'wAttack', id, 1*amount);
+        $.inidb.incr(username, 'wDefense', id, 1*amount);
+        $.inidb.incr(username, 'wLove', id, 1*amount);
+        $.inidb.incr(username, 'wLewdness', id, 1*amount);
+        $.inidb.decr(username, 'candy', 1*amount);
+        $.say($.lang.get('waifuGames.candy.use', $.whisperPrefix(username), replace(getWaifu(id)), replace2(getWaifu(id)), (25*amount), getEXP(username, id), getLevel(username, id), getCandy(username, id)));
     }
 
     /*
@@ -829,7 +836,7 @@
                 $.say($.lang.get('waifugames.candy.get', $.whisperPrefix(sender), getCandy(sender)));
                 return;
             } else {
-                useCandy(sender, args.join(' '));
+                useCandy(sender, action, subAction);
             }
         }
 
