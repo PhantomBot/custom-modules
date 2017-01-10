@@ -32,7 +32,7 @@ ___
 You can set any Pokémon as a favorite in your team by typing **!setpokemon (Pokémon)** and if you want to have a divorce just type **!resetpokemon**.  
 Setting a Favorite Pokémon comes with benefits such as: Bond % Boost and the ability to see your favorited Pokémon stats with **!pokemon**  
 ___
-##**teams**
+##**Teams**
 A team is like a team with your favorite Pokémon. A team can only have up to ***6 Pokémon***.  
 Typing **!team** will show your entire team.  
 **!addteam (Pokémon)** will add a Pokémon that you **OWN** into your team.  
