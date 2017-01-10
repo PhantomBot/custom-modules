@@ -17,6 +17,28 @@
     var commandList = [ 'pcpp' ];
 
     /**
+     * Until the 2.3.5 release.
+     */
+    function hasKey(list, value, subIndex) {
+        var i;
+    
+        if (subIndex > -1) {
+            for (i in list) {
+                if (list[i][subIndex].equalsIgnoreCase(value)) {
+                    return true;
+                }
+            }
+        } else {
+            for (i in list) {
+                if (list[i].equalsIgnoreCase(value)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    /**
      * @event command
      */
     $.bind('command', function(event) {
@@ -25,7 +47,7 @@
             args = event.getArgs(),
             userData;
 
-        if ($.hasKey(commandList, command)) {
+        if (hasKey(commandList, command)) {
             if (args.length == 0) {
                 $.say($.whisperPrefix(sender) + $.lang.get('userdatasystem.usage.' + command));
                 return;
