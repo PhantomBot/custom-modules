@@ -65,7 +65,7 @@
                     return;
                 }
                    
-                userData = $.getIniDbString('userdata_' + command, args[0], $.lang.get('userdatasystem.nodata.' + command));
+                userData = $.inidb.set('userdata_' + command, args[0], $.lang.get('userdatasystem.nodata.' + command));
                 $.say($.whisperPrefix(sender) + $.lang.get('userdatasystem.lookup.' + command, $.username.resolve(args[0]), userData));
                 return;
             }
