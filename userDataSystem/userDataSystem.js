@@ -65,7 +65,7 @@
                     return;
                 }
                    
-                userData = $.inidb.set('userdata_' + command, args[0], $.lang.get('userdatasystem.nodata.' + command));
+                userData = $.getIniDbString('userdata_' + command, args[0], $.lang.get('userdatasystem.nodata.' + command));
                 $.say($.whisperPrefix(sender) + $.lang.get('userdatasystem.lookup.' + command, $.username.resolve(args[0]), userData));
                 return;
             }
@@ -73,7 +73,7 @@
             if (args.length >= 2) {
                 if (args[0].equalsIgnoreCase('set')) {
                     userData = args.splice(1);
-                    $.setIniDbString('userdata_' + command, sender, userData);
+                    $.inidb.set('userdata_' + command, sender, userData);
                     $.say($.whisperPrefix(sender) + $.lang.get('userdatasystem.set.' + command, userData));
                     return;
                 }
