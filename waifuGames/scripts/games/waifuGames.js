@@ -611,14 +611,14 @@
      * @param {Number} id
      */
     function buyCandy(sender, amount) {
-      if (amount >= 2) {
-          price  = amount * $.inidb.get('pricecom', 'buycandy');
+      var price = $.inidb.get('pricecom', 'buycandy');
+
+      if (amount >= 1 && $.inidb.get('points', sender) >= price*amount) {
           $.inidb.incr(sender, 'candy', amount);
-          $.inidb.decr('points', sender, price);
-          $.say($.lang.get('waifugames.candy.buy', $.whisperPrefix(sender), amount, $.getPointsString(price), getCandy(sender)));
+          $.inidb.decr('points', sender, price*amount-price);
+          $.say($.lang.get('waifugames.candy.buy', $.whisperPrefix(sender), amount, $.getPointsString(price*amount), getCandy(sender)));
       } else {
           amount = 1;
-          price = amount * $.inidb.get('pricecom', 'buycandy');
           $.inidb.incr(sender, 'candy', amount);
           $.say($.lang.get('waifugames.candy.buy', $.whisperPrefix(sender), amount, $.getPointsString(price), getCandy(sender)));
       }
