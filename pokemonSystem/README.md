@@ -1,4 +1,4 @@
-# <img alt="PokemonSystem" src="http://i.imgur.com/n8bScDc.png" width="300px"/>
+# <img alt="PokemonSystem" src="http://i.imgur.com/n8bScDc.png" width="100px"/>
 
 # Pokémon System
 Only works on Phantombot 2.3.5 and above versions!  
