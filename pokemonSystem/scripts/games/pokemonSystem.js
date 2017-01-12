@@ -28,7 +28,7 @@
      */
     function loadWaifus() {
         var string = '',
-            i = 0;
+            i = 1;
 
         while ($.lang.exists('waifugames.waifu.' + i)) {
             string += 'Pokémon #' + i + ' ' + replace($.lang.get('waifugames.waifu.' + i)) + '\r\n';
@@ -42,7 +42,7 @@
      * @info Pushes the entire waifu list to the db, it does disable auto commit first to make this process a lot faster.
      */
     function pushWaifus() {
-        var i = 0;
+        var i = 1;
 
         $.inidb.setAutoCommit(false);
         while ($.lang.exists('waifugames.waifu.' + i)) {
