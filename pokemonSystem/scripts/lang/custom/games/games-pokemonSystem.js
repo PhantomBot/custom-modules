@@ -1,4 +1,4 @@
-$.lang.register('waifugames.waifuhelp', 'Usage: !pokedex, !profile, !catch, !setpokemon <pokemon>, !resetpokemon, !buypokemon <pokemon>, !giftpokemon <name> <pokemon>, !team, !addteam <pokemon>, !kickteam <pokemon>, !resetteam, !battle <name> <pokemon>, !candy <pokemon>, !pokereward.');
+$.lang.register('waifugames.waifuhelp', 'Usage: !pokedex, !profile, !catch, !setpokemon <pokemon>, !resetpokemon, !buypokemon <pokemon>, !giftpokemon <name> <pokemon>, !team, !addteam <pokemon>, !kickteam <pokemon>, !resetteam, !battle <name> <pokemon>, !candy <pokemon>, !buycandy <amount>, !pokereward.');
 $.lang.register('waifugames.split.success', '$1 $2 is no longer your favorite Pokémon!');
 $.lang.register('waifugames.split.404', '$1 you don\'t have a favorite Pokémon!');
 $.lang.register('waifugames.marry.success', '$1 favorited $2! Congratulations!');
@@ -8,10 +8,11 @@ $.lang.register('waifugames.exist.404', '$1 that Pokémon does not exist!');
 $.lang.register('waifugames.profile.success', '$1 you own $2 out of $3 Pokémon characters and you have $4 pieces of candy. $5% Progress');
 $.lang.register('waifugames.candy.get', '$1 you have $2 Candies! Each candy increases your Pokémon EXP by 100.');
 $.lang.register('waifugames.candy.missing', 'That Pokémon is not in your team!');
-$.lang.register('waifugames.candy.use', '$1 increased $2\'s EXP by $4! Your Pokémon now has $5 EXP at (level: $6). You have $7 candy left!');
+$.lang.register('waifugames.candy.use', '$1 increased $2\'s EXP by $4! [EXP: $5] - (Level: $6, Atk: $7, Def: $8). $9 candy left!');
 $.lang.register('waifugames.candy.nostock', '$1 you don\'t have any candy left!');
 $.lang.register('waifugames.candy.dropped', ' , it was holding a (Candy)');
 $.lang.register('waifugames.candy.dropped2', 'and dropped a (Candy)');
+$.lang.register('waifugames.candy.buy', '$1 bought $2 candy for $3, you now have $4 candy!');
 $.lang.register('waifugames.checkwaifu.success', '$1 You own $2 of: $3 #$4. $5 $6!');
 $.lang.register('waifugames.checkwaifu.stats', 'Level: $1, Atk: $2, Def: $3, Bond: $4%');
 $.lang.register('waifugames.catch.miss', '$1 $2 #$3 noticed you and dodged the Pokéball! It got away.');
