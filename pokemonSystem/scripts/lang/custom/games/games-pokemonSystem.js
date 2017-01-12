@@ -831,7 +831,7 @@ $.lang.register('waifugames.waifu.771','Pyukumuku');
 $.lang.register('waifugames.waifu.772','Type: Null');
 $.lang.register('waifugames.waifu.773','Silvally');
 $.lang.register('waifugames.waifu.774','Minior');
-$.lang.register('waifugames.waifu.774','Komala');
+$.lang.register('waifugames.waifu.775','Komala');
 $.lang.register('waifugames.waifu.776','Turtonator');
 $.lang.register('waifugames.waifu.777','Togedemaru');
 $.lang.register('waifugames.waifu.778','Mimikyu');
