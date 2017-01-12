@@ -24,7 +24,7 @@ $.lang.register('waifugames.giftwaifu.404', '$1 you don\'t own enough of that wa
 $.lang.register('waifugames.giftwaifu.success', '$1 sent waifu: $2 to $3. $4!');
 $.lang.register('waifugames.random.0', '$1 you haven\'t collected any waifus. Start collecting waifus with !seduce.');
 $.lang.register('waifugames.random.success', 'Random Waifu: $2 #$3. $4!');
-$.lang.register('waifugames.random.married', '$1 you are married to $2 #$3. Level: $4, Atk: $5, Def: $5, Love: $7%. $8.');
+$.lang.register('waifugames.random.married', '$1 you are married to $2 #$3. Level: $4, Atk: $5, Def: $6, Love: $7%. $8.');
 $.lang.register('waifugames.online.404', '$1 you can\'t seduce any new waifus when $2 is offline.');
 $.lang.register('waifugames.rare.chance', '[EVENT] A pack of rare waifus are hiding in the bushes, now\'s your chance to seduce and catch one! Type !seduce');
 $.lang.register('waifugames.rare.over', 'It seems the herd of waifus fled!');
