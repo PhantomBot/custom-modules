@@ -604,6 +604,27 @@
     }
 
     /*
+     * @function buyCandy
+     * @info Used to buy candy
+     *
+     * @param {Number} id
+     */
+    function buyCandy(sender, amount) {
+      if (amount >= 2) {
+          price  = amount * $.inidb.get('pricecom', 'buycandy');
+          $.inidb.incr(sender, 'candy', amount);
+          $.inidb.decr('points', sender, price);
+          $.say($.lang.get('waifugames.candy.buy', $.whisperPrefix(sender), amount, $.getPointsString(price), getCandy(sender)));
+      } else {
+          amount = 1;
+          price = amount * $.inidb.get('pricecom', 'buycandy');
+          $.inidb.incr(sender, 'candy', amount);
+          $.say($.lang.get('waifugames.candy.buy', $.whisperPrefix(sender), amount, $.getPointsString(price), getCandy(sender)));
+      }
+
+    }
+
+    /*
      * @function checkWaifu
      * @info Checks if a user owns that harem
      *
@@ -750,7 +771,7 @@
         $.inidb.incr(username, 'pLove', id, 1 * amount);
         $.inidb.incr(username, 'pLewdness', id, 1 * amount);
         $.inidb.decr(username, 'pcandy', 1 * amount);
-        $.say($.lang.get('waifuGames.candy.use', $.whisperPrefix(username), replace(getWaifu(id)), replace2(getWaifu(id)), (100 * amount), getEXP(username, id), getLevel(username, id), getCandy(username, id)));
+        $.say($.lang.get('waifuGames.candy.use', $.whisperPrefix(username), replace(getWaifu(id)), replace2(getWaifu(id)), (100 * amount), getEXP(username, id), getLevel(username, id), getAttack(username, id), getDefense(username, id), getCandy(username, id)));
     }
 
     /*
@@ -845,6 +866,10 @@
             }
         }
 
+        if (command.equalsIgnoreCase('buycandy')) {
+            buyCandy(sender, action);
+        }
+
         if (command.equalsIgnoreCase('team')) {
             getharem(sender);
         }
@@ -926,6 +951,7 @@
             $.registerChatCommand('./games/pokemonSystem.js', 'profile');
             $.registerChatCommand('./games/pokemonSystem.js', 'battle');
             $.registerChatCommand('./games/pokemonSystem.js', 'candy');
+            $.registerChatCommand('./games/pokemonSystem.js', 'buycandy');
             $.registerChatCommand('./games/pokemonSystem.js', 'catch');
             $.registerChatCommand('./games/pokemonSystem.js', 'giftpokemon');
             $.registerChatCommand('./games/pokemonSystem.js', 'resetpokemon');

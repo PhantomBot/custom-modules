@@ -1,6 +1,6 @@
 (function() {
     var google = 'http://google.com/images?q=',
-        reGetUrl = new RegExp(/(\[Rare\]\s)?(.*)\s=(.*)=/),
+        reGetUrl = new RegExp(/(\[Rare\]\s)?(.*)\s=(.*)=.*/),
         reGetTitle = new RegExp(/(\[Rare\]\s)?(.*)\s=(.*)=.*/),
         responses = {
             win: 1,
@@ -378,7 +378,7 @@
      * @return {String}
      */
     function url(str) {
-        return str.match(reGetUrl)[2] + ' ' + str.match(reGetUrl)[3];
+        return str.replace('\'', '%27').match(reGetUrl)[2] + ' ' + str.replace('\'', '%27').match(reGetUrl)[3];
     }
 
     /*
@@ -582,6 +582,7 @@
             $.say($.lang.get('waifugames.split.404', $.whisperPrefix(username)));
         }
     }
+
     /*
      * @function buyWaifu
      * @info Used to buy waifus
@@ -601,6 +602,27 @@
 
         $.say($.lang.get('waifugames.buywaifu.new', $.userPrefix(username, true), replace(waifu), getWaifuId(id), $.shortenURL.getShortURL(link)));
         $.inidb.incr(username, 'waifus', getWaifuId(id), 1);
+    }
+
+    /*
+     * @function buyCandy
+     * @info Used to buy candy
+     *
+     * @param {Number} id
+     */
+    function buyCandy(sender, amount) {
+      if (amount >= 2) {
+          price  = amount * $.inidb.get('pricecom', 'buycandy');
+          $.inidb.incr(sender, 'candy', amount);
+          $.inidb.decr('points', sender, price);
+          $.say($.lang.get('waifugames.candy.buy', $.whisperPrefix(sender), amount, $.getPointsString(price), getCandy(sender)));
+      } else {
+          amount = 1;
+          price = amount * $.inidb.get('pricecom', 'buycandy');
+          $.inidb.incr(sender, 'candy', amount);
+          $.say($.lang.get('waifugames.candy.buy', $.whisperPrefix(sender), amount, $.getPointsString(price), getCandy(sender)));
+      }
+
     }
 
     /*
@@ -753,7 +775,7 @@
         $.inidb.incr(username, 'wLove', id, 1 * amount);
         $.inidb.incr(username, 'wLewdness', id, 1 * amount);
         $.inidb.decr(username, 'candy', 1 * amount);
-        $.say($.lang.get('waifuGames.candy.use', $.whisperPrefix(username), replace(getWaifu(id)), replace2(getWaifu(id)), (100 * amount), getEXP(username, id), getLevel(username, id), getCandy(username, id)));
+        $.say($.lang.get('waifuGames.candy.use', $.whisperPrefix(username), replace(getWaifu(id)), replace2(getWaifu(id)), (100 * amount), getEXP(username, id), getLevel(username, id), getAttack(username, id), getDefense(username, id), getCandy(username, id)));
     }
 
     /*
@@ -793,13 +815,13 @@
             return;
         }
 
-        if ($.randRange((getAttack(username, id) / 20), getAttack(username, id)) > getDefense(opponent, id2)) {
+        if ($.randRange((0), getAttack(username, id)) > getDefense(opponent, id2)) {
             updateBattleStats(username, ['wLove', 'wDefense'], id, true);
             updateBattleStats(username, ['wLewdness', 'wAttack'], id, false);
             updateBattleStats(opponent, ['wLewdness', 'wLove', 'wDefense'], id2, false);
             $.inidb.incr('points', username, 25);
             $.say($.lang.get('waifugames.win.' + random1, replace2(player1), replace2(player2), attacker, attacked, $.pointNameMultiple));
-        } else if ($.randRange((getDefense(username, id) / 20), getDefense(username, id)) > getAttack(opponent, id2)) {
+        } else if ($.randRange(0, getDefense(username, id)) > getAttack(opponent, id2)) {
             updateBattleStats(username, ['wAttack'], id, false);
             updateBattleStats(opponent, ['wDefense'], id2, false);
             $.say($.lang.get('waifugames.stalemate.' + random2, replace2(player1), replace2(player2), attacker, attacked, $.pointNameMultiple));
@@ -846,6 +868,10 @@
             } else {
                 useCandy(sender, action, args.slice(1).join(' '));
             }
+        }
+
+        if (command.equalsIgnoreCase('buycandy')) {
+            buyCandy(sender, action);
         }
 
         if (command.equalsIgnoreCase('harem')) {
@@ -929,6 +955,7 @@
             $.registerChatCommand('./games/waifuGames.js', 'profile');
             $.registerChatCommand('./games/waifuGames.js', 'fight');
             $.registerChatCommand('./games/waifuGames.js', 'candy');
+            $.registerChatCommand('./games/waifuGames.js', 'buycandy');
             $.registerChatCommand('./games/waifuGames.js', 'seduce');
             $.registerChatCommand('./games/waifuGames.js', 'giftwaifu');
             $.registerChatCommand('./games/waifuGames.js', 'resetwaifu');
