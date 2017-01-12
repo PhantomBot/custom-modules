@@ -1,14 +1,14 @@
-$.lang.register('waifugames.waifuhelp', 'Usage: !pokedex, !profile, !catch, !setpokemon <pokemon>, !resetpokemon, !buypokemon <pokemon>, !giftpokemon <name> <pokemon>, !team, !addteam <pokemon>, !kickteam <pokemon>, !resetteam, !battle <name> <pokemon>, !candy <pokemon>, !buycandy <amount>, !pokereward.');
+$.lang.register('waifugames.waifuhelp', 'Usage: !pokedex, !profile, !catch, !setpokemon <pokemon>, !resetpokemon, !buypokemon <pokemon>, !giftpokemon <name> <pokemon>, !team, !addteam <pokemon>, !kickteam <pokemon>, !resetteam, !battle <name> <pokemon>, !candy <pokemon>, !buycandy <amount>, !pokereward <amount>, !fightreward <amount>.');
 $.lang.register('waifugames.split.success', '$1 $2 is no longer your favorite Pokémon!');
 $.lang.register('waifugames.split.404', '$1 you don\'t have a favorite Pokémon!');
 $.lang.register('waifugames.marry.success', '$1 favorited $2! Congratulations!');
 $.lang.register('waifugames.marry.null', '$1 you must specify a Pokémon you own, !setpokemon <pokemon>.');
-$.lang.register('waifugames.marry.already', '$1 you are already married to $2!');
+$.lang.register('waifugames.marry.already', '$1 you have already favorited $2!');
 $.lang.register('waifugames.exist.404', '$1 that Pokémon does not exist!');
 $.lang.register('waifugames.profile.success', '$1 you own $2 out of $3 Pokémon characters and you have $4 pieces of candy. $5% Progress');
 $.lang.register('waifugames.candy.get', '$1 you have $2 Candies! Each candy increases your Pokémon EXP by 100.');
 $.lang.register('waifugames.candy.missing', 'That Pokémon is not in your team!');
-$.lang.register('waifugames.candy.use', '$1 increased $2\'s EXP by $4! [EXP: $5] - (Level: $6, Atk: $7, Def: $8). $9 candy left!');
+$.lang.register('waifugames.candy.use', '$1 increased $2\'s EXP by $3! [EXP: $4] - (Level: $5, Atk: $6, Def: $7). $8 candy left!');
 $.lang.register('waifugames.candy.nostock', '$1 you don\'t have any candy left!');
 $.lang.register('waifugames.candy.dropped', ' , it was holding a (Candy)');
 $.lang.register('waifugames.candy.dropped2', 'and dropped a (Candy)');
@@ -48,14 +48,16 @@ $.lang.register('waifugames.addharem.usage', 'Usage: !addteam <pokemon> - adds a
 $.lang.register('waifugames.kickharem.usage', 'Usage: !kickteam <pokemon> - removes a Pokémon from your team.');
 $.lang.register('waifugames.reward.get', 'The current reward for catching [Legendary] Pokémon is: $1! Usage: !pokereward <amount>');
 $.lang.register('waifugames.reward.set', 'The reward for [Legendary] Pokémon has been set to: $1!');
+$.lang.register('waifugames.fightreward.get', 'The current reward for winning a fight is: $1! Usage: !fightreward <amount>');
+$.lang.register('waifugames.fightreward.set', 'The reward for fighting waifus has been set to: $1!');
 
-$.lang.register('waifugames.win.1', '$3\'s ($1) bashed $4\'s ($2) knocking $2 out! $3 wins +25 $5!!');
-$.lang.register('waifugames.win.2', '$3\'s ($1) used tackle $4\'s ($2) it was super effective! $2 fainted! $3 wins +25 $5!!');
-$.lang.register('waifugames.win.3', '$3\'s ($1) ran up to $4\'s ($2) and it gave it a massive slap that made $2 faint! $3 wins +25 $5!!');
+$.lang.register('waifugames.win.1', '$3\'s ($1) bashed $4\'s ($2) knocking $2 out! $3 wins +$5!!');
+$.lang.register('waifugames.win.2', '$3\'s ($1) used tackle $4\'s ($2) it was super effective! $2 fainted! $3 wins +$5!!');
+$.lang.register('waifugames.win.3', '$3\'s ($1) ran up to $4\'s ($2) and it gave it a massive slap that made $2 faint! $3 wins +$5!!');
 
 $.lang.register('waifugames.stalemate.1', '$3\'s ($1) and $4\'s ($2) heaadbutted each other with such force it knocked both of them out! DRAW!');
 
-$.lang.register('waifugames.lose.1', '$3\'s ($1) attacked $4\'s ($2) and slipped off the ring! $4 wins +25 $5!!');
+$.lang.register('waifugames.lose.1', '$3\'s ($1) attacked $4\'s ($2) and slipped off the ring! $4 wins +$5!!');
 
 $.lang.register('waifugames.waifu.1', 'Bulbasaur');
 $.lang.register('waifugames.waifu.2', 'Ivysaur');

@@ -352,6 +352,16 @@
     }
 
     /*
+     * @function getFReward
+     * @info Retrieve reward data
+     *
+     * @param {String} reward
+     */
+    function getFReward(reward) {
+        return ($.inidb.exists('settings', 'wFReward') ? $.inidb.get('settings', 'wFReward') : 25);
+    }
+
+    /*
      * @function replace
      *
      * @param {String} str
@@ -815,17 +825,17 @@
             updateBattleStats(username, ['pLove', 'pDefense'], id, true);
             updateBattleStats(username, ['pLewdness', 'pAttack'], id, false);
             updateBattleStats(opponent, ['pLewdness', 'pLove', 'pDefense'], id2, false);
-            $.inidb.incr('points', username, 25);
-            $.say($.lang.get('waifugames.win.' + random1, replace2(player1), replace2(player2), attacker, attacked, $.pointNameMultiple));
+            $.inidb.incr('points', username, getFReward());
+            $.say($.lang.get('waifugames.win.' + random1, replace2(player1), replace2(player2), attacker, attacked, $.getPointsString(getFReward())));
         } else if ($.randRange(0, getDefense(username, id)) > getAttack(opponent, id2)) {
             updateBattleStats(username, ['pAttack'], id, false);
             updateBattleStats(opponent, ['pDefense'], id2, false);
-            $.say($.lang.get('waifugames.stalemate.' + random2, replace2(player1), replace2(player2), attacker, attacked, $.pointNameMultiple));
+            $.say($.lang.get('waifugames.stalemate.' + random2, replace2(player1), replace2(player2), attacker, attacked, $.getPointsString(getFReward())));
         } else {
             updateBattleStats(opponent, ['pLove', 'pLewdness', 'pDefense'], id2, false);
             updateBattleStats(username, ['pLove', 'pLewdness', 'pDefense'], id, true);
-            $.inidb.incr('points', opponent, 25);
-            $.say($.lang.get('waifugames.lose.' + random3, replace2(player1), replace2(player2), attacker, attacked, $.pointNameMultiple));
+            $.inidb.incr('points', opponent, getFReward());
+            $.say($.lang.get('waifugames.lose.' + random3, replace2(player1), replace2(player2), attacker, attacked, $.getPointsString(getFReward())));
         }
     }
 
@@ -937,6 +947,15 @@
             }
         }
 
+        if (command.equalsIgnoreCase('fightreward')) {
+            if (action === undefined) {
+                $.say($.lang.get('waifugames.fightreward.get', $.getPointsString(getFReward())));
+            } else {
+                $.inidb.set('settings', 'wFReward', action);
+                $.say($.lang.get('waifugames.fightreward.set', $.getPointsString(action)));
+            }
+        }
+
         if (command.equalsIgnoreCase('pokemonhelp')) {
             $.say($.whisperPrefix(sender) + $.lang.exists('waifugames.waifuhelp'));
         }
@@ -964,6 +983,7 @@
             $.registerChatCommand('./games/pokemonSystem.js', 'pokemonhelp');
             $.registerChatCommand('./games/pokemonSystem.js', 'rarechance', 1);
             $.registerChatCommand('./games/pokemonSystem.js', 'pokereward', 1);
+            $.registerChatCommand('./games/pokemonSystem.js', 'fightreward', 1);
             load();
         }
     });
