@@ -388,7 +388,7 @@
      * @return {String}
      */
     function url(str) {
-          return str.replace(/=/, '(').replace('[Legendary]', '').replace(/=/g, ')');
+        return str.replace(/=/, '(').replace('[Legendary]', '').replace(/=/g, ')');
     }
 
     /*
@@ -619,20 +619,20 @@
      *
      * @param {Number} id
      */
-     function buyCandy(sender, amount) {
-       var price = $.inidb.get('pricecom', 'buycandy');
+    function buyCandy(sender, amount) {
+        var price = $.inidb.get('pricecom', 'buycandy');
 
-       if (amount >= 1 && $.inidb.get('points', sender) >= price*amount) {
-           $.inidb.incr(sender, 'candy', amount);
-           $.inidb.decr('points', sender, price*amount-price);
-           $.say($.lang.get('waifugames.candy.buy', $.whisperPrefix(sender), amount, $.getPointsString(price*amount), getCandy(sender)));
-       } else {
-           amount = 1;
-           $.inidb.incr(sender, 'candy', amount);
-           $.say($.lang.get('waifugames.candy.buy', $.whisperPrefix(sender), amount, $.getPointsString(price), getCandy(sender)));
-       }
+        if (amount >= 1 && $.inidb.get('points', sender) >= price * amount) {
+            $.inidb.incr(sender, 'candy', amount);
+            $.inidb.decr('points', sender, price * amount - price);
+            $.say($.lang.get('waifugames.candy.buy', $.whisperPrefix(sender), amount, $.getPointsString(price * amount), getCandy(sender)));
+        } else {
+            amount = 1;
+            $.inidb.incr(sender, 'candy', amount);
+            $.say($.lang.get('waifugames.candy.buy', $.whisperPrefix(sender), amount, $.getPointsString(price), getCandy(sender)));
+        }
 
-     }
+    }
 
     /*
      * @function checkWaifu
@@ -794,19 +794,28 @@
             random2 = $.randRange(1, responses.stalemate),
             random3 = $.randRange(1, responses.lost),
             id,
-            id2 = getRandomharemIdFromUser(opponent),
+            id2 = getRandomHaremIdFromUser(opponent),
             player1,
-            player2 = getWaifu(id2),
+            player2,
             attacked = $.userPrefix(opponent),
             attacker = $.userPrefix(username);
 
         if (!action == '') {
             id = getWaifuId(action);
-            player1 = getWaifu(getWaifuId(action));
+        } else if (isMarried(username)) {
+            id = getMarried(username);
         } else {
-            id = getRandomharemIdFromUser(username);
-            player1 = getWaifu(id);
+            id = getRandomHaremIdFromUser(username);
         }
+
+        if (isMarried(opponent)) {
+            id2 = getMarried(opponent);
+        } else {
+            id2 = getRandomHaremIdFromUser(opponent);
+        }
+
+        player1 = getWaifu(id);
+        player2 = getWaifu(id2);
 
         if (opponent.equalsIgnoreCase(username)) {
             $.say($.lang.get('waifugames.harem.same'));
