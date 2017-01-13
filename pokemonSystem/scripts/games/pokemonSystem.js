@@ -414,7 +414,7 @@
     }
 
     function rareChance(action) {
-        var toggle = ($.inidb.exists('settings', 'rChance') ? $.inidb.exists('settings', 'rChance').equals('true') : false);
+        var toggle = ($.inidb.exists('settings', 'rChance') ? $.inidb.get('settings', 'rChance').equals('true') : false);
 
         if (toggle === true) {
             $.say($.lang.get('waifugames.rare.over'));
