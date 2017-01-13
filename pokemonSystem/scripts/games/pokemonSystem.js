@@ -46,7 +46,7 @@
 
         $.inidb.setAutoCommit(false);
         while ($.lang.exists('waifugames.waifu.' + i)) {
-            if (!$.inidb.exists('pokelist', '', i)) { // This will make setting pokemons faster since it does not need to write prokemons that are already on the disk.
+            if (!$.inidb.exists('pokelist', i)) { // This will make setting pokemons faster since it does not need to write prokemons that are already on the disk.
                 $.inidb.set('pokelist', i, $.lang.get('waifugames.waifu.' + i));
             }
             ++i;
