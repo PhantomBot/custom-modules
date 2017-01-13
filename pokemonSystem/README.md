@@ -29,8 +29,8 @@ OR (in team)
 ```
 ___
 ##**Favorite Pokémon**
-You can set any Pokémon as a favorite in your team by typing **!setpokemon (Pokémon)** and if you want to have a divorce just type **!resetpokemon**.  
-Setting a Favorite Pokémon comes with benefits such as: Bond % Boost and the ability to see your favorited Pokémon stats with **!pokemon**  
+You can set any Pokémon as a favorite in your team by typing **!setpokemon (Pokémon)** and if you want to unfavorite that Pokémon just type **!resetpokemon**.  
+Setting a Favorite Pokémon comes with benefits such as: Default fighter, Bond % Boost and the ability to see your favorited Pokémon stats with **!pokemon**  
 ___
 ##**Teams**
 A team is like a team with your favorite Pokémon. A team can only have up to ***6 Pokémon***.  
@@ -47,6 +47,7 @@ ___
 ##**Candy**
 You unlock candy randomly when you try to catch Pokémon, this candy can be used to increase your Pokémon's EXP, Attack, Defense and Bond all at once.  
 You can check how much you have through typing **!candy** or **!profile**. To use your candy on a Pokémon just type **!candy (Pokémon)**
+
 ___
 ##**Rewards**
 You can customize the reward players receive from catching Pokémon with **!pokereward (amount)**.  
