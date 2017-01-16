@@ -57,18 +57,18 @@ $.lang.register('waifugames.win.3', '$3\'s ($1) dove at $4\'s ($2) with her Butt
 $.lang.register('waifugames.win.4', '$3\'s ($1) slammed $4\'s ($2) with an Ass Attack, a total knockout! $3 +$5!!');
 $.lang.register('waifugames.win.5', '$3\'s ($1) hypnotized $4\'s ($2) with her Titty Hypnosis, it was super effective! $3 +$5!!');
 $.lang.register('waifugames.win.6', '$3\'s ($1) attacked $4\'s ($2) using "K-Acceleration" (a wedgie, allowing for greater hip mobility and dramatically increased speed!) $3 +$5!!');
-$.lang.register('waifugames.win.7', '$3\'s ($1) unleashes The Ass of Vajra and strikes like a spear on $4\'s ($2)! The force is so strong it knocks her overboard! $3 +$5!!');
+$.lang.register('waifugames.win.7', 'A huge pillow fight broke out with $3\'s ($1) vs. $4\'s ($2)! However $1\'s pillow was filled with rocks! $3 +$5!!');
 $.lang.register('waifugames.win.8', '$3\'s ($1) performed the Triple-Thrust Hurricane Attack on $4\'s ($2), $2 collapses! $3 +$5!!');
 $.lang.register('waifugames.win.9', '$3\'s ($1) used Steel Lance Ass Attack and tore off $4\'s ($2)\'s clothes, she ran away in embarrassment! $3 +$5!!');
 $.lang.register('waifugames.win.10', '$3\'s ($1) overpowered $4\'s ($2) through a Bust to Bust attack! $3 +$5!!');
 $.lang.register('waifugames.win.11', 'There it is! $3\'s ($1) knocked $4\'s ($2) out with her mighty Butt Guillotine! $3 +$5!!');
 $.lang.register('waifugames.win.12', '$3\'s ($1) planted her butt on $4\'s ($2\'s) breasts and forced her to go overboard! $3 +$5!!');
 $.lang.register('waifugames.win.13', '$3\'s ($1) unleashed a barrage of blows on $4\'s ($2\'s) face with her Butt Gatling, the hits were too much for her to handle! $3 +$5!!');
-$.lang.register('waifugames.win.14', '$3\'s ($1) is using her Full-Power Cerberus!! Her butt chased $4\'s ($2\'s) off the stage like a homing missle! $3 +$5!!');
+$.lang.register('waifugames.win.14', '$3\'s ($1) was rushing to get to class before the bell rings, only to run into $4\'s ($2) knocking $2 out! $3 +$5!! Cliche!');
 
 $.lang.register('waifugames.stalemate.1', '$3\'s ($1) and $4\'s ($2) started kissing until they fell off the stage! DOUBLE DOWN!');
 $.lang.register('waifugames.stalemate.2', '$3\'s ($1) and $4\'s ($2) managed to knock each other out with a headbutt! DOUBLE DOWN!');
-$.lang.register('waifugames.stalemate.3', '$3\'s ($1) and $4\'s ($2) performed a charged Butt Slap, which created a sonic boom! Both girls were thrown overboard! DOUBLE DOWN!');
+$.lang.register('waifugames.stalemate.3', '$3\'s ($1) and $4\'s ($2) performed a charged Butt Slap, which created a sonic boom! Both girls were blown overboard by the shockwave! DOUBLE DOWN!');
 
 $.lang.register('waifugames.lose.1', '$3\'s ($1) attacked  and $4\'s ($2) countered with a roundhouse kick! $4 +$5!!');
 $.lang.register('waifugames.lose.2', '$3\'s ($1) attacked $4\'s ($2), but suddenly had a random heart attack! Kira? $4 +$5!!');
@@ -80,6 +80,7 @@ $.lang.register('waifugames.lose.7', '$3\'s ($1) attacked $4\'s ($2) and lost du
 $.lang.register('waifugames.lose.8', '$3\'s ($1) unleashed a deadly force on $4\'s ($2) but all attacks were repelled because $2\'s boobs & butt are too soft! $4 +$5!!');
 $.lang.register('waifugames.lose.9', '$3\'s ($1) is using her Full-Auto Cerberus!! but $4\'s ($2) counters with a Vibe-Ring Hip! The vibrations leave $1 unable to continue! $4 +$5!!');
 $.lang.register('waifugames.lose.10', '$3\'s ($1) plunged her ass against $4\'s ($2) Ass, but her Soft Buns absorbed the shock and repelled ($1) off the stage! $4 +$5!!');
+$.lang.register('waifugames.lose.11', '$3\'s ($1) plunged her ass against $4\'s ($2) Ass, but her Soft Buns absorbed the shock and repelled ($1) off the stage! $4 +$5!!');
 
 $.lang.register('waifugames.waifu.0', 'Kanon Kanase =Strike the Blood=');
 $.lang.register('waifugames.waifu.1', 'Sayaka Kirasaka =Strike the Blood=');
@@ -1407,3 +1408,4 @@ $.lang.register('waifugames.waifu.1320', 'Tatsuki Arisawa =Bleach=');
 $.lang.register('waifugames.waifu.1321', 'Nemu Kurotsuchi =Bleach=');
 $.lang.register('waifugames.waifu.1322', '[Rare] Ururu Tsumugiya =Bleach=');
 $.lang.register('waifugames.waifu.1323', 'Nozomi Kujō =Bleach=');
+$.lang.register('waifugames.waifu.1324', 'Bridget =Guilty Gear=');

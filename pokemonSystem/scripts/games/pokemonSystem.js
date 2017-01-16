@@ -414,7 +414,7 @@
     }
 
     function rareChance(action) {
-        var toggle = ($.inidb.exists('settings', 'rChance') ? $.inidb.get('settings', 'rChance').equals('true') : false);
+        var toggle = ($.inidb.exists('settings', 'rChance') ? $.inidb.get('settings', 'rChance') : false);
 
         if (toggle === true) {
             $.say($.lang.get('waifugames.rare.over'));
@@ -778,9 +778,9 @@
      * @return Battle with another waifu
      */
     function startBattle(username, opponent, action) {
-        var random1 = $.randRange(1, responses.win),
-            random2 = $.randRange(1, responses.stalemate),
-            random3 = $.randRange(1, responses.lost),
+        var random1 = $.randRange(1, responses.win-1),
+            random2 = $.randRange(1, responses.stalemate-1),
+            random3 = $.randRange(1, responses.lost-1),
             id,
             id2 = getRandomHaremIdFromUser(opponent),
             player1,
