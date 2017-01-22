@@ -38,9 +38,10 @@ Typing **!harem** will show your entire harem.
 You can remove any character from your harem using **!kickHarem (waifu)**.
 ___
 ##**Fights**
-Using **!fight (player) (waifu)** you can battle anyone to train and level up your waifu's stats such as: EXP, Attack, Defense, and Love.
+Using **!fight (player) (waifu)** you can battle anyone with at elast one waifu in a harem to gain: EXP, Attack, Defense, and Love.  
 If you type **!fight (player)** it will use a random waifu in your harem.   
-Battles are calculated by your and your opponent's waifu stats.  
+Battles are calculated by your and your opponent's waifu stats. 
+Each fight will result in you and your opponent losing health, when you or your opponent's hitpoints hit 0 that waifu will not be able to fight until you heal them using candy.  
 ***Requirements:*** Both players must have a harem with at least one character in it.
 ___
 ##**Candy**
