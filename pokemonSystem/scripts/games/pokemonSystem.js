@@ -448,10 +448,12 @@
             waifu = getWaifu(id),
             link = (google + url(waifu)),
             candy = '',
+            candy2 = '',
+            candyDrop = $.randRange(1,2);
             rare = '';
 
-        if (waifu.includes('[Legendary]') && !hasWaifu(username, id)) {
-            rare = ('/me +' + $.getPointsString(reward) + ' ');
+        if (waifu.includes('[Legendary]')) {
+            rare = ('/me Legendary +' + $.getPointsString(reward) + ' ');
             if ($.inidb.get('settings', 'rChance') == 'true') {
                 chance = $.randRange(1, 4);
             } else {
@@ -462,7 +464,7 @@
             $.inidb.incr('points', username, reward);
         }
 
-        if (chance >= 4) {
+        if (chance >= 4 && candyDrop > 1) {
             $.inidb.incr(username, 'pcandy', 1);
             candy = $.lang.get('waifugames.candy.dropped');
             candy2 = $.lang.get('waifugames.candy.dropped2');
