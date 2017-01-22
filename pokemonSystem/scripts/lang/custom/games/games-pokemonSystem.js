@@ -1,4 +1,4 @@
-$.lang.register('waifugames.waifuhelp', 'Usage: !pokedex, !profile, !catch, !setpokemon <pokemon>, !resetpokemon, !buypokemon <pokemon>, !giftpokemon <name> <pokemon>, !team, !addteam <pokemon>, !kickteam <pokemon>, !resetteam, !battle <name> <pokemon>, !candy <pokemon>, !buycandy <amount>, !pokereward <amount>, !fightreward <amount>.');
+$.lang.register('waifugames.waifuhelp', 'Usage: !pokedex, !pokefile, !catch, !setpokemon <pokemon>, !resetpokemon, !buypokemon <pokemon>, !giftpokemon <name> <pokemon>, !team, !addteam <pokemon>, !kickteam <pokemon>, !resetteam, !battle <name> <pokemon>, !pcandy <pokemon>, !buypcandy <amount>, !pokereward <amount>, !battlereward <amount>.');
 $.lang.register('waifugames.split.success', '$1 $2 is no longer your favorite Pokémon!');
 $.lang.register('waifugames.split.404', '$1 you don\'t have a favorite Pokémon!');
 $.lang.register('waifugames.marry.success', '$1 favorited $2! Congratulations!');
