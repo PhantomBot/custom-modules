@@ -49,15 +49,33 @@ $.lang.register('waifugames.kickharem.usage', 'Usage: !kickteam <pokemon> - remo
 $.lang.register('waifugames.reward.get', 'The current reward for catching [Legendary] Pokémon is: $1! Usage: !pokereward <amount>');
 $.lang.register('waifugames.reward.set', 'The reward for [Legendary] Pokémon has been set to: $1!');
 $.lang.register('waifugames.fightreward.get', 'The current reward for winning a fight is: $1! Usage: !fightreward <amount>');
-$.lang.register('waifugames.fightreward.set', 'The reward for fighting waifus has been set to: $1!');
+$.lang.register('waifugames.fightreward.set', 'The reward for fighting Pokémon has been set to: $1!');
+$.lang.register('waifugames.player1.nohp', '$1\'s ($2) is K.O.\'d and can\'t fight! Heal them with !candy <amount> <name>.');
+$.lang.register('waifugames.player2.nohp', '$1\'s ($2) is K.O.\'d and can\'t fight! Heal them with !candy <amount> <name>.');
+$.lang.register('waifugames.win.fight', '$1\'s ($2) K.O.\'d $3\'s ($4) and won $5!');
+$.lang.register('waifugames.win.draw', '$1\'s ($2) and $3\'s ($4) knocked each other out!');
 
-$.lang.register('waifugames.win.1', '$3\'s ($1) bashed $4\'s ($2) knocking $2 out! $3 wins +$5!!');
-$.lang.register('waifugames.win.2', '$3\'s ($1) used tackle $4\'s ($2) it was super effective! $2 fainted! $3 wins +$5!!');
-$.lang.register('waifugames.win.3', '$3\'s ($1) ran up to $4\'s ($2) and it gave it a massive slap that made $2 faint! $3 wins +$5!!');
+$.lang.register('waifugames.fight.1', '$1 (HP:$2/100) received $7 damage, and dealt $6 damage with $3 $4 (HP:$5/100)! $8');
 
-$.lang.register('waifugames.stalemate.1', '$3\'s ($1) and $4\'s ($2) heaadbutted each other with such force it knocked both of them out! DRAW!');
-
-$.lang.register('waifugames.lose.1', '$3\'s ($1) attacked $4\'s ($2) and slipped off the ring! $4 wins +$5!!');
+$.lang.register('waifugames.attack.1', 'a pillow on');
+$.lang.register('waifugames.attack.2', 'the Kamehameha on');
+$.lang.register('waifugames.attack.3', 'a chainsaw on');
+$.lang.register('waifugames.attack.4', 'her boobs on');
+$.lang.register('waifugames.attack.5', 'her butt on');
+$.lang.register('waifugames.attack.5', ' a Dragon Punch on');
+$.lang.register('waifugames.attack.6', 'Hadouken on');
+$.lang.register('waifugames.attack.7', 'Shoryuken on');
+$.lang.register('waifugames.attack.8', 'Gravity Kick on');
+$.lang.register('waifugames.attack.9', 'slapping');
+$.lang.register('waifugames.attack.10', 'hugging');
+$.lang.register('waifugames.attack.11', 'ZA WARUDO on');
+$.lang.register('waifugames.attack.12', 'a POWA BOMB on');
+$.lang.register('waifugames.attack.13', 'Internet Memes on');
+$.lang.register('waifugames.attack.14', 'Omnislash on');
+$.lang.register('waifugames.attack.15', 'a Spirit Bomb on');
+$.lang.register('waifugames.attack.16', 'Destructo Disc on');
+$.lang.register('waifugames.attack.16', 'Final Flash on');
+$.lang.register('waifugames.attack.17', 'a wet T-Shirt on');
 
 $.lang.register('waifugames.waifu.1', 'Bulbasaur');
 $.lang.register('waifugames.waifu.2', 'Ivysaur');
