@@ -1025,22 +1025,22 @@
      */
     $.bind('initReady', function() {
         if ($.bot.isModuleEnabled('./games/waifuGames.js')) {
-            $.registerChatCommand('./games/waifuGames.js', 'waifu');
-            $.registerChatCommand('./games/waifuGames.js', 'profile');
-            $.registerChatCommand('./games/waifuGames.js', 'fight');
-            $.registerChatCommand('./games/waifuGames.js', 'candy');
-            $.registerChatCommand('./games/waifuGames.js', 'buycandy');
-            $.registerChatCommand('./games/waifuGames.js', 'seduce');
-            $.registerChatCommand('./games/waifuGames.js', 'giftwaifu');
-            $.registerChatCommand('./games/waifuGames.js', 'resetwaifu');
-            $.registerChatCommand('./games/waifuGames.js', 'setwaifu');
-            $.registerChatCommand('./games/waifuGames.js', 'buywaifu');
-            $.registerChatCommand('./games/waifuGames.js', 'harem');
-            $.registerChatCommand('./games/waifuGames.js', 'addharem');
-            $.registerChatCommand('./games/waifuGames.js', 'kickharem');
-            $.registerChatCommand('./games/waifuGames.js', 'resetharem');
-            $.registerChatCommand('./games/waifuGames.js', 'waifuhelp');
-            $.registerChatCommand('./games/waifuGames.js', 'rarechance');
+            $.registerChatCommand('./games/waifuGames.js', 'waifu', 7);
+            $.registerChatCommand('./games/waifuGames.js', 'profile', 7);
+            $.registerChatCommand('./games/waifuGames.js', 'fight', 7);
+            $.registerChatCommand('./games/waifuGames.js', 'candy', 7);
+            $.registerChatCommand('./games/waifuGames.js', 'buycandy', 7);
+            $.registerChatCommand('./games/waifuGames.js', 'seduce', 7);
+            $.registerChatCommand('./games/waifuGames.js', 'giftwaifu', 7);
+            $.registerChatCommand('./games/waifuGames.js', 'resetwaifu', 7);
+            $.registerChatCommand('./games/waifuGames.js', 'setwaifu', 7);
+            $.registerChatCommand('./games/waifuGames.js', 'buywaifu', 7);
+            $.registerChatCommand('./games/waifuGames.js', 'harem', 7);
+            $.registerChatCommand('./games/waifuGames.js', 'addharem', 7);
+            $.registerChatCommand('./games/waifuGames.js', 'kickharem', 7);
+            $.registerChatCommand('./games/waifuGames.js', 'resetharem', 7);
+            $.registerChatCommand('./games/waifuGames.js', 'waifuhelp', 7);
+            $.registerChatCommand('./games/waifuGames.js', 'rarechance', 7);
             $.registerChatCommand('./games/waifuGames.js', 'waifureward', 1);
             $.registerChatCommand('./games/waifuGames.js', 'fightreward', 1);
             load();
