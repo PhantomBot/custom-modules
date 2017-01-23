@@ -775,10 +775,6 @@
             return;
         }
 
-        if (isNaN(amount)) {
-          amount = 1;
-        }
-
         if (id === '') {
             id = getWaifuId(amount);
             amount = 1;
@@ -823,8 +819,10 @@
             player1 = $.userPrefix(username),
             player2 = $.userPrefix(opponent),
             attack = $.lang.get('waifugames.attack.' + random1),
-            dmg = 1,
-            dmgRec = $.randRange(1, 5),
+            dmg,
+            dmgRec,
+            dmgMsg = '',
+            dmgRecMsg = dmgRec + ' damage',
             winMsg = '';
 
 
@@ -860,9 +858,15 @@
         }
 
         if (getAttack(username, id) > getDefense(opponent, id2)) {
-          dmg = Math.round($.randRange(getDefense(opponent, id2), getAttack(username, id))/3-getDefense(opponent, id2)/3);
-        } else if (getDefense(opponent, id2) > getAttack(username, id)) {
-          dmgRec = Math.round($.randRange(getAttack(username, id), getDefense(opponent, id2))/3-getAttack(username, id)/3);
+          dmg = Math.floor($.randRange(getDefense(opponent, id2), getAttack(username, id))/3-getDefense(opponent, id2)/3);
+        } else {
+          dmg = $.randRange(0, 1);
+        }
+
+        if (getDefense(opponent, id2) > getAttack(username, id)) {
+          dmgRec = Math.floor($.randRange(getAttack(username, id), getDefense(opponent, id2))/3-getAttack(username, id)/3);
+        } else {
+          dmgRec = $.randRange(0, 5);
         }
 
         if (getHitPoints(username, id) < 1) {
@@ -892,7 +896,13 @@
             $.inidb.incr('points', username, getFReward());
           }
 
-          $.say($.lang.get('waifugames.fight.' + random2, replace2(waifu1), getHitPoints(username, id), attack, replace2(waifu2), getHitPoints(opponent, id2), dmg, dmgRec, winMsg));
+          if (dmg === 0) {
+            dmgMsg = 'missed';
+          } else {
+            dmgMsg = 'inflicted ' + dmg + ' damage on';
+          }
+
+          $.say($.lang.get('waifugames.fight.' + random2, replace2(waifu1), getHitPoints(username, id), dmgRec, attack, dmgMsg, replace2(waifu2), getHitPoints(opponent, id2), winMsg));
 
         }
 
@@ -921,7 +931,7 @@
                 $.say($.lang.get('waifugames.fight.usage'));
                 return;
             }
-            if ($.isOnline($.channelName)) {
+            if (!$.isOnline($.channelName)) {
                 startBattle(sender, action.toLowerCase(), args.slice(1).join(' '));
             }
         }
