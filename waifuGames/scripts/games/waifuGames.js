@@ -930,7 +930,7 @@
                 $.say($.lang.get('waifugames.fight.usage'));
                 return;
             }
-            if (!$.isOnline($.channelName)) {
+            if ($.isOnline($.channelName)) {
                 startBattle(sender, action.toLowerCase(), args.slice(1).join(' '));
             }
         }
