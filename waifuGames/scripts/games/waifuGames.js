@@ -59,11 +59,11 @@
      */
     function loadResponses() {
         while ($.lang.exists('waifugames.attack.' + responses.attack)) {
-            responses.attack++;
+            ++responses.attack;
         }
 
         while ($.lang.exists('waifugames.fight.' + responses.fight)) {
-            responses.fight++;
+            ++responses.fight;
         }
     }
 
