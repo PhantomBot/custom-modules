@@ -1,5 +1,5 @@
 (function() {
-    var google = 'http://google.com/images?q=',
+    var google = 'https://pokemondb.net/pokedex/',
         reGetUrl = new RegExp(/(\[Legendary\]\s)?(.*)\s=(.*)=.*/),
         reGetTitle = new RegExp(/(\[Legendary\]\s)?(.*)\s=(.*)=.*/),
         responses = {
@@ -10,7 +10,7 @@
         totalWaifus = 0,
         navigatorImg = 'navigator.png';
 
-    // load();
+    load();
 
     /*
      * @function load
@@ -18,8 +18,8 @@
      */
     function load() {
         loadWaifus();
-        pushWaifus();
         loadResponses();
+        pushWaifus();
     }
 
     /*
@@ -28,7 +28,7 @@
      */
     function loadWaifus() {
         var string = '',
-            i = 0;
+            i = 1;
 
         while ($.lang.exists('pwaifugames.waifu.' + i)) {
             string += 'Pokemon #' + i + ' ' + replace($.lang.get('pwaifugames.waifu.' + i)) + '\r\n';
@@ -43,18 +43,18 @@
      * @function pushWaifus
      * @info Pushes the entire waifu list to the db, it does disable auto commit first to make this process a lot faster.
      */
-    function pushWaifus() {
-        var i = 0;
+     function pushWaifus() {
+            var i = 1;
 
-        $.inidb.setAutoCommit(false);
-        while ($.lang.exists('pwaifugames.waifu.' + i)) {
-            if (!$.inidb.exists('pwaifulist', i)) { // This will make setting pokemons faster since it does not need to write prokemons that are already on the disk.
-                $.inidb.set('pwaifulist', i, $.lang.get('pwaifugames.waifu.' + i));
-            }
-            ++i;
-        }
-        $.inidb.setAutoCommit(true);
-    }
+         $.inidb.setAutoCommit(false);
+         while ($.lang.exists('pwaifugames.waifu.' + i)) {
+             if (!$.inidb.exists('pokemon', i)) { // This will make setting pokemons faster since it does not need to write prokemons that are already on the disk.
+                   $.inidb.set('pokemon', i, $.lang.get('pwaifugames.waifu.' + i));
+             }
+             ++i;
+         }
+         $.inidb.setAutoCommit(true);
+     }
 
     /*
      * @function loadResponses
@@ -82,7 +82,7 @@
      * @return {String} waifu name; will return "" if the waifu does not exist.
      */
     function getWaifuByName(name) {
-        var results = $.inidb.searchByValue('pwaifulist', name)[0];
+        var results = $.inidb.searchByValue('pokemon', name)[0];
 
         return (results === undefined ? '' : $.lang.get('pwaifugames.waifu.' + results));
     }
@@ -128,7 +128,7 @@
      * @return {Number} waifu id; will return 0 if it does not exist.
      */
     function getWaifuIdByName(name) {
-        var results = $.inidb.searchByValue('pwaifulist', name)[0];
+        var results = $.inidb.searchByValue('pokemon', name)[0];
 
         return (results === undefined ? 0 : results);
     }
@@ -496,7 +496,7 @@
      * @param {String} username
      */
     function randomWaifu(username) {
-        var id = $.randRange(0, totalWaifus),
+        var id = $.randRange(1, 802),
             waifu = getWaifu(id),
             link = (google + url(waifu));
 
@@ -922,7 +922,7 @@
                 if (action === undefined) {
                     randomWaifu(sender);
                 } else {
-                    checkWaifu(sender, args.join(' '));
+                    checkWaifu(sender, action);
                 }
             }
 
@@ -942,7 +942,7 @@
                 if (action === undefined) {
                     $.say($.lang.get('pwaifugames.candy.get', $.whisperPrefix(sender), getCandy(sender)));
                 } else {
-                    useCandy(sender, action, args.slice(1).join(' '));
+                    useCandy(sender, action, subAction);
                 }
             }
 
@@ -951,14 +951,14 @@
             }
 
             if (command.equalsIgnoreCase('team')) {
-                getharem(sender);
+                getHarem(sender);
             }
 
             if (command.equalsIgnoreCase('addteam')) {
                 if (action === undefined) {
                     $.say($.lang.get('pwaifugames.addharem.usage'));
                 } else {
-                    addharem(sender, args.join(' '));
+                    addHarem(sender, action);
                 }
             }
 
@@ -966,7 +966,7 @@
                 if (action === undefined) {
                     $.say($.lang.get('pwaifugames.kickharem.usage'));
                 } else {
-                    kickharem(sender, args.join(' '));
+                    kickHarem(sender, action);
                 }
             }
 
@@ -984,11 +984,11 @@
             }
 
             if (command.equalsIgnoreCase('giftpokemon')) {
-                sendWaifu(sender, action, args.slice(1).join(' '));
+                sendWaifu(sender, action, subAction);
             }
 
             if (command.equalsIgnoreCase('buypokemon')) {
-                buyWaifu(sender, args.join(' '));
+                buyWaifu(sender, action);
             }
 
             if (command.equalsIgnoreCase('pokefile')) {
@@ -996,7 +996,7 @@
             }
 
             if (command.equalsIgnoreCase('setpokemon')) {
-                setWaifu(sender, args.join(' '));
+                setWaifu(sender, action);
             }
 
             if (command.equalsIgnoreCase('resetpokemon')) {
