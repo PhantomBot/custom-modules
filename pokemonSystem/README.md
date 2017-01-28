@@ -49,7 +49,9 @@ Battles are calculated by your and your opponent's Pokémon stats.
 OR  
 !battle phantomindex = Pikachu (HP:100/100) received 0 damage, and with Double Slap inflicted 12 damage on Squirtle (HP:88/100)! 
 ```
-As you can see in the first example you can choose any Pokémon in your tema to fight your opponent. The opponent's Pokémon is selected randomly if he or she doesn't have one set as a favorite.
+As you can see in the first example you can choose any Pokémon in your tema to fight your opponent. The opponent's Pokémon is selected randomly if he or she doesn't have one set as a favorite.  
+
+When a player's Pokémon HP reaches 0 it means that Pokémon is now K.O.'d and can't fight. You will need to use a **candy** on that pokemon to revive it back.
 
 **Note:** If you'd like to add or customize the attacks for the Pokémon, just edit them in the lang file. It will choose 1 of the many attacks for battle. 
 
@@ -60,5 +62,9 @@ You can check how much you have through typing **!candy** or **!profile**. To us
 
 ___
 ##**Rewards**
-You can customize the reward players receive from catching Pokémon with **!pokereward (amount)**.  
+You can customize the reward players receive from catching Pokémon with **!pokereward (amount)**.    
 Default is 100.
+  
+You can also customize the fight rewards for defeating a Pokémon with **!battlereward (amount)**  
+Default is 50.
+
