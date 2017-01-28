@@ -30,7 +30,9 @@ OR (in team)
 ___
 ##**Favorite Pokémon**
 You can set any Pokémon as a favorite in your team by typing **!setpokemon (Pokémon)** and if you want to unfavorite that Pokémon just type **!resetpokemon**.  
-Setting a Favorite Pokémon comes with benefits such as: (Main Fighter: Attacks and Fefends when a Pokémon is not specified in battle), Bond % Boost and the ability to see your favorited Pokémon stats with **!pokemon**  
+Setting a Favorite Pokémon comes with benefits such as: Increasing the Bond level with your Pokémon and setting it as:
+(**Main Fighter:** Attacks and Defends when a Pokémon is not specified in battle)  
+**!pokedex**  will let you see your favorite Pokémon's stats otherwise show a random Pokémon.
 ___
 ##**Teams**
 A team is like a team with your favorite Pokémon. A team can only have up to ***6 Pokémon***.  
@@ -43,7 +45,7 @@ Using **!battle (player) (Pokémon)** you can battle anyone to train and level u
 If you type **!battle (player)** it will use a random Pokémon in your team.   
 Battles are calculated by your and your opponent's Pokémon stats.  
   
-***Requirements:*** Both players must have a team with at least one character in it.  
+***Requirements:*** Both players must have a **team** with at least one character in it.  
 ```Example:  
 !battle phantomindex charizard = Charizard (HP:100/100) received 0 damage, and with Mega Punch inflicted 20 damage on Squirtle (HP:80/100)!
 OR  
@@ -57,8 +59,10 @@ When a player's Pokémon HP reaches 0 it means that Pokémon is now K.O.'d and c
 
 ___
 ##**Candy**
-You unlock candy randomly when you try to catch Pokémon, this candy can be used to increase your Pokémon's EXP, Attack, Defense and Bond all at once.  
-You can check how much you have through typing **!candy** or **!profile**. To use your candy on a Pokémon just type **!candy (Pokémon)**
+You unlock candy randomly when you try to catch Pokémon. 
+Candy can be used to restore HP to 100, increase your Pokémon's EXP by 100, Attack by 1, Defense by 1 and Bond by 1% all at once.  
+You can check how much you have by typing **!candy** or **!profile**.  
+To use your candy on a Pokémon just type **!candy (Pokémon)** or if you want to use more than one on that same Pokémon type: **!candy (amount) (Pokémon)**
 
 ___
 ##**Rewards**
