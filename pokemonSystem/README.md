@@ -42,6 +42,7 @@ ___
 Using **!battle (player) (Pokémon)** you can battle anyone to train and level up your Pokémon's stats such as: EXP, Attack, Defense, and Bond.
 If you type **!battle (player)** it will use a random Pokémon in your team.   
 Battles are calculated by your and your opponent's Pokémon stats.  
+  
 ***Requirements:*** Both players must have a team with at least one character in it.  
 ```Example:  
 !battle phantomindex charizard = Charizard (HP:100/100) received 0 damage, and with Mega Punch inflicted 20 damage on Squirtle (HP:80/100)!
@@ -49,6 +50,8 @@ OR
 !battle phantomindex = Pikachu (HP:100/100) received 0 damage, and with Double Slap inflicted 12 damage on Squirtle (HP:88/100)! 
 ```
 As you can see in the first example you can choose any Pokémon in your tema to fight your opponent. The opponent's Pokémon is selected randomly if he or she doesn't have one set as a favorite.
+
+**Note:** If you'd like to add or customize the attacks for the Pokémon, just edit them in the lang file. It will choose 1 of the many attacks for battle. 
 
 ___
 ##**Candy**
