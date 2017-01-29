@@ -30,7 +30,9 @@ OR (in team)
 ___
 ##**Favorite Pokémon**
 You can set any Pokémon as a favorite in your team by typing **!setpokemon (Pokémon)** and if you want to unfavorite that Pokémon just type **!resetpokemon**.  
-Setting a Favorite Pokémon comes with benefits such as: Default fighter, Bond % Boost and the ability to see your favorited Pokémon stats with **!pokemon**  
+Setting a Favorite Pokémon comes with benefits such as: Increasing the Bond level with your Pokémon and setting it as:
+(**Main Fighter:** Attacks and Defends when a Pokémon is not specified in battle)  
+**!pokedex**  will let you see your favorite Pokémon's stats otherwise show a random Pokémon.
 ___
 ##**Teams**
 A team is like a team with your favorite Pokémon. A team can only have up to ***6 Pokémon***.  
@@ -42,13 +44,31 @@ ___
 Using **!battle (player) (Pokémon)** you can battle anyone to train and level up your Pokémon's stats such as: EXP, Attack, Defense, and Bond.
 If you type **!battle (player)** it will use a random Pokémon in your team.   
 Battles are calculated by your and your opponent's Pokémon stats.  
-***Requirements:*** Both players must have a team with at least one character in it.
+  
+***Requirements:*** Both players must have a **team** with at least one character in it.  
+```Example:  
+!battle phantomindex charizard = Charizard (HP:100/100) received 0 damage, and with Mega Punch inflicted 20 damage on Squirtle (HP:80/100)!
+OR  
+!battle phantomindex = Pikachu (HP:100/100) received 0 damage, and with Double Slap inflicted 12 damage on Squirtle (HP:88/100)! 
+```
+As you can see in the first example you can choose any Pokémon in your tema to fight your opponent. The opponent's Pokémon is selected randomly if he or she doesn't have one set as a favorite.  
+
+When a player's Pokémon HP reaches 0 it means that Pokémon is now K.O.'d and can't fight. You will need to use a **candy** on that pokemon to revive it back.
+
+**Note:** If you'd like to add or customize the attacks for the Pokémon, just edit them in the lang file. It will choose 1 of the many attacks for battle. 
+
 ___
 ##**Candy**
-You unlock candy randomly when you try to catch Pokémon, this candy can be used to increase your Pokémon's EXP, Attack, Defense and Bond all at once.  
-You can check how much you have through typing **!candy** or **!profile**. To use your candy on a Pokémon just type **!candy (Pokémon)**
+You unlock candy randomly when you try to catch Pokémon. 
+Candy can be used to restore HP to 100, increase your Pokémon's EXP by 100, Attack by 1, Defense by 1 and Bond by 1% all at once.  
+You can check how much you have by typing **!candy** or **!profile**.  
+To use your candy on a Pokémon just type **!candy (Pokémon)** or if you want to use more than one on that same Pokémon type: **!candy (amount) (Pokémon)**
 
 ___
 ##**Rewards**
-You can customize the reward players receive from catching Pokémon with **!pokereward (amount)**.  
+You can customize the reward players receive from catching Pokémon with **!pokereward (amount)**.    
 Default is 100.
+  
+You can also customize the fight rewards for defeating a Pokémon with **!battlereward (amount)**  
+Default is 50.
+
