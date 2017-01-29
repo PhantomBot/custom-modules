@@ -59,6 +59,9 @@ $.lang.register('waifugames.catch.rare', 'Latest [Rare] Waifu caught: $3 #$4 by 
 $.lang.register('waifugames.catchmiss.1', '$1 $2 #$3 noticed you and slapped you $4 before running away!');
 $.lang.register('waifugames.catchmiss.2', '$1 $2 #$3 tried running from you, but fell off a ledge and died $4!');
 $.lang.register('waifugames.catchmiss.3', '$1 $2 #$3 glared at you with disgust, while walking away $4!');
+$.lang.register('waifugames.catchmiss.4', '$1 $2 #$3 kicked you in the crouch, before runnning away $4!');
+$.lang.register('waifugames.catchmiss.5', '$1 you found $2 #$3 undressing in the bathroom. She slaps you before running away $4!');
+$.lang.register('waifugames.catchmiss.6', '$1 you spotted $2 #$3 but she vanished. It was an illusion $4!');
 
 $.lang.register('waifugames.fight.1', '$1 (HP:$2/100) received $3, and with $4 $5 $6 (HP:$7/100)! $8');
 $.lang.register('waifugames.fight.2', '$1 (HP:$2/100) received $3, and $5 $6 (HP:$7/100) with $4! $8');

@@ -475,19 +475,8 @@
             candy = '',
             candy2 = '',
             candyDrop = $.randRange(1, 2);
-        rare = '';
+            rare = '';
 
-        if (waifu.includes('[Rare]')) {
-            rare = ('/me RARE! +' + $.getPointsString(reward) + ' ');
-            if ($.inidb.get('settings', 'rChance') == 'true') {
-                chance = $.randRange(1, 4);
-            } else {
-                chance = $.randRange(1, 15);
-            }
-
-            $.panelsocketserver.alertImage(navigatorImg + ',5');
-            $.inidb.incr('points', username, reward);
-        }
 
         if (chance >= 4 && candyDrop > 1) {
             $.inidb.incr(username, 'candy', 1);
@@ -496,6 +485,19 @@
         }
 
         if (chance <= 4) {
+
+          if (waifu.includes('[Rare]')) {
+              rare = ('/me RARE! +' + $.getPointsString(reward) + ' ');
+              if ($.inidb.get('settings', 'rChance') == 'true') {
+                  chance = $.randRange(1, 4);
+              } else {
+                  chance = $.randRange(1, 15);
+              }
+
+              $.panelsocketserver.alertImage(navigatorImg + ',5');
+              $.inidb.incr('points', username, reward);
+          }
+
             if (hasWaifu(username, id)) {
                 $.inidb.incr(username, 'waifus', id, unlock);
                 $.say($.lang.get('waifugames.catch.own', rare + $.userPrefix(username, true), unlock, replace(waifu), id, $.shortenURL.getShortURL(link) + candy));
@@ -784,6 +786,7 @@
      * @param {String} sender
      */
     function useCandy(username, amount, id) {
+        var candy = $.inidb.get(username, 'candy');
 
         if (getCandy(username) < 1) {
             $.say($.lang.get('waifugames.candy.nostock', $.whisperPrefix(username)));
@@ -806,6 +809,11 @@
                 $.say($.lang.get('waifugames.candy.missing', $.whisperPrefix(username)));
                 return;
             }
+        }
+
+        if (amount > candy) {
+          $.say($.lang.get('waifugames.candy.nostock', $.whisperPrefix(username)));
+          return
         }
 
 
