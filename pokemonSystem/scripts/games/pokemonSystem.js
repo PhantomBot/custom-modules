@@ -790,7 +790,7 @@
         }
 
         if (amount > candy) {
-          $.say($.lang.get('waifugames.candy.nostock', $.whisperPrefix(username)));
+          $.say($.lang.get('pwaifugames.candy.nostock', $.whisperPrefix(username)));
           return
         }
 
