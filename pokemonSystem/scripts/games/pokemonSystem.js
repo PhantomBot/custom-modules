@@ -764,6 +764,7 @@
      * @param {String} sender
      */
     function useCandy(username, amount, id) {
+      var candy = $.inidb.get(username, 'candy');
 
         if (getCandy(username) < 1) {
             $.say($.lang.get('pwaifugames.candy.nostock', $.whisperPrefix(username)));
@@ -786,6 +787,11 @@
                 $.say($.lang.get('pwaifugames.candy.missing', $.whisperPrefix(username)));
                 return;
             }
+        }
+
+        if (amount > candy) {
+          $.say($.lang.get('waifugames.candy.nostock', $.whisperPrefix(username)));
+          return
         }
 
 
