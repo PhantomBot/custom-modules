@@ -26,7 +26,7 @@ Command | Description of function
  --------------
 ## Installation  
 
-1. Rightclick [Download](http://puu.sh/ru6pi/39790b0d39.zip) ([Mirror #1](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/PhantomBot/custom-modules/tree/master/Status Phrase System)) -> Save Target As - "Statusphrase System.zip"
+1. Rightclick [Download](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/PhantomBot/custom-modules/tree/master/Status%20Phrase%20System) -> Save Target As - "Statusphrase System.zip"
 2. Put the just downloaded 'Statusphrase System.zip' in the  root folder of your phantombot.)
 3. Extract the archiv and overwrite any files if asked.
 4. You are done!
