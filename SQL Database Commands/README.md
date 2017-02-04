@@ -12,4 +12,7 @@ Command | Description of function
 **!dbedit clear [*table*]** | Clears a table.
 **!dbedit remove [*table*] [*key*]** | Removes a single key in a given table.
 
-* The brackets **[] mark parameters** to input! (Ex. '!dbedit remove [table] [key]' becomes '!dbedit remove someTable someKeyInsideThatTable')
+* The brackets **[] mark parameters** to input! (Ex. '!dbedit remove [table] [key]' becomes '!dbedit remove someTable someKeyInsideThatTable')  
+  
+On usage it will prompt the bot owner to reply with *!dbedit yes* or *!dbedit no* within 20 seconds. The script will do nothing if it's not given the “*yes*” approval.  
+Reboot the bot afterwards.
