@@ -180,6 +180,26 @@
     }
 
     /*
+     * @function getWins
+     * @info Used to get the amount of Wins
+     *
+     * @param {String} username
+     */
+    function getWins(username) {
+        return ($.inidb.exists(username, 'wWins') ? $.inidb.get(username, 'wWins') : 0);
+    }
+
+    /*
+     * @function getLosses
+     * @info Used to get the amount of Losses
+     *
+     * @param {String} username
+     */
+    function getLosses(username) {
+        return ($.inidb.exists(username, 'wLosses') ? $.inidb.get(username, 'wLosses') : 0);
+    }
+
+    /*
      * @function getCandy
      * @info Used to get the amount of candy
      *
@@ -449,12 +469,12 @@
         var toggle = $.inidb.exists('settings', 'rChance') ? $.inidb.get('settings', 'rChance') : 'false';
 
         if (toggle == 'false') {
-          $.say($.lang.get('waifugames.rare.chance'));
-          $.panelsocketserver.alertImage('rarechance.gif' + ',4');
-          $.inidb.set('settings', 'rChance', 'true');
+            $.say($.lang.get('waifugames.rare.chance'));
+            $.panelsocketserver.alertImage('rarechance.gif' + ',4');
+            $.inidb.set('settings', 'rChance', 'true');
         } else {
-          $.say($.lang.get('waifugames.rare.over'));
-          $.inidb.set('settings', 'rChance', 'false');
+            $.say($.lang.get('waifugames.rare.over'));
+            $.inidb.set('settings', 'rChance', 'false');
         }
     }
 
@@ -466,7 +486,7 @@
      */
     function catchWaifu(username) {
         var id = $.randRange(0, totalWaifus),
-            missR = $.randRange(1, responses.miss -1),
+            missR = $.randRange(1, responses.miss - 1),
             unlock = $.randRange(1, 2),
             chance = $.randRange(1, 5),
             reward = getReward(),
@@ -475,7 +495,7 @@
             candy = '',
             candy2 = '',
             candyDrop = $.randRange(1, 2);
-            rare = '';
+        rare = '';
 
 
         if (chance >= 4 && candyDrop > 1) {
@@ -486,17 +506,17 @@
 
         if (chance <= 4) {
 
-          if (waifu.includes('[Rare]')) {
-              rare = ('/me RARE! +' + $.getPointsString(reward) + ' ');
-              if ($.inidb.get('settings', 'rChance') == 'true') {
-                  chance = $.randRange(1, 4);
-              } else {
-                  chance = $.randRange(1, 15);
-              }
+            if (waifu.includes('[Rare]')) {
+                rare = ('/me RARE! +' + $.getPointsString(reward) + ' ');
+                if ($.inidb.get('settings', 'rChance') == 'true') {
+                    chance = $.randRange(1, 4);
+                } else {
+                    chance = $.randRange(1, 15);
+                }
 
-              $.panelsocketserver.alertImage(navigatorImg + ',5');
-              $.inidb.incr('points', username, reward);
-          }
+                $.panelsocketserver.alertImage(navigatorImg + ',5');
+                $.inidb.incr('points', username, reward);
+            }
 
             if (hasWaifu(username, id)) {
                 $.inidb.incr(username, 'waifus', id, unlock);
@@ -568,7 +588,7 @@
      * @info Used to get your current profile of waifus.
      */
     function waifuProfile(username) {
-        $.say($.lang.get('waifugames.profile.success', $.whisperPrefix(username), getTotalUserWaifus(username), totalWaifus, getCandy(username), Math.floor((getTotalUserWaifus(username) / totalWaifus) * 100)));
+        $.say($.lang.get('waifugames.profile.success', $.whisperPrefix(username), getTotalUserWaifus(username), totalWaifus, getCandy(username), Math.floor((getTotalUserWaifus(username) / totalWaifus) * 100), getWins(username), getLosses(username)));
     }
 
     /*
@@ -639,8 +659,8 @@
         var waifu = getWaifu(id),
             link = (google + url(waifu));
 
-        $.say($.lang.get('waifugames.buywaifu.new', $.userPrefix(username, true), replace(waifu), getWaifuId(id), $.shortenURL.getShortURL(link)));
         $.inidb.incr(username, 'waifus', getWaifuId(id), 1);
+        $.say($.lang.get('waifugames.buywaifu.new', $.userPrefix(username, true), replace(waifu), getWaifuId(id), $.shortenURL.getShortURL(link)));
     }
 
     /*
@@ -812,8 +832,8 @@
         }
 
         if (amount > candy) {
-          $.say($.lang.get('waifugames.candy.nostock', $.whisperPrefix(username)));
-          return
+            $.say($.lang.get('waifugames.candy.nostock', $.whisperPrefix(username)));
+            return
         }
 
 
@@ -884,13 +904,13 @@
         if (getAttack(username, id) >= getDefense(opponent, id2)) {
             dmg = Math.floor($.randRange(getDefense(opponent, id2), getAttack(username, id)) / 3 - getDefense(opponent, id2) / 3);
         } else {
-            dmg = Math.floor($.randRange(0, getAttack(username, id)/6));
+            dmg = Math.floor($.randRange(0, getAttack(username, id) / 6));
         }
 
         if (getDefense(opponent, id2) >= getAttack(username, id)) {
             dmgRec = Math.floor($.randRange(getAttack(username, id), getDefense(opponent, id2)) / 3 - getAttack(username, id) / 3);
         } else {
-            dmgRec = Math.floor($.randRange(0, getAttack(opponent, id2)/6));
+            dmgRec = Math.floor($.randRange(0, getAttack(opponent, id2) / 6));
         }
 
         if (getHitPoints(username, id) < 1) {
@@ -911,6 +931,8 @@
             if ($.inidb.GetInteger(username, 'wHitPoints', id) <= 0) {
                 winMsg = $.lang.get('waifugames.win.fight', player2, replace2(waifu2), player1, replace2(waifu1), $.getPointsString(getFReward()));
                 $.inidb.incr('points', opponent, getFReward());
+                $.inidb.incr(opponent, 'wWins', 1);
+                $.inidb.incr(username, 'wLosses', 1);
             }
 
             if ($.inidb.GetInteger(username, 'wHitPoints', id) <= 0 && $.inidb.GetInteger(opponent, 'wHitPoints', id2) <= 0) {
@@ -920,6 +942,8 @@
             if ($.inidb.GetInteger(opponent, 'wHitPoints', id2) <= 0) {
                 winMsg = $.lang.get('waifugames.win.fight', player1, replace2(waifu1), player2, replace2(waifu2), $.getPointsString(getFReward()));
                 $.inidb.incr('points', username, getFReward());
+                $.inidb.incr(username, 'wWins', 1);
+                $.inidb.incr(opponent, 'wLosses', 1);
             }
 
             var dmgRecMsg = $.lang.get('waifugames.fight.dmgrec', dmgRec);

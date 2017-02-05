@@ -5,7 +5,7 @@ $.lang.register('pwaifugames.marry.success', '$1 favorited $2! Congratulations!'
 $.lang.register('pwaifugames.marry.null', '$1 you must specify a Pokémon you own, !setPokémon Pokémon.');
 $.lang.register('pwaifugames.marry.already', '$1 you are already married to $2!');
 $.lang.register('pwaifugames.exist.404', '$1 that Pokémon does not exist!');
-$.lang.register('pwaifugames.profile.success', '$1 you own $2 out of $3 Pokémon\'s and you have $4 pieces of candy. $5% Progress');
+$.lang.register('pwaifugames.profile.success', '$1 you own $2 out of $3 Pokémon\'s and you have $4 pieces of candy. $5% Progress. (W: $6 / L: $7).');
 $.lang.register('pwaifugames.candy.get', '$1 you have $2 Candy! Each candy restores a Pokémon\'s HP and increases EXP by: 100.');
 $.lang.register('pwaifugames.candy.missing', 'That Pokémon is not in your team!');
 $.lang.register('pwaifugames.candy.use', '$1 increased $2\'s EXP by $3! [EXP: $4] - (HP: ($5/100) - Level: $6, Atk: $7, Def: $8). $9 candy left!');
@@ -58,8 +58,8 @@ $.lang.register('pwaifugames.catch.new', '$1 caught +$2: $3 #$4. $5!');
 $.lang.register('pwaifugames.catch.rare', 'Latest [Legendary] Pokémon caught: $3 #$4 by $1!');
 
 $.lang.register('pwaifugames.catchmiss.1', '$1 $2 #$3 noticed you and slapped you $4 before running away!');
-$.lang.register('pwaifugames.catchmiss.2', '$1 $2 #$3 tried running from you, but fell off a ledge and died $4!');
-$.lang.register('pwaifugames.catchmiss.3', '$1 $2 #$3 glared at you with disgust, while walking away $4!');
+$.lang.register('pwaifugames.catchmiss.2', '$1 $2 #$3 tried running from you, but fell off a ledge and died! $4');
+$.lang.register('pwaifugames.catchmiss.3', '$1 $2 #$3 glared at you with disgust, while walking away! $4');
 
 $.lang.register('pwaifugames.fight.1', '$1 (HP:$2/100) received $3, and with $4 $5 $6 (HP:$7/100)! $8');
 $.lang.register('pwaifugames.fight.2', '$1 (HP:$2/100) received $3, and $5 $6 (HP:$7/100) with $4! $8');
