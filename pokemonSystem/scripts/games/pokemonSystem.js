@@ -1156,9 +1156,17 @@
                 checkWaifu(sender, action);
             }
         }
-
+            
+        if (command.equalsIgnoreCase('catch')) {
+            if ($.isOnline($.channelName)) {
+                catchWaifu(sender);
+            } else {
+                $.say($.lang.get('pwaifugames.online.404', $.whisperPrefix(sender), $.channelName));
+            }
+        }
+            
         if (command.equalsIgnoreCase('boss')) {
-          if (!$.isOnline($.channelName)) {
+          if ($.isOnline($.channelName)) {
               generateBoss();
               bossBattle(sender, action);
           } else {
@@ -1168,7 +1176,7 @@
         }
 
         if (command.equalsIgnoreCase('battle')) {
-          if (!$.isOnline($.channelName)) {
+          if ($.isOnline($.channelName)) {
               startBattle(sender, action.toLowerCase(), subAction);
               if (action === undefined) {
                     $.say($.lang.get('pwaifugames.fight.usage'));
@@ -1216,14 +1224,6 @@
           $.inidb.del(username, 'pmarried');
           $.inidb.RemoveSection(sender, 'pharem');
           $.say($.whisperPrefix(sender) + $.lang.get('pwaifugames.harem.reset'));
-        }
-
-        if (command.equalsIgnoreCase('catch')) {
-            if (!$.isOnline($.channelName)) {
-                catchWaifu(sender);
-            } else {
-                $.say($.lang.get('pwaifugames.online.404', $.whisperPrefix(sender), $.channelName));
-            }
         }
 
         if (command.equalsIgnoreCase('giftpokemon')) {
