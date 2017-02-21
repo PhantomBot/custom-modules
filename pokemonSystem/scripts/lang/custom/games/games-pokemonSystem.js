@@ -1,15 +1,19 @@
-$.lang.register('pwaifugames.waifuhelp', 'Usage: !pokedex, !pokefile, !catch, !setpokemon <pokemon>, !resetpokemon, !buypokemon <pokemon>, !giftpokemon <name> <pokemon>, !team, !addteam <pokemon>, !kickteam <pokemon>, !resetteam, !battle <name> <pokemon>, !pcandy <pokemon>, !buypcandy <amount>, !pokereward <amount>, !battlereward <amount>.');
+$.lang.register('pwaifugames.waifuhelp', 'Usage: !pokedex, !pokefile, !catch, !setpokemon <pokemon>, !resetpokemon, !buypokemon <pokemon>, !giftpokemon <name> <pokemon>, !team, !addteam <pokemon>, !kickteam <pokemon>, !resetteam, !battle <name> <pokemon>, !pcandy <pokemon>, !buypcandy <amount>, !pokereward <amount>, !battlereward <amount>, !boss <pokemon>, !giftcandy <name> <amount>.');
 $.lang.register('pwaifugames.split.success', '$1 unfavorited Pokémon: $2!');
 $.lang.register('pwaifugames.split.404', '$1 you don\'t have a favorite Pokémon yet!');
 $.lang.register('pwaifugames.marry.success', '$1 favorited $2! Congratulations!');
 $.lang.register('pwaifugames.marry.null', '$1 you must specify a Pokémon you own, !setPokémon Pokémon.');
 $.lang.register('pwaifugames.marry.already', '$1 you are already married to $2!');
 $.lang.register('pwaifugames.exist.404', '$1 that Pokémon does not exist!');
-$.lang.register('pwaifugames.profile.success', '$1 you own $2 out of $3 Pokémon\'s and you have $4 pieces of candy. $5% Progress. (W: $6 / L: $7).');
+$.lang.register('waifugames.profile.success', '$1 Progress: $5% - You own $2 out of $3 Pokémon and you have $4 (Candy). [Score Won: $6 | Lost: $7]');
+$.lang.register('pwaifugames.level.max', 'That character has reached the maximum level!');
 $.lang.register('pwaifugames.candy.get', '$1 you have $2 Candy! Each candy restores a Pokémon\'s HP and increases EXP by: 100.');
 $.lang.register('pwaifugames.candy.missing', 'That Pokémon is not in your team!');
 $.lang.register('pwaifugames.candy.use', '$1 increased $2\'s EXP by $3! [EXP: $4] - (HP: ($5/100) - Level: $6, Atk: $7, Def: $8). $9 candy left!');
 $.lang.register('pwaifugames.candy.nostock', '$1 you don\'t have any candy left!');
+$.lang.register('pwaifugames.candy.enough', '$1 you don\'t have that much candy!');
+$.lang.register('pwaifugames.giftcandy.success', '$1 gifted $2 $3 candy!');
+$.lang.register('pwaifugames.giftcandy.404', '$1 you don\'t have any candy left!');
 $.lang.register('pwaifugames.candy.dropped', ' , She was holding a (Candy)');
 $.lang.register('pwaifugames.candy.dropped2', 'and dropped a (Candy)');
 $.lang.register('pwaifugames.candy.buy', '$1 bought $2 candy for $3, you now have $4 candy!');
@@ -39,6 +43,9 @@ $.lang.register('pwaifugames.harem.nostock', 'You haven\'t unlocked that Pokémo
 $.lang.register('pwaifugames.harem.fight404', 'You don\'t have a team yet! Usage: !addteam Pokémon');
 $.lang.register('pwaifugames.harem.fight4042', 'Wrong username or your opponent doesn\'t have a team yet!');
 $.lang.register('pwaifugames.harem.same', 'Can\'t start a battle with yourself!');
+$.lang.register('pwaifugames.info.release', 'Usage: !release (Pokémon)');
+$.lang.register('pwaifugames.harem.release', '$1 has been freed into the wild!');
+$.lang.register('pwaifugames.harem.release404', 'Either $1 is still in your team or you don\'t have that Pokémon!');
 $.lang.register('pwaifugames.fight.usage', 'Usage: !fight <name> - Performs a fight with another player\'s Pokémon (requires both players to have a harem)!');
 $.lang.register('pwaifugames.addharem.usage', 'Usage: !addteam Pokémon - adds a Pokémon to your harem.');
 $.lang.register('pwaifugames.kickharem.usage', 'Usage: !kickteam Pokémon - removes a Pokémon from your harem.');
@@ -47,6 +54,8 @@ $.lang.register('pwaifugames.reward.set', 'The reward for legendary Pokémon has
 $.lang.register('pwaifugames.fightreward.get', 'The current reward for winning a fight is: $1! Usage: !fightreward <amount>');
 $.lang.register('pwaifugames.fightreward.set', 'The reward for fighting Pokémon has been set to: $1!');
 $.lang.register('pwaifugames.player.nohp', '$1\'s ($2) is K.O.\'d and can\'t fight! Heal Pokémon with !candy <amount> <name>.');
+$.lang.register('pwaifugames.boss.win', '$1\'s ($2) defeated $4 and won $5! +10 (Candy)');
+$.lang.register('pwaifugames.boss.loss', '($2) deafeated $3\'s ($4). Who can stop this monster?!');
 $.lang.register('pwaifugames.win.fight', '$1\'s ($2) K.O.\'d $3\'s ($4) and won $5!');
 $.lang.register('pwaifugames.win.draw', '$1\'s ($2) and $3\'s ($4) knocked each other out!');
 $.lang.register('pwaifugames.fight.miss', 'missed');
@@ -58,11 +67,17 @@ $.lang.register('pwaifugames.catch.new', '$1 caught +$2: $3 #$4. $5!');
 $.lang.register('pwaifugames.catch.rare', 'Latest [Legendary] Pokémon caught: $3 #$4 by $1!');
 
 $.lang.register('pwaifugames.catchmiss.1', '$1 $2 #$3 noticed you and slapped you $4 before running away!');
-$.lang.register('pwaifugames.catchmiss.2', '$1 $2 #$3 tried running from you, but fell off a ledge and died! $4');
-$.lang.register('pwaifugames.catchmiss.3', '$1 $2 #$3 glared at you with disgust, while walking away! $4');
+$.lang.register('pwaifugames.catchmiss.2', '$1 $2 #$3 tried running from you, but fell off a ledge and died $4!');
+$.lang.register('pwaifugames.catchmiss.3', '$1 $2 #$3 glared at you with disgust, while walking away $4!');
 
 $.lang.register('pwaifugames.fight.1', '$1 (HP:$2/100) received $3, and with $4 $5 $6 (HP:$7/100)! $8');
 $.lang.register('pwaifugames.fight.2', '$1 (HP:$2/100) received $3, and $5 $6 (HP:$7/100) with $4! $8');
+
+$.lang.register('pwaifugames.bosses.1', 'Lugia');
+$.lang.register('pwaifugames.bosses.2', 'Mewtwo');
+$.lang.register('pwaifugames.bosses.3', 'Slow King');
+$.lang.register('pwaifugames.bosses.4', 'A peice of grass');
+$.lang.register('pwaifugames.bosses.5', 'An Egg');
 
 $.lang.register('pwaifugames.attack.1', 'Mega Punch');
 $.lang.register('pwaifugames.attack.2', 'Mega Kick');
@@ -84,6 +99,7 @@ $.lang.register('pwaifugames.attack.16', 'Destructo Disc');
 $.lang.register('pwaifugames.attack.16', 'Final Flash');
 $.lang.register('pwaifugames.attack.17', 'hacks');
 $.lang.register('pwaifugames.attack.17', 'Vine Whip');
+$.lang.register('pwaifugames.attack.18', 'Fly');
 
 $.lang.register('pwaifugames.waifu.1', 'Bulbasaur');
 $.lang.register('pwaifugames.waifu.2', 'Ivysaur');
