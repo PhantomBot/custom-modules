@@ -5,7 +5,7 @@ $.lang.register('pwaifugames.marry.success', '$1 favorited $2! Congratulations!'
 $.lang.register('pwaifugames.marry.null', '$1 you must specify a Pokémon you own, !setPokémon Pokémon.');
 $.lang.register('pwaifugames.marry.already', '$1 you are already married to $2!');
 $.lang.register('pwaifugames.exist.404', '$1 that Pokémon does not exist!');
-$.lang.register('waifugames.profile.success', '$1 Progress: $5% - You own $2 out of $3 Pokémon and you have $4 (Candy). [Score Won: $6 | Lost: $7]');
+$.lang.register('pwaifugames.profile.success', '$1 Progress: $5% - You own $2 out of $3 Pokémon and you have $4 (Candy). [Score Won: $6 | Lost: $7]');
 $.lang.register('pwaifugames.level.max', 'That character has reached the maximum level!');
 $.lang.register('pwaifugames.candy.get', '$1 you have $2 Candy! Each candy restores a Pokémon\'s HP and increases EXP by: 100.');
 $.lang.register('pwaifugames.candy.missing', 'That Pokémon is not in your team!');
