@@ -898,19 +898,18 @@
               $.say($.lang.get('waifugames.exist.404', $.whisperPrefix(username)));
               return;
           }
-
-          if ((100 * amount +  getEXP(username, id)) > 120000) {
-            $.say($.lang.get('waifugames.level.exceed', $.whisperPrefix(username), amount, replace(getWaifu(id))));
-            return;
-          }
-
+	    
           if (getLevel(username, id) >= 100) {
               $.inidb.SetInteger(username, 'wHitPoints', id, 100);
               $.inidb.decr(username, 'candy', amount);
               $.say($.lang.get('waifugames.level.max', $.whisperPrefix(username), replace(getWaifu(id))));
               return;
           }
-
+          
+          if ((100 * amount +  getEXP(username, id)) > 120000) {
+            $.say($.lang.get('waifugames.level.exceed', $.whisperPrefix(username), amount, replace(getWaifu(id))));
+            return;
+          }
 
         $.inidb.SetInteger(username, 'wHitPoints', id, 100);
         $.inidb.incr(username, 'wEXP', id, (100 * amount));
