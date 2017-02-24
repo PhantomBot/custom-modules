@@ -36,7 +36,7 @@ OR (in team)
 !waifu juri = You own 2 of:  Juri Han #6 (Street Fighter). Level: 1, Atk: 5, Def: 7, Love: 2%
 ```
 ___
-##**Marry your waifu **
+##**Marry your waifu**
 You can marry any waifu in your harem by typing **!setwaifu (waifu)** and if you want to duivorce her just type **!resetwaifu**.  
 Marryinga waifu comes with benefits such as: Increasing the Love level with your waifu and setting it as:
 (**Main Fighter:** Attacks and Defends when a waifu is not specified in battle)  
