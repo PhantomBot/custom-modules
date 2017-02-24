@@ -62,6 +62,7 @@ $.lang.register('waifugames.boss.win', '$1\'s ($2) defeated $4 and won $5! +10 (
 $.lang.register('waifugames.boss.loss', '($2) deafeated $3\'s ($4)!');
 $.lang.register('waifugames.win.fight', '$1\'s ($2) K.O.\'d $3\'s ($4) and won $5! +1 (Candy)');
 $.lang.register('waifugames.win.draw', '$1\'s ($2) and $3\'s ($4) knocked each other out!');
+$.lang.register('waifugames.fight.boss', '[BOSS FIGHT]');
 $.lang.register('waifugames.fight.miss', 'missed');
 $.lang.register('waifugames.fight.crit', '(Critical Dmg!)');
 $.lang.register('waifugames.fight.dmg', 'inflicted $1 damage on');
@@ -73,6 +74,7 @@ $.lang.register('waifugames.catch.rare', 'Latest [Rare] Waifu caught: $3 #$4 by 
 //Stream notification images in the web/alerts folder (mp3 with the name name as the image will work too)
 $.lang.register('waifugames.alert.navigator', 'waifu.gif');
 $.lang.register('waifugames.alert.boss', 'boss.png');
+$.lang.register('waifugames.alert.rarechance', 'rarechance.gif');
 
 $.lang.register('waifugames.catchmiss.1', '$1 $2 #$3 noticed you and slapped you before running away! $4');
 $.lang.register('waifugames.catchmiss.2', '$1 $2 #$3 tried running from you, but fell off a ledge and died! $4');
