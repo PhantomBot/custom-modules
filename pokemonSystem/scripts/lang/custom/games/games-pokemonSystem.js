@@ -59,7 +59,7 @@ $.lang.register('pwaifugames.bossreward.get', 'The current reward for defeating 
 $.lang.register('pwaifugames.bossreward.set', 'The reward for defeating Bosses has been set to: $1!');
 $.lang.register('pwaifugames.player.nohp', '$1\'s ($2) is K.O.\'d and can\'t fight! Heal Pokémon with !candy <amount> <name>.');
 $.lang.register('pwaifugames.boss.win', '$1\'s ($2) defeated $4 and won $5! +10 (Candy)');
-$.lang.register('pwaifugames.boss.loss', '($2) deafeated $3\'s ($4). Who can stop this monster?!');
+$.lang.register('pwaifugames.boss.loss', '($2) deafeated $3\'s ($4).');
 $.lang.register('pwaifugames.win.fight', '$1\'s ($2) K.O.\'d $3\'s ($4) and won $5!');
 $.lang.register('pwaifugames.win.draw', '$1\'s ($2) and $3\'s ($4) knocked each other out!');
 $.lang.register('pwaifugames.fight.boss', '[BOSS FIGHT]');
