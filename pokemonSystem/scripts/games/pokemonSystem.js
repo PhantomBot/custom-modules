@@ -9,7 +9,7 @@
                 bosses: 1
             },
             totalWaifus = 0,
-            navigatorImg = 'navigator.png';
+            navigatorImg = $.lang.get('waifugames.alert.navigator');
 
         //load();
 
@@ -27,16 +27,14 @@
          * @function loadWaifus
          * @info Gets a count of all the waifus and stores it in a variable. It will also generate a txt file with all the waifus.
          */
-        function loadWaifus() {
-            var string = '',
-                i = 1;
+         function loadWaifus() {
+         var string = '',
+             i = 0;
 
-            while ($.lang.exists('pwaifugames.waifu.' + i)) {
-                string += 'Pokemon #' + i + ' ' + replace($.lang.get('pwaifugames.waifu.' + i)) + '\r\n';
-                ++i;
-
-                //$.writeToFile('Waifu #' + i + ' ' + replace($.lang.get('pwaifugames.waifu.' + i)) + '\r\n', 'waifus.txt', false);
-            }
+         while ($.lang.exists('pwaifugames.waifu.' + i)) {
+             string += 'Pokemon #' + i + ' ' + replace($.lang.get('pwaifugames.waifu.' + i)) + '\r\n';
+             ++i;
+         }
             totalWaifus = i;
         }
 
@@ -74,7 +72,7 @@
                 ++responses.miss;
             }
 
-            while ($.lang.exists('waifugames.bosses.' + responses.bosses)) {
+            while ($.lang.exists('pwaifugames.bosses.' + responses.bosses)) {
                 ++responses.bosses;
             }
         }
@@ -250,12 +248,12 @@
          * @return gets the hitpoints of a waifu in the user's harem
          */
         function getHitPoints(username, id) {
-            if ($.inidb.GetInteger(username, 'pHitPoints', id) <= 0) {
-                return 0;
-            } else {
-                return ($.inidb.HasKey(username, 'pHitPoints', id) ? ($.inidb.GetInteger(username, 'pHitPoints', id) >= 100 ? 100 : $.inidb.GetInteger(username, 'pHitPoints', id)) : 0);
+              if ($.inidb.GetInteger(username, 'pHitPoints', id) <= 0) {
+                  return 0;
+              } else {
+                  return ($.inidb.HasKey(username, 'pHitPoints', id) ? ($.inidb.GetInteger(username, 'pHitPoints', id) >= 2500 ? 2500 : $.inidb.GetInteger(username, 'pHitPoints', id)) : 0);
+              }
             }
-        }
 
         /*
          * @function getAttack
@@ -281,7 +279,8 @@
          * @return gets the Love of a waifu in the user's harem
          */
         function getLove(username, id) {
-            return ($.inidb.HasKey(username, 'pLove', id) ? $.inidb.GetInteger(username, 'pLove', id) : 0);
+          return ($.inidb.HasKey(username, 'pLove', id) ? ($.inidb.GetInteger(username, 'pLove', id) >= 100 ? 100 : $.inidb.GetInteger(username, 'pLove', id)) : 0);
+        }
         }
 
         /*
@@ -409,6 +408,16 @@
         }
 
         /*
+         * @function getFReward
+         * @info Retrieve reward data
+         *
+         * @param {String} reward
+         */
+        function getBReward(reward) {
+            return ($.inidb.exists('settings', 'pBReward') ? $.inidb.get('settings', 'pBReward') : 10000);
+        }
+
+        /*
          * @function replace
          *
          * @param {String} str
@@ -460,7 +469,7 @@
 
             if (toggle == 'false') {
                 $.say($.lang.get('pwaifugames.rare.chance'));
-                $.panelsocketserver.alertImage('rarechance.gif' + ',4');
+                $.panelsocketserver.alertImage($.lang.get('pwaifugames.alert.rarechance') + ',4');
                 $.inidb.set('psettings', 'rChance', 'true');
             } else {
                 $.say($.lang.get('pwaifugames.rare.over'));
@@ -576,7 +585,7 @@
                 $.inidb.SetString(receiver.toLowerCase(), 'pAttack', getWaifuId(id), getAttack(username, getWaifuId(id)));
                 $.inidb.SetString(receiver.toLowerCase(), 'pDefense', getWaifuId(id), getDefense(username, getWaifuId(id)));
               }
-              $.inidb.decr(username, 'waifus', id, 1);
+              $.inidb.decr(username, 'pokemon', id, 1);
           } else {
               $.say($.lang.get('pwaifugames.giftwaifu.404', $.userPrefix(username, true)));
           }
@@ -672,7 +681,7 @@
         function buyWaifu(username, id) {
             if (!waifuExists(id)) {
                 $.say($.lang.get('pwaifugames.exist.404', $.whisperPrefix(username)));
-                $.inidb.incr('points', username, $.inidb.get('pricecom', 'buywaifu'));
+                $.inidb.incr('points', username, $.inidb.get('pricecom', 'buypokemon'));
                 return;
             }
 
@@ -876,15 +885,16 @@
         }
 
         if (getLevel(username, id) >= 100) {
-            $.say($.lang.get('pwaifugames.level.max'));
+            $.inidb.SetInteger(username, 'pHitPoints', id, 100);
+            $.inidb.decr(username, 'pcandy', amount);
+            $.say($.lang.get('pwaifugames.level.max', $.whisperPrefix(username), replace(getWaifu(id))));
             return;
         }
 
-
-      if (getLevel(username, id) >= 100) {
-          $.say($.lang.get('pwaifugames.level.max'));
-          return
-      }
+        if ((100 * amount +  getEXP(username, id)) > 120000) {
+          $.say($.lang.get('pwaifugames.level.exceed', $.whisperPrefix(username), amount, replace(getWaifu(id))));
+          return;
+        }
 
       $.inidb.SetInteger(username, 'pHitPoints', id, 100);
       $.inidb.incr(username, 'pEXP', id, (100 * amount));
@@ -903,11 +913,12 @@
         if (bossHP <= 0) {
             $.inidb.set('boss', 'id', bosses);
             $.inidb.SetInteger('boss', 'pharem', bosses, 1);
-            $.inidb.SetInteger('boss', 'pHitPoints', bosses, 100);
-            $.inidb.SetInteger('boss', 'pAttack', bosses, $.randRange(200,800));
-            $.inidb.SetInteger('boss', 'pDefense', bosses, $.randRange(800,2000));
-            $.inidb.SetInteger('boss', 'pLove', bosses, 1000);
+            $.inidb.SetInteger('boss', 'pHitPoints', bosses, 2500);
+            $.inidb.SetInteger('boss', 'pAttack', bosses, $.randRange(200,600));
+            $.inidb.SetInteger('boss', 'pDefense', bosses, $.randRange(800,1000));
+            $.inidb.SetInteger('boss', 'pLove', bosses, 100);
         }
+            return bosses;
     }
 
     function getBoss(sender, bosses) {
@@ -989,21 +1000,19 @@
              }
 
              if ($.inidb.GetInteger(username, 'pHitPoints', id) <= 0) {
-                 winMsg = $.lang.get('pwaifugames.boss.loss', player2, replace(waifu2), player1, replace(waifu1), $.getPointsString(getFReward()));
-                 $.inidb.incr('points', opponent, getFReward());
-                 $.inidb.incr(opponent, 'pWins', 1);
-                 $.inidb.incr(opponent, 'pcandy', 1);
+                 winMsg = $.lang.get('pwaifugames.boss.loss', player2, replace(waifu2), player1, replace(waifu1));
                  $.inidb.incr(username, 'pLosses', 1);
              }
 
              if ($.inidb.GetInteger(opponent, 'pHitPoints', id2) <= 0) {
-                 winMsg = $.lang.get('pwaifugames.boss.win', player1, replace(waifu1), player2, '[Boss] ' + replace(waifu2), $.getPointsString(10*getFReward()));
-                 $.inidb.incr('points', username, ((10*getFReward())));
+                 winMsg = $.lang.get('pwaifugames.boss.win', player1, replace(waifu1), player2, '[Boss] ' + replace(waifu2), $.getPointsString(getBReward()));
+                 $.inidb.incr('points', username, ((getBReward())));
                  $.inidb.incr(username, 'pWins', 1);
                  $.inidb.incr(username, 'pcandy', 10);
                  $.inidb.incr(opponent, 'pLosses', 1);
                  $.inidb.RemoveSection('boss', 'pharem');
                  $.inidb.del('boss', 'id');
+                 $.panelsocketserver.alertImage($.lang.get('pwaifugames.alert.boss') + ', 12');
              }
 
              var dmgRecMsg = $.lang.get('pwaifugames.fight.dmgrec', dmgRec);
@@ -1014,7 +1023,7 @@
                  dmgMsg = $.lang.get('pwaifugames.fight.dmg', dmg);
              }
 
-             $.say('[BOSS FIGHT] ' + $.lang.get('pwaifugames.fight.' + random2, replace(waifu1), getHitPoints(username, id), dmgRecMsg, attack, dmgMsg, '[Boss] ' + replace(waifu2), getHitPoints(opponent, id2), winMsg));
+             $.say($.lang.get('pwaifugames.fight.boss') $.lang.get('pwaifugames.fight.' + random2, replace(waifu1), getHitPoints(username, id), dmgRecMsg, attack, dmgMsg, '[Boss] ' + replace(waifu2), getHitPoints(opponent, id2), winMsg));
 
          }
 
@@ -1156,7 +1165,7 @@
                 checkWaifu(sender, action);
             }
         }
-            
+
         if (command.equalsIgnoreCase('catch')) {
             if ($.isOnline($.channelName)) {
                 catchWaifu(sender);
@@ -1164,7 +1173,7 @@
                 $.say($.lang.get('pwaifugames.online.404', $.whisperPrefix(sender), $.channelName));
             }
         }
-            
+
         if (command.equalsIgnoreCase('boss')) {
           if ($.isOnline($.channelName)) {
               generateBoss();
@@ -1188,7 +1197,7 @@
           }
         }
 
-        if (command.equalsIgnoreCase('pcandy')) {
+        if (command.equalsIgnoreCase('candy')) {
             if (action === undefined) {
                 $.say($.lang.get('pwaifugames.candy.get', $.whisperPrefix(sender), getCandy(sender)));
             } else {
@@ -1196,7 +1205,7 @@
             }
         }
 
-        if (command.equalsIgnoreCase('buypcandy')) {
+        if (command.equalsIgnoreCase('buycandy')) {
             buyCandy(sender, action);
         }
 
@@ -1276,6 +1285,15 @@
             }
         }
 
+        if (command.equalsIgnoreCase('bossreward')) {
+            if (action === undefined) {
+                $.say($.lang.get('pwaifugames.bossreward.get', $.getPointsString(getBReward())));
+            } else {
+                $.inidb.set('settings', 'pBReward', action);
+                $.say($.lang.get('pwaifugames.bossreward.set', $.getPointsString(action)));
+            }
+        }
+
         if (command.equalsIgnoreCase('pokemonhelp')) {
             $.say($.whisperPrefix(sender) + $.lang.exists('pwaifugames.waifuhelp'));
         }
@@ -1286,27 +1304,29 @@
      */
     $.bind('initReady', function() {
         if ($.bot.isModuleEnabled('./games/pokemonSystem.js')) {
-            $.registerChatCommand('./games/pokemonSystem.js', 'pokedex', 7);
-            $.registerChatCommand('./games/pokemonSystem.js', 'pokefile', 7);
-            $.registerChatCommand('./games/pokemonSystem.js', 'battle', 7);
-            $.registerChatCommand('./games/pokemonSystem.js', 'boss', 7);
-            $.registerChatCommand('./games/pokemonSystem.js', 'pcandy', 7);
-            $.registerChatCommand('./games/pokemonSystem.js', 'buypcandy', 7);
-            $.registerChatCommand('./games/pokemonSystem.js', 'catch', 7);
-            $.registerChatCommand('./games/pokemonSystem.js', 'giftcandy', 7);
-            $.registerChatCommand('./games/pokemonSystem.js', 'giftpokemon', 7);
-            $.registerChatCommand('./games/pokemonSystem.js', 'resetpokemon', 7);
-            $.registerChatCommand('./games/pokemonSystem.js', 'setpokemon', 7);
-            $.registerChatCommand('./games/pokemonSystem.js', 'buypokemon', 7);
-            $.registerChatCommand('./games/pokemonSystem.js', 'team', 7);
-            $.registerChatCommand('./games/pokemonSystem.js', 'addteam', 7);
-            $.registerChatCommand('./games/pokemonSystem.js', 'kickteam', 7);
-            $.registerChatCommand('./games/pokemonSystem.js', 'resetteam', 7);
-            $.registerChatCommand('./games/pokemonSystem.js', 'pokemonhelp', 7);
-            $.registerChatCommand('./games/pokemonSystem.js', 'release', 7);
-            $.registerChatCommand('./games/pokemonSystem.js', 'legendchance', 1);
-            $.registerChatCommand('./games/pokemonSystem.js', 'pokereward', 1);
-            $.registerChatCommand('./games/pokemonSystem.js', 'battlereward', 1);
+            $.registerChatCommand('./games/waifuGames.js', 'pokedex', 7);
+            $.registerChatCommand('./games/waifuGames.js', 'pokefile', 7);
+            $.registerChatCommand('./games/waifuGames.js', 'battle', 7);
+            $.registerChatCommand('./games/waifuGames.js', 'boss', 7);
+            $.registerChatCommand('./games/waifuGames.js', 'candy', 7);
+            $.registerChatCommand('./games/waifuGames.js', 'buycandy', 7);
+            $.registerChatCommand('./games/waifuGames.js', 'catch', 7);
+            $.registerChatCommand('./games/waifuGames.js', 'giftpokemon', 7);
+            $.registerChatCommand('./games/waifuGames.js', 'giftcandy', 7);
+            $.registerChatCommand('./games/waifuGames.js', 'resetwaifu', 7);
+            $.registerChatCommand('./games/waifuGames.js', 'release', 7);
+            $.registerChatCommand('./games/waifuGames.js', 'setpokemon', 7);
+            $.registerChatCommand('./games/waifuGames.js', 'buypokemon', 7);
+            $.registerChatCommand('./games/waifuGames.js', 'team', 7);
+            $.registerChatCommand('./games/waifuGames.js', 'addteam', 7);
+            $.registerChatCommand('./games/waifuGames.js', 'kickteam', 7);
+            $.registerChatCommand('./games/waifuGames.js', 'resetteam', 7);
+            $.registerChatCommand('./games/waifuGames.js', 'pokehelp', 7);
+            $.registerChatCommand('./games/waifuGames.js', 'legendchance', 7);
+            $.registerChatCommand('./games/waifuGames.js', 'resetratio', 7);
+            $.registerChatCommand('./games/waifuGames.js', 'pokemonreward', 1);
+            $.registerChatCommand('./games/waifuGames.js', 'fightreward', 1);
+            $.registerChatCommand('./games/waifuGames.js', 'bossreward', 1);
             load();
         }
     });
