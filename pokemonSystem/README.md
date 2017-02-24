@@ -20,6 +20,12 @@ ___
 You can release a Pokémon at any time to reset it's stats, but you will need to catch it again in order to use it.  
 To release a Pokémon type **!release (name or id)**   
 ___
+##**Trading Pokémon**
+This isn't exactly trading, but more like sending a Pokémon you own to another user. 
+The stats of your Pokemon will transfer to another player and if he/she already owns that Pokémon, it will overwrite the stat data **ONLY** if your Pokémon has higher stats
+  
+To transfer a Pokémon just type **!giftpokemon (name) (pokemon)**.
+___
 ##**Pokémon Lookup**  
 You can type **!Pokedex (name or id)** to look up information about that Pokémon.  
 If that Pokémon is in your team the message will show their stats: Level, Atk, Def, and Bond.  
