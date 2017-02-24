@@ -17,7 +17,7 @@ Type **!catch** and it will catch one random Pokémon from the list. You have a 
 You have a small chance to encounter and catch a rare Pokémon. Rare Pokémon come with higher stats than common ones.  
 ___
 ##**Pokémon Lookup**  
-You can type **!Pokémon (name or id)** to look up information about that Pokémon.  
+You can type **!Pokedex (name or id)** to look up information about that Pokémon.  
 If that Pokémon is in your team the message will show their stats: Level, Atk, Def, and Bond.  
 ```
 Example:   
