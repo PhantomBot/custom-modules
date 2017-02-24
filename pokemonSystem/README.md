@@ -60,8 +60,8 @@ When a player's Pokémon HP reaches 0 it means that Pokémon is now K.O.'d and c
 ___
 ##**Candy**
 You unlock candy randomly when you try to catch Pokémon. 
-Candy can be used to restore HP to 100, increase your Pokémon's EXP by 100, Attack by 1, Defense by 1 and Bond by 1% all at once.  
-You can check how much you have by typing **!candy** or **!profile**.  
+Candy can be used to restore HP to 100, increase your Pokémon's EXP by 100, Attack by 1-2, Defense by 1-2 and Bond by 1% all at once.  
+You can check how much you have by typing **!candy** or **!pokefile**.  
 To use your candy on a Pokémon just type **!candy (Pokémon)** or if you want to use more than one on that same Pokémon type: **!candy (amount) (Pokémon)**
 
 ___
@@ -72,3 +72,5 @@ Default is 100.
 You can also customize the fight rewards for defeating a Pokémon with **!battlereward (amount)**  
 Default is 50.
 
+You can also customize the boss rewards for defeating a Boss with **!bossreward (amount)**  
+Default is 10000.
