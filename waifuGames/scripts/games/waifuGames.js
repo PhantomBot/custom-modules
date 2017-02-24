@@ -278,7 +278,7 @@
      * @return gets the Love of a waifu in the user's harem
      */
     function getLove(username, id) {
-        return ($.inidb.HasKey(username, 'wLove', id) ? $.inidb.GetInteger(username, 'wLove', id) : 0);
+        return ($.inidb.HasKey(username, 'wLove', id) ? ($.inidb.GetInteger(username, 'wLove', id) >= 100 ? 100 : $.inidb.GetInteger(username, 'wLove', id)) : 0);
     }
 
     /*
