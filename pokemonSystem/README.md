@@ -55,7 +55,7 @@ Battles are calculated by your and your opponent's Pokémon stats.
 OR  
 !battle phantomindex = Pikachu [HP:100] received 0 damage, and with Double Slap inflicted 12 damage on Squirtle [HP:88]! 
 ```
-As you can see in the first example you can choose any Pokémon in your tema to fight your opponent. The opponent's Pokémon is selected randomly if he or she doesn't have one set as a favorite.  
+As you can see in the first example you can choose any Pokémon in your team to fight your opponent. The opponent's Pokémon is selected randomly if he or she doesn't have one set as a favorite.  
 
 When a player's Pokémon HP reaches 0 it means that Pokémon is now K.O.'d and can't fight. You will need to use a **candy** on that pokemon to revive it back.
 
