@@ -1,5 +1,5 @@
 # Pokémon System  <img alt="PokemonSystem" src="http://i.imgur.com/n8bScDc.png" width="100px"/>
-Only works on Phantombot 2.3.5 and above versions!  
+Only works on Phantombot 2.3.5.2 and above versions!  
 
 This is a full rewrite of the Pokémon System script with new features!  
 
@@ -63,9 +63,11 @@ When a player's Pokémon HP reaches 0 it means that Pokémon is now K.O.'d and c
 ___
 ##**Bosses**
 Bosses are the big tough fighters with immense attack power and hit points. It's a high risk high reward feature.  
-You can battle the boss with **!boss**
+You can battle the boss with **!boss**  
+  
 A boss will be generate with **2500 HP** and **Attack 200-800** including **Defense 600-800**. Who ever defeats the boss will be rewarded and a new boss will be generated when someone types **!boss**  
 Default rewards for defeating the boss is: **10,000 points and 10 candy.**  
+  
 You can edit the boss names through the lang file.
 ___
 ##**Profile/Pokefile**
