@@ -485,7 +485,7 @@
 
         if (toggle == 'false') {
             $.say($.lang.get('waifugames.rare.chance'));
-            $.panelsocketserver.alertImage('rarechance.gif' + ',4');
+            $.panelsocketserver.alertImage($.lang.get('waifugames.alert.rarechance') + ',4');
             $.inidb.set('settings', 'rChance', 'true');
         } else {
             $.say($.lang.get('waifugames.rare.over'));
@@ -898,14 +898,14 @@
               $.say($.lang.get('waifugames.exist.404', $.whisperPrefix(username)));
               return;
           }
-	    
+
           if (getLevel(username, id) >= 100) {
               $.inidb.SetInteger(username, 'wHitPoints', id, 100);
               $.inidb.decr(username, 'candy', amount);
               $.say($.lang.get('waifugames.level.max', $.whisperPrefix(username), replace(getWaifu(id))));
               return;
           }
-          
+
           if ((100 * amount +  getEXP(username, id)) > 120000) {
             $.say($.lang.get('waifugames.level.exceed', $.whisperPrefix(username), amount, replace(getWaifu(id))));
             return;
@@ -1041,7 +1041,7 @@
                 dmgMsg = $.lang.get('waifugames.fight.dmg', dmg);
             }
 
-            $.say('[BOSS FIGHT] ' + $.lang.get('waifugames.fight.' + random2, replace2(waifu1), getHitPoints(username, id), dmgRecMsg, attack, dmgMsg, '[Boss] ' + replace2(waifu2), getHitPoints(opponent, id2), winMsg));
+            $.say($.lang.get('waifugames.fight.boss') + $.lang.get('waifugames.fight.' + random2, replace2(waifu1), getHitPoints(username, id), dmgRecMsg, attack, dmgMsg, '[Boss] ' + replace2(waifu2), getHitPoints(opponent, id2), winMsg));
 
         }
 
