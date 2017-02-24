@@ -16,6 +16,10 @@ This is a full rewrite of the Pokémon System script with new features!
 Type **!catch** and it will catch one random Pokémon from the list. You have a chance of a Pokémon getting away and dropping candy.  
 You have a small chance to encounter and catch a rare Pokémon. Rare Pokémon come with higher stats than common ones.  
 ___
+##**Releasing Pokémon**
+You can release a Pokémon at any time to reset it's stats, but you will need to catch it again in order to use it.  
+To release a Pokémon type **!release (name or id)**   
+___
 ##**Pokémon Lookup**  
 You can type **!Pokedex (name or id)** to look up information about that Pokémon.  
 If that Pokémon is in your team the message will show their stats: Level, Atk, Def, and Bond.  
@@ -47,21 +51,32 @@ Battles are calculated by your and your opponent's Pokémon stats.
   
 ***Requirements:*** Both players must have a **team** with at least one character in it.  
 ```Example:  
-!battle phantomindex charizard = Charizard (HP:100/100) received 0 damage, and with Mega Punch inflicted 20 damage on Squirtle (HP:80/100)!
+!battle phantomindex charizard = Charizard [HP:100] received 0 damage, and with Mega Punch inflicted 20 damage on Squirtle [HP:80]!
 OR  
-!battle phantomindex = Pikachu (HP:100/100) received 0 damage, and with Double Slap inflicted 12 damage on Squirtle (HP:88/100)! 
+!battle phantomindex = Pikachu [HP:100] received 0 damage, and with Double Slap inflicted 12 damage on Squirtle [HP:88]! 
 ```
 As you can see in the first example you can choose any Pokémon in your tema to fight your opponent. The opponent's Pokémon is selected randomly if he or she doesn't have one set as a favorite.  
 
 When a player's Pokémon HP reaches 0 it means that Pokémon is now K.O.'d and can't fight. You will need to use a **candy** on that pokemon to revive it back.
 
 **Note:** If you'd like to add or customize the attacks for the Pokémon, just edit them in the lang file. It will choose 1 of the many attacks for battle. 
-
+___
+##**Bosses**
+Bosses are the big tough fighters with immense attack power and hit points. It's a high risk high reward feature.  
+You can battle the boss with **!boss**
+A boss will be generate with **2500 HP** and **Attack 200-800** including **Defense 600-800**. Who ever defeats the boss will be rewarded and a new boss will be generated when someone types **!boss**  
+Default rewards for defeating the boss is: **10,000 points and 10 candy.**  
+You can edit the boss names through the lang file.
+___
+##**Profile/Pokefile**
+Using **!pokefile** will bring up information such as the amount of Pokemon you've caught, candy you have and your Win/Lose ratio.   
+You can reset your win/lose ratio using **!resetratio**  
 ___
 ##**Candy**
-You unlock candy randomly when you try to catch Pokémon. 
-Candy can be used to restore HP to 100, increase your Pokémon's EXP by 100, Attack by 1-2, Defense by 1-2 and Bond by 1% all at once.  
-You can check how much you have by typing **!candy** or **!pokefile**.  
+You unlock candy randomly when catching a Pokémon. 
+You can check how much candy you've collected by typing **!candy** or **!pokefile**. 
+Candy can be used to restore a Pokémons HP to 100, increase your Pokémon's EXP by 100, Attack by 1-2, Defense by 1-2 and Bond by 1% all at once. Maximum 120000 EXP = level 100 
+  
 To use your candy on a Pokémon just type **!candy (Pokémon)** or if you want to use more than one on that same Pokémon type: **!candy (amount) (Pokémon)**
 
 ___
