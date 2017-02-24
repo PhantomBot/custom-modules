@@ -86,7 +86,7 @@ ___
 You can customize the reward players receive from catching Pokémon with **!pokereward (amount)**.    
 Default is 100.
   
-You can also customize the fight rewards for defeating a Pokémon with **!battlereward (amount)**  
+You can also customize the fight rewards for defeating a Pokémon with **!fightreward (amount)**  
 Default is 50.
 
 You can also customize the boss rewards for defeating a Boss with **!bossreward (amount)**  
