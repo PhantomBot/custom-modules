@@ -89,7 +89,7 @@ To use your candy on a Pokémon just type **!candy (Pokémon)** or if you want t
 
 ___
 ##**Rewards**
-You can customize the reward players receive from catching Pokémon with **!pokereward (amount)**.    
+You can customize the reward players receive from catching **Legendary Pokémon** with **!pokereward (amount)**.    
 Default is 100.
   
 You can also customize the fight rewards for defeating a Pokémon with **!fightreward (amount)**  
