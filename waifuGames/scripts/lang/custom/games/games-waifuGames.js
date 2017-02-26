@@ -10,7 +10,7 @@ $.lang.register('waifugames.reset.stats', '$1 your win and loss stats have been 
 $.lang.register('waifugames.level.max', '$1 $2 has been healed, but can\'t level any further. Max level 100!');
 $.lang.register('waifugames.level.exceed', '$1 Using $2 Candy on $3 will exceed the 120000 EXP limit!');
 $.lang.register('waifugames.candy.get', '$1 you have $2 Candy! Each candy restores a character\'s HP and increases EXP by: 100.');
-$.lang.register('waifugames.candy.missing', 'That waifu is not in your harem!');
+$.lang.register('waifugames.candy.missing', 'You don\'t have that waifu!');
 $.lang.register('waifugames.candy.use', '$1 increased $2\'s EXP by $3! [EXP: $4] - (HP:$5 - Level: $6, Atk: $7, Def: $8). $9 candy left!');
 $.lang.register('waifugames.candy.nostock', '$1 you don\'t have any candy left!');
 $.lang.register('waifugames.candy.enough', '$1 you don\'t have that much candy!');
