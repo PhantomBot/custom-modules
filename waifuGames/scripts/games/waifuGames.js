@@ -1236,7 +1236,7 @@
             } else if (args.length == 1) {
               useCandy(sender, 1, args.join(' '));
             } else {
-              if (args.length > 1) {
+              if (args.length > 2) {
                 useCandy(sender, action, args.slice(1).join(' '));
               }
             }
