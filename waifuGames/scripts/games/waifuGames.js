@@ -311,6 +311,25 @@
     }
 
     /*
+     * @function getRandomOwnedIdFromUser
+     * @info Will return a random Waifu id from that users waifu list, can be 0 if he does not have any.
+     *
+     * @return {Number} harem id.
+     */
+    function getRandomOwnedIdFromUser(username) {
+        var keys = $.inidb.GetKeyList(username, 'waifus'),
+            temp = [];
+
+        for (var i = 0; i < keys.length; i++) {
+            temp.push(keys[i]);
+        }
+        if (temp.length > 0) {
+            return $.randElement(temp);
+        } else {
+            return 0;
+        }
+    }
+    /*
      * @function getRandomHaremNameFromUser
      * @info Will return a random harem name from that users harem list, can be '' if he does not have any.
      *
@@ -876,13 +895,6 @@
      */
     function useCandy(username, amount, id) {
 
-        if (id === '') {
-            id = getWaifuId(amount);
-            amount = 1;
-        } else {
-            id = getWaifuId(id);
-            amount = amount;
-        }
 
           if (amount > getCandy(username)) {
               $.say($.lang.get('waifugames.candy.enough', $.whisperPrefix(username)));
@@ -897,6 +909,11 @@
           if (!waifuExists(id)) {
               $.say($.lang.get('waifugames.exist.404', $.whisperPrefix(username)));
               return;
+          }
+
+          if (!hasWaifu(username, id)) {
+            $.say($.lang.get('waifugames.candy.missing', $.whisperPrefix(username)));
+            return;
           }
 
           if (getLevel(username, id) >= 100) {
@@ -1214,11 +1231,14 @@
         }
 
         if (command.equalsIgnoreCase('candy')) {
-            if (action === undefined) {
-                $.say($.lang.get('waifugames.candy.get', $.whisperPrefix(sender), getCandy(sender)));
-                return;
+            if (args.length == 0) {
+              useCandy(sender, 1, getRandomOwnedIdFromUser(sender));
+            } else if (args.length == 1) {
+              useCandy(sender, 1, args.join(' '));
             } else {
+              if (args.length > 1) {
                 useCandy(sender, action, args.slice(1).join(' '));
+              }
             }
         }
 
