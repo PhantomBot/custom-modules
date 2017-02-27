@@ -110,8 +110,13 @@ $.lang.register('waifugames.attack.17', 'a wet T-Shirt');
 $.lang.register('waifugames.attack.18', 'Magician\'s Redo');
 $.lang.register('waifugames.attack.19', 'EXPLOSION');
 
-$.lang.register('waifugames.bosses.1', 'Alucard =Boss=');
-$.lang.register('waifugames.bosses.2', 'Skeith =Boss=');
-$.lang.register('waifugames.bosses.3', 'Leviathan =Boss=');
-$.lang.register('waifugames.bosses.4', 'Bahamut =Boss=');
-$.lang.register('waifugames.bosses.5', 'Aku =Boss=');
+$.lang.register('waifugames.bosses.1', 'Sephiroth =Boss=');
+$.lang.register('waifugames.bosses.2', 'Aku =Boss=');
+$.lang.register('waifugames.bosses.3', 'Skeith =Boss=');
+$.lang.register('waifugames.bosses.4', 'Leviathan =Boss=');
+$.lang.register('waifugames.bosses.5', 'Bahamut =Boss=');
+$.lang.register('waifugames.bosses.6', 'King Moogle Mog XII =Boss=');
+$.lang.register('waifugames.bosses.7', 'Bismarck =Boss=');
+$.lang.register('waifugames.bosses.8', 'Ifrit =Boss=');
+$.lang.register('waifugames.bosses.9', 'Black Goku =Boss=');
+$.lang.register('waifugames.bosses.10', 'Shenron =Boss=');
