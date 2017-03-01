@@ -878,8 +878,9 @@
      *
      * @param {String} sender
      */
-    function useCandy(username, amount, id) {
-
+    function useCandy(username, amount, waifu) {
+        var id = getWaifuId(waifu);
+            
         if (amount > getCandy(username)) {
             $.say($.lang.get('pwaifugames.candy.enough', $.whisperPrefix(username)));
             return;
