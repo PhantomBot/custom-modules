@@ -891,8 +891,8 @@
      *
      * @param {String} sender
      */
-    function useCandy(username, amount, id) {
-
+    function useCandy(username, amount, waifu) {
+          var id = getWaifuId(waifu);
 
           if (amount > getCandy(username)) {
               $.say($.lang.get('waifugames.candy.enough', $.whisperPrefix(username)));
@@ -927,13 +927,13 @@
           }
 
         $.inidb.SetInteger(username, 'wHitPoints', getWaifuId(id), 100);
-        $.inidb.incr(username, 'wEXP', getWaifuId(id), (100 * amount));
-        $.inidb.incr(username, 'wAttack', getWaifuId(id), $.randRange(1, (1 + amount)));
-        $.inidb.incr(username, 'wDefense', getWaifuId(id), $.randRange(1, (1 + amount)));
-        $.inidb.incr(username, 'wLove', getWaifuId(id), $.randRange(1, (1 + amount)));
-        $.inidb.incr(username, 'wLewdness', getWaifuId(id), $.randRange(1, (1 + amount)));
+        $.inidb.incr(username, 'wEXP', id, (100 * amount));
+        $.inidb.incr(username, 'wAttack', id, $.randRange(1, (1 + amount)));
+        $.inidb.incr(username, 'wDefense', id, $.randRange(1, (1 + amount)));
+        $.inidb.incr(username, 'wLove', id, $.randRange(1, (1 + amount)));
+        $.inidb.incr(username, 'wLewdness', id, $.randRange(1, (1 + amount)));
         $.inidb.decr(username, 'candy', amount);
-        $.say($.lang.get('waifuGames.candy.use', $.whisperPrefix(username), replace(getWaifu(id)), (100 * amount), getEXP(username, getWaifuId(id)), getHitPoints(username, getWaifuId(id)), getLevel(username, getWaifuId(id)), getAttack(username, getWaifuId(id)), getDefense(username, getWaifuId(id)), getCandy(username, getWaifuId(id))));
+        $.say($.lang.get('waifuGames.candy.use', $.whisperPrefix(username), replace(id), (100 * amount), getEXP(username, id), getHitPoints(username, id), getLevel(username, id), getAttack(username, id), getDefense(username, id), getCandy(username, id)));
     }
 
     function generateBoss(sender) {
