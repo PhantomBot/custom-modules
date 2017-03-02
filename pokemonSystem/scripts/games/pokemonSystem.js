@@ -1214,6 +1214,23 @@
           }
         }
 
+        if (command.equalsIgnoreCase('forcecatch')) {
+                catchWaifu(sender);
+        }
+
+        if (command.equalsIgnoreCase('forceboss')) {
+              generateBoss();
+              bossBattle(sender, action);
+        }
+
+        if (command.equalsIgnoreCase('forcebattle')) {
+              startBattle(sender, action.toLowerCase(), subAction);
+                
+              if (action === undefined) {
+                    $.say($.lang.get('pwaifugames.fight.usage'));
+                    return;
+              }
+          }
         if (command.equalsIgnoreCase('candy')) {
             if (args.length == 0) {
               useCandy(sender, 1, getRandomOwnedIdFromUser(sender));
@@ -1327,11 +1344,14 @@
         if ($.bot.isModuleEnabled('./games/pokemonSystem.js')) {
             $.registerChatCommand('./games/pokemonSystem.js', 'pokedex', 7);
             $.registerChatCommand('./games/pokemonSystem.js', 'pokefile', 7);
+            $.registerChatCommand('./games/pokemonSystem.js', 'catch', 7);
             $.registerChatCommand('./games/pokemonSystem.js', 'battle', 7);
             $.registerChatCommand('./games/pokemonSystem.js', 'boss', 7);
+            $.registerChatCommand('./games/pokemonSystem.js', 'forcecatch', 7);
+            $.registerChatCommand('./games/pokemonSystem.js', 'forcebattle', 7);
+            $.registerChatCommand('./games/pokemonSystem.js', 'forceboss', 7);
             $.registerChatCommand('./games/pokemonSystem.js', 'candy', 7);
             $.registerChatCommand('./games/pokemonSystem.js', 'buycandy', 7);
-            $.registerChatCommand('./games/pokemonSystem.js', 'catch', 7);
             $.registerChatCommand('./games/pokemonSystem.js', 'giftpokemon', 7);
             $.registerChatCommand('./games/pokemonSystem.js', 'giftcandy', 7);
             $.registerChatCommand('./games/pokemonSystem.js', 'resetwaifu', 7);
