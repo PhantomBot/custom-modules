@@ -8,7 +8,7 @@ This is a full rewrite of the Pokémon System script with new features!
 2. Drop *pokemonSystem.js* in your **scripts>games** folder   
 3. Drop *games-pokemonSystem.js* in your **scripts>lang>english>games** folder  
 4. Replace the web folder in your root folder of Phantombot with the one that comes with this.
-5. Start the bot backup and test with !pokemonhelp  
+5. Start the bot backup and test with !pokehelp  
 
 #**Features**
 
