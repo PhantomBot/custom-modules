@@ -1315,7 +1315,7 @@
             }
         }
 
-        if (command.equalsIgnoreCase('pokemonhelp')) {
+        if (command.equalsIgnoreCase('pokehelp')) {
             $.say($.whisperPrefix(sender) + $.lang.exists('pwaifugames.waifuhelp'));
         }
     });
