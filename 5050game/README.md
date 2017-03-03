@@ -1,4 +1,4 @@
-**50/50 Game Module**
+**50/50 Game Module**    
 custom/5050game.js
     
 **Author**    
@@ -20,10 +20,10 @@ The module provides the following commands:
                            100 is 100% or matching the bet. If user bets 100, they would get 100.
                            500 is 500% or 5x the bet.  If user bets 100, they would get 500.
 
-**Notes**
+**Notes**    
 The default maxbet is 100. THe default winpct is 50.
 
-**Samples**
+**Samples**    
 !5050
 [03-03-2017 @ 15:08:49.882 MST] [MUTED] illusionarybot !5050 [bet amount] | [setmaxbet] | [setwinpct]. Max bet is 100 bits
 
