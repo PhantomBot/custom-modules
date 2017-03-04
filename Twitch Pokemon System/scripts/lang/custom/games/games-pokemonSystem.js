@@ -11,7 +11,7 @@ $.lang.register('pwaifugames.level.max', 'That character has reached the maximum
 $.lang.register('pwaifugames.level.exceed', '$1 Using $2 Candy on $3 will exceed the 120000 EXP limit!');
 $.lang.register('pwaifugames.candy.get', '$1 you have $2 Candy! Each candy restores a Pokémon\'s HP and increases EXP by: 100.');
 $.lang.register('pwaifugames.candy.missing', 'You don\'t have Pokémon!');
-$.lang.register('pwaifugames.candy.use', '$1 increased $2\'s EXP by $3! [EXP: $4] - (HP: ($5/100) - Level: $6, Atk: $7, Def: $8). $9 candy left!');
+$.lang.register('pwaifugames.candy.use', '$1 increased $2\'s EXP by $3! [EXP: $4] - (HP:$5 - Level: $6, Atk: $7, Def: $8). $9 candy left!');
 $.lang.register('pwaifugames.candy.nostock', '$1 you don\'t have any candy left!');
 $.lang.register('pwaifugames.candy.enough', '$1 you don\'t have that much candy!');
 $.lang.register('pwaifugames.giftcandy.success', '$1 gifted $2 $3 candy!');
@@ -20,13 +20,13 @@ $.lang.register('pwaifugames.candy.dropped', ' , She was holding a (Candy)');
 $.lang.register('pwaifugames.candy.dropped2', 'and dropped a (Candy)');
 $.lang.register('pwaifugames.candy.buy', '$1 bought $2 candy for $3, you now have $4 candy!');
 $.lang.register('pwaifugames.checkwaifu.success', '$1 You own $2 of: $3 #$4. $5 $6!');
-$.lang.register('pwaifugames.checkwaifu.stats', 'HP: ($1/100) - Level: $2, Atk: $3, Def: $4, Bond: $5%');
+$.lang.register('pwaifugames.checkwaifu.stats', 'HP: ($1) - Level: $2, Atk: $3, Def: $4, Bond: $5%');
 $.lang.register('pwaifugames.giftwaifu.nouser', '$1 you must specify a user, !giftPokémon <name> Pokémon');
 $.lang.register('pwaifugames.giftwaifu.404', '$1 you don\'t own enough of that Pokémon or it does not exist.');
 $.lang.register('pwaifugames.giftwaifu.success', '$1 sent waifu: $2 to $3. $4!');
 $.lang.register('pwaifugames.random.0', '$1 you haven\'t collected any Pokémon. Start collecting Pokémon with !catch.');
 $.lang.register('pwaifugames.random.success', 'Random Pokémon: $2 #$3. $4!');
-$.lang.register('pwaifugames.random.married', '$1 your favorite Pokémon is $2 #$3. HP:($4/100) - Level: $5, Atk: $6, Def: $7, Bond: $8%. $9.');
+$.lang.register('pwaifugames.random.married', '$1 your favorite Pokémon is $2 #$3. HP:($4) - Level: $5, Atk: $6, Def: $7, Bond: $8%. $9.');
 $.lang.register('pwaifugames.online.404', '$1 you can\'t catch any new Pokémon when $2 is offline.');
 $.lang.register('pwaifugames.rare.chance', '[EVENT] A pack of legendary Pokémon are near! Now\'s your chance to catch one! (Chance: 95%) Type !catch');
 $.lang.register('pwaifugames.rare.over', '[EVENT] The event is over! The legendary Pokémon have fled!');
@@ -80,8 +80,8 @@ $.lang.register('pwaifugames.catchmiss.1', '$1 $2 #$3 noticed you and slapped yo
 $.lang.register('pwaifugames.catchmiss.2', '$1 $2 #$3 tried running from you, but fell off a ledge and died $4!');
 $.lang.register('pwaifugames.catchmiss.3', '$1 $2 #$3 glared at you with disgust, while walking away $4!');
 
-$.lang.register('pwaifugames.fight.1', '$1 (HP:$2/100) received $3, and with $4 $5 $6 (HP:$7/100)! $8');
-$.lang.register('pwaifugames.fight.2', '$1 (HP:$2/100) received $3, and $5 $6 (HP:$7/100) with $4! $8');
+$.lang.register('pwaifugames.fight.1', '$1 (HP:$2) received $3, and with $4 $5 $6 (HP:$7)! $8');
+$.lang.register('pwaifugames.fight.2', '$1 (HP:$2) received $3, and $5 $6 (HP:$7) with $4! $8');
 
 $.lang.register('pwaifugames.attack.1', 'Mega Punch');
 $.lang.register('pwaifugames.attack.2', 'Mega Kick');
