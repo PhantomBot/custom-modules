@@ -239,11 +239,11 @@
 
     $.bind('initReady', function() {
         if ($.bot.isModuleEnabled('./discord/handlers/challongeHandler.js')) {
-            $.discord.registerCommand('./discord/handlers/challongeHandler.js', 'last');
-            $.discord.registerCommand('./discord/handlers/challongeHandler.js', 'signup');
-            $.discord.registerCommand('./discord/handlers/challongeHandler.js', 'match');
-            $.discord.registerCommand('./discord/handlers/challongeHandler.js', 'report');
-            $.discord.registerCommand('./discord/handlers/challongeHandler.js', 'tournament');
+            $.discord.registerCommand('./discord/handlers/challongeHandler.js', 'last', 0);
+            $.discord.registerCommand('./discord/handlers/challongeHandler.js', 'signup', 0);
+            $.discord.registerCommand('./discord/handlers/challongeHandler.js', 'match', 0);
+            $.discord.registerCommand('./discord/handlers/challongeHandler.js', 'report', 0);
+            $.discord.registerCommand('./discord/handlers/challongeHandler.js', 'tournament', 0);
             $.discord.registerCommand('./discord/handlers/challongeHandler.js', 'challongekey', 1);
             setInterval(function() {
                 query();
