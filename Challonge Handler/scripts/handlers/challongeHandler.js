@@ -235,11 +235,11 @@
 
     $.bind('initReady', function() {
         if ($.bot.isModuleEnabled('./handlers/challongeHandler.js')) {
-            $.registerChatCommand('./handlers/challongeHandler.js', 'last');
-            $.registerChatCommand('./handlers/challongeHandler.js', 'signup');
-            $.registerChatCommand('./handlers/challongeHandler.js', 'match');
-            $.registerChatCommand('./handlers/challongeHandler.js', 'report');
-            $.registerChatCommand('./handlers/challongeHandler.js', 'tournament');
+            $.registerChatCommand('./handlers/challongeHandler.js', 'last', 7);
+            $.registerChatCommand('./handlers/challongeHandler.js', 'signup', 7);
+            $.registerChatCommand('./handlers/challongeHandler.js', 'match', 7);
+            $.registerChatCommand('./handlers/challongeHandler.js', 'report', 7);
+            $.registerChatCommand('./handlers/challongeHandler.js', 'tournament', 7);
             $.registerChatCommand('./handlers/challongeHandler.js', 'challongekey', 1);
             setInterval(function() {
                 query();
