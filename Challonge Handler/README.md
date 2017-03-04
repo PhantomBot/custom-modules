@@ -15,8 +15,8 @@ Note: I didn't test this with an account that never made a tournament, but usual
 **!tournament** - Will bring up the latest tournament and it's current state.  
 **!report** -  Will bring up a link of a tournament thats in-progress to report your match scores.  
 **!match** - Will bring the last completed match.  
-**!last** - Will bring up last completed Tournament. 
-**!challongekey (API)** - Sets the API key for your account in order to retrieve tournament data.  
+**!last** - Will bring up last completed Tournament.  
+**!challongekey (API)** - Sets the API key for your account in order to retrieve tournament data.   
 *(Coming Soon) !signup*  
   
 #**Features:**  
