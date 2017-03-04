@@ -55,11 +55,11 @@
      */
     function setChallongeKey(key) {
         if (key === undefined) {
-            $.say('Usage: !challongekey <API Key in your challonge settings>');
+            $.say($.lang.get('challonge.key'));
             return;
         }
 
-        $.say('Challonge API Key set!');
+        $.say($.lang.get('challonge.key.set'));
         key = key;
         $.inidb.set('challonge', 'key', key);
         return;
@@ -90,12 +90,12 @@
                 get = get[get.length - 1].tournament;
 
             if (get.sign_up_url == null) {
-                url = 'http://challonge.com/' + get.url;
+                url = 'http://challonge.com/', + get.url;
             } else {
-                url = 'Sign-Up: ' + get.sign_up_url;
+                url = ($.lang.get('challonge.sign.up', + get.sign_up_url));
             }
 
-            return ('Name: ' + get.name + ' | Game: ' + get.game_name + ' | Date: ' + getDate(get.start_at) + ' | Registered: ' + get.participants_count + ' | ' + url);
+            return ($.lang.get('challonge.name', + get.name + ' | ' + 'challonge.game', + get.game_name + ' | ' + 'challonge.date', + getDate(get.start_at) + ' | ' + 'challonge.registered', + get.participants_count + ' | ' + url));
         } catch (ex) {
             return undefined;
         }
@@ -106,7 +106,7 @@
             var get = JSON.parse($.customAPI.get("https://api.challonge.com/v1/tournaments.json?api_key=" + key + "&state=in_progress").content);
             get = get[get.length - 1].tournament;
 
-            return ('Name: ' + get.name + ' | Game: ' + get.game_name + ' | Started: ' + getDate(get.started_at) + ' | Registered: ' + get.participants_count + ' | Progress: ' + get.progress_meter + '% | http://challonge.com/' + get.url);
+            return ($.lang.get('challonge.name', + get.name + ' | ' + 'challonge.game', + get.game_name + ' | ' + 'challonge.started', + getDate(get.started_at) + ' | ' + 'challonge.registered', + get.participants_count + ' | ' + 'challonge.progress', + get.progress_meter + '% | http://challonge.com/' + get.url));
         } catch (ex) {
             return undefined;
         }
@@ -117,7 +117,7 @@
             var get = JSON.parse($.customAPI.get("https://api.challonge.com/v1/tournaments.json?api_key=" + key + "&state=ended").content);
             get = get[get.length - 1].tournament;
 
-            return ('Name: ' + get.name + ' | Game: ' + get.game_name + ' | Ended: ' + getDate(get.completed_at) + ' | Registered: ' + get.participants_count + ' | http://challonge.com/' + get.url);
+            return ($.lang.get('challonge.name', + get.name + ' | ' + 'challonge.game', + get.game_name + ' | ' + 'challonge.ended', + getDate(get.completed_at) + ' | ' + 'challonge.registered', + get.participants_count + ' | http://challonge.com/' + get.url));
         } catch (ex) {
             return undefined;
         }
@@ -128,7 +128,7 @@
      */
     function tournamentStartedEvent() {
         if (tournamentCache.state === 'underway' && !$.getIniDbString('tournament', 'state', '').equals(tournamentCache.state)) {
-            $.say('Tournament: ' + tournamentCache.name + ' for ' + tournamentCache.game_name + ' has just started! Checkout the bracket at: ' + 'http://challonge.com/' + tournamentCache.url);
+            $.say($.lang.get('challonge.tournament', + tournamentCache.name + 'challonge.for', + tournamentCache.game_name + 'challonge.tournament.started', + 'http://challonge.com/' + tournamentCache.url));
             $.setIniDbString('tournament', 'state', tournamentCache.state);
 						$.setIniDbString('tournament', 'id', tournamentCache.id);
         }
@@ -139,7 +139,7 @@
      */
     function tournamentEndedEvent() {
         if (tournamentCache.state === 'complete' && !$.getIniDbString('tournament', 'state', '').equals(tournamentCache.state)) {
-            $.say('Tournament: ' + tournamentCache.name + ' for ' + tournamentCache.game_name + ' is over! Checkout the results at: ' + 'http://challonge.com/' + tournamentCache.url);
+            $.say($.lang.get('challonge.tournament', + tournamentCache.name + 'challonge.for', + tournamentCache.game_name + 'challonge.tournament.ended', + 'http://challonge.com/' + tournamentCache.url));
             $.setIniDbString('tournament', 'state', tournamentCache.state);
         }
     }
@@ -149,7 +149,7 @@
      */
     function tournamentResetEvent() {
         if (tournamentCache.state === 'pending' && !$.getIniDbString('tournament', 'state', '').equals(tournamentCache.state)) {
-            $.say('Tournament: ' + tournamentCache.name + ' for ' + tournamentCache.game_name + ' was reset! Checkout the bracket at: ' + 'http://challonge.com/' + tournamentCache.url);
+            $.say($.lang.get('challonge.tournament', + tournamentCache.name + 'challonge.for', + tournamentCache.game_name + 'challonge.tournament.reset', + 'http://challonge.com/' + tournamentCache.url));
             $.setIniDbString('tournament', 'state', tournamentCache.state);
         }
     }
@@ -163,7 +163,7 @@
                 var winner = matchCache[i].match.winner_id;
                 var loser = matchCache[i].match.loser_id;
                 if ($.getIniDbString('tournament', 'match_' + matchCache[i].match.id, '') === '') {
-                    $.say('The match between ' + playerId(winner) + ' and ' + playerId(loser) + ' is over! ' + playerId(winner) + ' wins!');
+                    $.say($.lang.get('challonge.match.event.1,' + playerId(winner) + 'challonge.and', + playerId(loser) + 'challonge.match.event.2', + playerId(winner) + 'challonge.match.event.3'));
                     $.setIniDbString('tournament', 'match_' + matchCache[i].match.id, 'true');
                 }
             }
@@ -181,10 +181,10 @@
                 var winner = matchCache[i].match.winner_id;
                 var loser = matchCache[i].match.loser_id;
                 var score = matchCache[i].match.scores_csv;
-                return (playerId(winner) + ' vs. ' + playerId(loser) + '! Score: ' + score + ' Winner: ' + playerId(winner));
+                return ($.lang.get(playerId(winner) + 'challonge.get.match.vs', + playerId(loser) + '! ' + 'challonge.get.match.score', + score + 'challonge.get.match.winner', + playerId(winner)));
             }
         }
-        return 'No new matches have been completed yet!';
+        return ($.lang.get('challonge.get.match.no.new'));
     }
 
     /**
@@ -199,16 +199,16 @@
 
         if (command.equalsIgnoreCase('tournament')) {
             if (getInProgress() == undefined && getPending() == undefined) {
-                $.say("[Ended] " + getEnded());
+                $.say($.lang.get('challonge.command.ended', + getEnded()));
                 return;
             }
 
             if (getInProgress() == undefined) {
-                $.say("[Pending] " + getPending());
+                $.say($.lang.get('challonge.command.pending', + getPending()));
             } else if (getPending() == undefined) {
-                $.say("[In Progress] " + getInProgress());
+                $.say($.lang.get('challonge.command.progress', + getInProgress()));
             } else {
-                $.say("[Ended] " + getEnded());
+                $.say($.lang.get('challonge.command.ended', + getEnded()));
             }
         }
 
@@ -217,15 +217,15 @@
         }
 
         if (command.equalsIgnoreCase('report')) {
-            $.say("Report your scores here: " + getReportUrl());
+            $.say($.lang.get('challonge.command.report', + getReportUrl()));
         }
 
         if (command.equalsIgnoreCase('last')) {
-            $.say("[Last Game] " + getEnded());
+            $.say($.lang.get('challonge.command.last.game', + getEnded()));
         }
 
         if (command.equalsIgnoreCase('match')) {
-            $.say("[Last Match] " + getMatch());
+            $.say($.lang.get('challonge.command.last.match', + getMatch()));
         }
 
         if (command.equalsIgnoreCase('challongekey')) {
