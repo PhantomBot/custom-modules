@@ -1,0 +1,39 @@
+﻿
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch is up-to-date with 'origin/master'.
+#
+# Changes to be committed:
+#	new file:   Challonge Handler/README.md
+#	new file:   Challonge Handler/scripts/handlers/challongeHandler.js
+#	renamed:    pokemonSystem/README.md -> Twitch Pokemon System/README.md
+#	renamed:    pokemonSystem/scripts/games/pokemonSystem.js -> Twitch Pokemon System/scripts/games/pokemonSystem.js
+#	renamed:    pokemonSystem/scripts/lang/custom/games/games-pokemonSystem.js -> Twitch Pokemon System/scripts/lang/custom/games/games-pokemonSystem.js
+#	renamed:    waifuGames/README.md -> Twitch Waifu System/README.md
+#	renamed:    waifuGames/scripts/games/waifuGames.js -> Twitch Waifu System/scripts/games/waifuGames.js
+#	renamed:    waifuGames/scripts/lang/custom/games/games-waifuGames.js -> Twitch Waifu System/scripts/lang/custom/games/games-waifuGames.js
+#	renamed:    waifuGames/scripts/lang/custom/games/games-waifuList -> Twitch Waifu System/scripts/lang/custom/games/games-waifuList
+#	renamed:    waifuGames/waifus.txt -> Twitch Waifu System/waifus.txt
+#	deleted:    guildwars2/README.md
+#	deleted:    guildwars2/games/guildwars2.js
+#	deleted:    guildwars2/lang/deutsch/games/games-guildwars2.js
+#	deleted:    guildwars2/lang/english/games/games-guildwars2.js
+#	deleted:    insultCommand/scripts/discord/games/insult.js
+#	deleted:    insultCommand/scripts/games/insult.js
+#	deleted:    insultCommand/scripts/lang/english/games/games-insult.js
+#	deleted:    pokemonSystem/web/alerts/data/navigator.mp3
+#	deleted:    pokemonSystem/web/alerts/data/navigator.png
+#	deleted:    pokemonSystem/web/alerts/data/rarechance.gif
+#	deleted:    pokemonSystem/web/alerts/data/rarechance.mp3
+#	deleted:    rankSystem/README.md
+#	deleted:    rankSystem/lang/english/systems/systems-ranksSystem.js
+#	deleted:    rankSystem/systems/ranksSystem.js
+#	deleted:    userDataSystem/README.md
+#	deleted:    userDataSystem/systems-userDataSystem.js
+#	deleted:    userDataSystem/userDataSystem.js
+#	deleted:    waifuGames/web/alerts/data/navigator.mp3
+#	deleted:    waifuGames/web/alerts/data/rarechance.gif
+#	deleted:    waifuGames/web/alerts/data/rarechance.mp3
+#
+
