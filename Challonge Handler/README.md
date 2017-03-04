@@ -9,13 +9,14 @@ Note: I didn't test this with an account that never made a tournament, but usual
 1. Shut down your bot and then put:  
 2. Drop *challongeHandler.js* in your **scripts>handlers** folder   
 3. Start the bot backup and visit https://challonge.com/settings/developer to generate a API key  
-4. In your chat or console of the bot type !challongekey <your challonge API>  
+4. In your chat or console of the bot type **!challongekey <your challonge API>**  
 
 #**Commands:** 
 **!tournament** - Will bring up the latest tournament and it's current state.  
 **!report** -  Will bring up a link of a tournament thats in-progress to report your match scores.  
 **!match** - Will bring the last completed match.  
-**!last** - Will bring up last completed Tournament.  
+**!last** - Will bring up last completed Tournament. 
+**!challongekey <API>** - Sets the API key for your account in order to retrieve tournament data.  
 *(Coming Soon) !signup*  
   
 #**Features:**  
