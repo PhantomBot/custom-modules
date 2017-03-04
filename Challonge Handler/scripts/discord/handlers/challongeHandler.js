@@ -187,45 +187,49 @@
         return $.lang.get('challonge.null.match');
     }
 
+
     /**
      * @event command
      */
-    $.bind('command', function(event) {
-        var sender = event.getSender().toLowerCase(),
-            command = event.getCommand(),
-            args = event.getArgs(),
-            action = args[0],
-            subAction = args[1];
+    $.bind('discordCommand', function(event) {
+			var sender = event.getSender(),
+					channel = event.getChannel(),
+					command = event.getCommand(),
+					mention = event.getMention(),
+					arguments = event.getArguments(),
+					args = event.getArgs(),
+					action = args[0],
+					subAction = args[1];
 
         if (command.equalsIgnoreCase('tournament')) {
             if (getInProgress() == undefined && getPending() == undefined) {
-                $.say($.lang.get('challonge.get.ended', getEnded()));
+                $.discord.say(channel, $.lang.get('challonge.get.ended', getEnded()));
                 return;
             }
 
             if (getInProgress() == undefined) {
-                $.say($.lang.get('challonge.get.pending', getPending()));
+                $.discord.say(channel, $.lang.get('challonge.get.pending', getPending()));
             } else if (getPending() == undefined) {
-                $.say($.lang.get('challonge.get.progress', getInProgress()));
+                $.discord.say(channel, $.lang.get('challonge.get.progress', getInProgress()));
             } else {
-                $.say($.lang.get('challonge.get.ended', getEnded()));
+                $.discord.say(channel, $.lang.get('challonge.get.ended', getEnded()));
             }
         }
 
         if (command.equalsIgnoreCase('signup')) {
-            $.say(registerPlayer(sender));
+            $.discord.say(channel, registerPlayer(sender));
         }
 
         if (command.equalsIgnoreCase('report')) {
-            $.say($.lang.get('challonge.get.report', getReportUrl()));
+            $.discord.say(channel, $.lang.get('challonge.get.report', getReportUrl()));
         }
 
         if (command.equalsIgnoreCase('last')) {
-            $.say($.lang.get('challonge.get.last', getEnded()));
+            $.discord.say(channel, $.lang.get('challonge.get.last', getEnded()));
         }
 
         if (command.equalsIgnoreCase('match')) {
-            $.say($.lang.get('challonge.get.match', getMatch()));
+            $.discord.say(channel, $.lang.get('challonge.get.match', getMatch()));
         }
 
         if (command.equalsIgnoreCase('challongekey')) {
@@ -234,13 +238,13 @@
     });
 
     $.bind('initReady', function() {
-        if ($.bot.isModuleEnabled('./handlers/challongeHandler.js')) {
-            $.registerChatCommand('./handlers/challongeHandler.js', 'last');
-            $.registerChatCommand('./handlers/challongeHandler.js', 'signup');
-            $.registerChatCommand('./handlers/challongeHandler.js', 'match');
-            $.registerChatCommand('./handlers/challongeHandler.js', 'report');
-            $.registerChatCommand('./handlers/challongeHandler.js', 'tournament');
-            $.registerChatCommand('./handlers/challongeHandler.js', 'challongekey', 1);
+        if ($.bot.isModuleEnabled('./discord/handlers/challongeHandler.js')) {
+            $.discord.registerCommand('./discord/handlers/challongeHandler.js', 'last');
+            $.discord.registerCommand('./discord/handlers/challongeHandler.js', 'signup');
+            $.discord.registerCommand('./discord/handlers/challongeHandler.js', 'match');
+            $.discord.registerCommand('./discord/handlers/challongeHandler.js', 'report');
+            $.discord.registerCommand('./discord/handlers/challongeHandler.js', 'tournament');
+            $.discord.registerCommand('./discord/handlers/challongeHandler.js', 'challongekey', 1);
             setInterval(function() {
                 query();
             }, 15000);
