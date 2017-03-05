@@ -29,7 +29,7 @@
      */
     function loadWaifus() {
         var string = '',
-            i = 0;
+            i = 1;
 
         while ($.lang.exists('pwaifugames.waifu.' + i)) {
             string += 'Pokemon #' + i + ' ' + replace($.lang.get('pwaifugames.waifu.' + i)) + '\r\n';
