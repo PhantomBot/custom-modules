@@ -62,6 +62,7 @@
         $.say($.lang.get('challonge.key.set'));
         key = key;
         $.inidb.set('challonge', 'key', key);
+				$.inidb.del('tournament', 'id');
         return;
     }
 
@@ -141,6 +142,7 @@
         if (tournamentCache.state === 'complete' && !$.getIniDbString('tournament', 'state', '').equals(tournamentCache.state)) {
             $.say($.lang.get('challonge.ended.event', tournamentCache.name, tournamentCache.game_name, tournamentCache.url));
             $.setIniDbString('tournament', 'state', tournamentCache.state);
+						$.inidb.del('tournament', 'id');
         }
     }
 
@@ -151,6 +153,7 @@
         if (tournamentCache.state === 'pending' && !$.getIniDbString('tournament', 'state', '').equals(tournamentCache.state)) {
             $.say($.lang.get('challonge.reset.event', tournamentCache.name, tournamentCache.game_name, tournamentCache.url));
             $.setIniDbString('tournament', 'state', tournamentCache.state);
+						$.inidb.del('tournament', 'id');
         }
     }
 
@@ -185,6 +188,7 @@
             }
         }
         return $.lang.get('challonge.null.match');
+
     }
 
     /**
@@ -235,11 +239,11 @@
 
     $.bind('initReady', function() {
         if ($.bot.isModuleEnabled('./handlers/challongeHandler.js')) {
-            $.registerChatCommand('./handlers/challongeHandler.js', 'last', 7);
-            $.registerChatCommand('./handlers/challongeHandler.js', 'signup', 7);
-            $.registerChatCommand('./handlers/challongeHandler.js', 'match', 7);
-            $.registerChatCommand('./handlers/challongeHandler.js', 'report', 7);
-            $.registerChatCommand('./handlers/challongeHandler.js', 'tournament', 7);
+            $.registerChatCommand('./handlers/challongeHandler.js', 'last');
+            $.registerChatCommand('./handlers/challongeHandler.js', 'signup');
+            $.registerChatCommand('./handlers/challongeHandler.js', 'match');
+            $.registerChatCommand('./handlers/challongeHandler.js', 'report');
+            $.registerChatCommand('./handlers/challongeHandler.js', 'tournament');
             $.registerChatCommand('./handlers/challongeHandler.js', 'challongekey', 1);
             setInterval(function() {
                 query();
