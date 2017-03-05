@@ -70,6 +70,11 @@ $.lang.register('pwaifugames.fight.dmgrec', '$1 damage');
 $.lang.register('pwaifugames.catch.own', '$1 caught another +$2: $3 #$4. $5!');
 $.lang.register('pwaifugames.catch.new', '$1 caught +$2: $3 #$4. $5!');
 $.lang.register('pwaifugames.catch.rare', 'Latest [Legendary] Pokémon caught: $3 #$4 by $1!');
+$.lang.register('pwaifugames.web.own', 'You do not own any pokemon yet. Use !catch to try your luck');
+//You need to provide a webserver that forwards to the images for this feature to work.
+$.lang.register('pwaifugames.web.url', 'http://yourwebsite.com');
+$.lang.register('pwaifugames.web.404', 'This feature is not setup! This requires a web server!');
+$.lang.register('pwaifugames.get.url', '$1 go here to see your pokemon $2');
 
 //Stream notification images in the web/alerts folder (mp3 with the name name as the image will work too)
 $.lang.register('waifugames.alert.navigator', 'pokemon.png');

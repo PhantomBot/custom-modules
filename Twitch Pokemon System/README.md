@@ -21,9 +21,9 @@ You can release a Pokémon at any time to reset it's stats, but you will need to
 To release a Pokémon type **!release (name or id)**   
 ___
 ##**Trading Pokémon**
-This isn't exactly trading, but more like sending a Pokémon you own to another user. 
+This isn't exactly trading, but more like sending a Pokémon you own to another user.
 The stats of your Pokemon will transfer to another player and if he/she already owns that Pokémon, it will overwrite the stat data **ONLY** if your Pokémon has higher stats
-  
+
 To transfer a Pokémon just type **!giftpokemon (name) (pokemon)**.
 ___
 ##**Pokémon Lookup**  
@@ -54,26 +54,26 @@ ___
 Using **!battle (player) (Pokémon)** you can battle anyone to train and level up your Pokémon's stats such as: EXP, Attack, Defense, and Bond.
 If you type **!battle (player)** it will use a random Pokémon in your team.   
 Battles are calculated by your and your opponent's Pokémon stats.  
-  
+
 ***Requirements:*** Both players must have a **team** with at least one character in it.  
 ```Example:  
 !battle phantomindex charizard = Charizard [HP:100] received 0 damage, and with Mega Punch inflicted 20 damage on Squirtle [HP:80]!
 OR  
-!battle phantomindex = Pikachu [HP:100] received 0 damage, and with Double Slap inflicted 12 damage on Squirtle [HP:88]! 
+!battle phantomindex = Pikachu [HP:100] received 0 damage, and with Double Slap inflicted 12 damage on Squirtle [HP:88]!
 ```
 As you can see in the first example you can choose any Pokémon in your team to fight your opponent. The opponent's Pokémon is selected randomly if he or she doesn't have one set as a favorite.  
 
 When a player's Pokémon HP reaches 0 it means that Pokémon is now K.O.'d and can't fight. You will need to use a **candy** on that pokemon to revive it back.
 
-**Note:** If you'd like to add or customize the attacks for the Pokémon, just edit them in the lang file. It will choose 1 of the many attacks for battle. 
+**Note:** If you'd like to add or customize the attacks for the Pokémon, just edit them in the lang file. It will choose 1 of the many attacks for battle.
 ___
 ##**Bosses**
 Bosses are the big tough fighters with immense attack power and hit points. It's a high risk high reward feature.  
 You can battle the boss with **!boss**  
-  
+
 A boss will be generate with **2500 HP** and **Attack 200-800** including **Defense 600-800**. Who ever defeats the boss will be rewarded and a new boss will be generated when someone types **!boss**  
 Default rewards for defeating the boss is: **10,000 points and 10 candy.**  
-  
+
 You can edit the boss names through the lang file.
 ___
 ##**Profile/Pokefile**
@@ -81,19 +81,21 @@ Using **!pokefile** will bring up information such as the amount of Pokemon you'
 You can reset your win/lose ratio using **!resetratio**  
 ___
 ##**Candy**
-You unlock candy randomly when catching a Pokémon. 
-You can check how much candy you've collected by typing **!candy** or **!pokefile**. 
-Candy can be used to restore a Pokémons HP to 100, increase your Pokémon's EXP by 100, Attack by 1-2, Defense by 1-2 and Bond by 1% all at once. Maximum 120000 EXP = level 100 
-  
+You unlock candy randomly when catching a Pokémon.
+You can check how much candy you've collected by typing **!candy** or **!pokefile**.
+Candy can be used to restore a Pokémons HP to 100, increase your Pokémon's EXP by 100, Attack by 1-2, Defense by 1-2 and Bond by 1% all at once. Maximum 120000 EXP = level 100
+
 To use your candy on a Pokémon just type **!candy (Pokémon)** or if you want to use more than one on that same Pokémon type: **!candy (amount) (Pokémon)**
 
 ___
 ##**Rewards**
 You can customize the reward players receive from catching **Legendary Pokémon** with **!pokereward (amount)**.    
 Default is 100.
-  
+
 You can also customize the fight rewards for defeating a Pokémon with **!fightreward (amount)**  
 Default is 50.
 
 You can also customize the boss rewards for defeating a Boss with **!bossreward (amount)**  
 Default is 10000.
+
+Enabling !allpokemon
