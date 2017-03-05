@@ -38,7 +38,7 @@ $.lang.register('pwaifugames.harem.success', '$1 you\'ve added $2 to your team!'
 $.lang.register('pwaifugames.harem.get', '$1 your current team is: $2.');
 $.lang.register('pwaifugames.harem.denied', 'You\'ve hit the maximum of 6 Pokémon in your team! !kickteam Pokémon to make room.');
 $.lang.register('pwaifugames.harem.kick', 'kicked $1 from the team!');
-$.lang.register('pwaifugames.harem.kick404', '$1 that Pokémon is not in your team!');
+$.lang.register('pwaifugames.harem.kick404', 'That Pokémon is not in your team!');
 $.lang.register('pwaifugames.harem.reset', 'your team has been disbanded!');
 $.lang.register('pwaifugames.harem.404', 'You don\'t have a team yet! Usage: !addteam Pokémon');
 $.lang.register('pwaifugames.harem.nostock', 'You haven\'t unlocked that Pokémon or she doesn\'t exist!');
