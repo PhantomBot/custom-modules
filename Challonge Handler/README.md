@@ -1,5 +1,5 @@
 # Challonge Handler
-Only works on Phantombot 2.3.5 and above versions!  
+Only works on Phantombot 2.3.5.3 and above versions!  
 
 **Info:** This script uses the Challonge API (A website for hosting tournament brackets) and brings it automated to your twitch chat!
 
