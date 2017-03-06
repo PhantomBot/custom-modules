@@ -9,6 +9,7 @@ $.lang.register('pwaifugames.profile.success', '$1 Progress: $5% - You own $2 ou
 $.lang.register('pwaifugames.reset.stats', '$1 your win and loss stats have been reset!');
 $.lang.register('pwaifugames.level.max', 'That character has reached the maximum level!');
 $.lang.register('pwaifugames.level.exceed', '$1 Using $2 Candy on $3 will exceed the 120000 EXP limit!');
+$.lang.register('pwaifugames.candy.owned', '$1 you have $2 candy!');
 $.lang.register('pwaifugames.candy.get', '$1 you have $2 Candy! Each candy restores a Pokémon\'s HP and increases EXP by: 100.');
 $.lang.register('pwaifugames.candy.missing', 'You don\'t have Pokémon!');
 $.lang.register('pwaifugames.candy.use', '$1 increased $2\'s EXP by $3! [EXP: $4] - (HP:$5 - Level: $6, Atk: $7, Def: $8). $9 candy left!');
