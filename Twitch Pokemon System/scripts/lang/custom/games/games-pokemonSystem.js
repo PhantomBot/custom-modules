@@ -50,6 +50,8 @@ $.lang.register('pwaifugames.info.release', 'Usage: !release (Pokémon)');
 $.lang.register('pwaifugames.harem.release', '$1 has been freed into the wild!');
 $.lang.register('pwaifugames.harem.release404', 'Either $1 is still in your team or you don\'t have that Pokémon!');
 $.lang.register('pwaifugames.fight.usage', 'Usage: !fight <name> - Performs a fight with another player\'s Pokémon (requires both players to have a Pokémon)!');
+$.lang.register('pwaifugames.addharem.usage', 'Usage: !addteam Pokémon - adds a Pokémon to your PokéTeam.');
+$.lang.register('pwaifugames.kickharem.usage', 'Usage: !kickteam Pokémon - removes a Pokémon from your PokéTeam.');
 $.lang.register('pwaifugames.reward.get', 'The current reward for catching legendary Pokémon is: $1! Usage: !pokereward <amount>');
 $.lang.register('pwaifugames.reward.set', 'The reward for legendary Pokémon has been set to: $1!');
 $.lang.register('pwaifugames.fightreward.get', 'The current reward for winning a fight is: $1! Usage: !fightreward <amount>');
