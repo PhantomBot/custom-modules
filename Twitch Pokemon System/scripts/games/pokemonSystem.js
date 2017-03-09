@@ -510,11 +510,11 @@
                 rarechance = $.randRange(4, 25),
                 reward = getReward(),
                 waifu = getWaifu(id),
-                link = (google + url(waifu)),
+                link = (google + url(replace(waifu))),
                 candy = '',
                 candy2 = '',
                 candyDrop = $.randRange(1, 2);
-            rare = '';
+                rare = '';
 
 
             if (chance >= 4 && candyDrop > 1) {
@@ -561,7 +561,7 @@
         function randomWaifu(username) {
             var id = $.randRange(1, 802),
                 waifu = getWaifu(id),
-                link = (google + url(waifu));
+                link = (google + url(replace(waifu)));
 
             if (getTotalUserWaifus(username) === 0) {
                 $.say($.lang.get('pwaifugames.random.0', $.whisperPrefix(username)));
@@ -593,7 +593,7 @@
             id = getWaifuId(id);
 
             var waifu = getWaifu(id),
-                link = (google + url(waifu));
+                link = (google + url(replace(waifu)));
 
             if (getUserWaifuCount(username, id) > 0) {
                 $.say($.lang.get('pwaifugames.giftwaifu.success', $.userPrefix(username, true), replace(waifu), $.userPrefix(receiver, false), $.shortenURL.getShortURL(link)));
@@ -705,7 +705,7 @@
             }
 
             var waifu = getWaifu(id),
-                link = (google + url(waifu));
+                link = (google + url(replace(waifu)));
 
             $.inidb.incr(username, 'pokemon', getWaifuId(id), 1);
             $.say($.lang.get('pwaifugames.buywaifu.new', $.userPrefix(username, true), replace(waifu), getWaifuId(id), $.shortenURL.getShortURL(link)));
