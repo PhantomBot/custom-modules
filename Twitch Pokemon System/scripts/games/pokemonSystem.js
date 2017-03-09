@@ -1365,7 +1365,7 @@
                     $.registerChatCommand('./games/pokemonSystem.js', 'buycandy', 7);
                     $.registerChatCommand('./games/pokemonSystem.js', 'giftpokemon', 7);
                     $.registerChatCommand('./games/pokemonSystem.js', 'giftcandy', 7);
-                    $.registerChatCommand('./games/pokemonSystem.js', 'resetwaifu', 7);
+                    $.registerChatCommand('./games/pokemonSystem.js', 'resetpokemon', 7);
                     $.registerChatCommand('./games/pokemonSystem.js', 'release', 7);
                     $.registerChatCommand('./games/pokemonSystem.js', 'setpokemon', 7);
                     $.registerChatCommand('./games/pokemonSystem.js', 'buypokemon', 7);
