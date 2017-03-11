@@ -1243,7 +1243,7 @@
                 }
                 if (command.equalsIgnoreCase('candy')) {
                     if (args.length == 0) {
-                        useCandy(sender, 1, getRandomOwnedIdFromUser(sender));
+                        waifuProfile(sender);
                     } else if (args.length == 1) {
                         useCandy(sender, 1, args.join(' '));
                     } else {
