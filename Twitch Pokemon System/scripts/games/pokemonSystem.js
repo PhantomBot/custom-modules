@@ -862,7 +862,7 @@
                 array = [];
 
             for (var i = 0; i < keys.length; i++) {
-                array.push(replace($.lang.get('pwaifugames.waifu.' + keys[i])) + ' #' + keys[i]);
+                array.push(replace2($.lang.get('pwaifugames.waifu.' + keys[i])) + ' [HP:' + getHitPoints(username, keys[i]) + ']');
             }
 
             if (array.length >= 1) {
