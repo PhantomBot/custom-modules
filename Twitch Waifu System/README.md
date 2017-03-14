@@ -65,7 +65,7 @@ When a player's waifu HP reaches 0 it means that waifu is now K.O.'d and can't f
 
 **Note:** If you'd like to add or customize the attacks for the waifu, just edit them in the lang file. It will choose 1 of the many attacks for battle. 
 ___
-##**Bosses**
+##**Bosses**##
 Bosses are the big tough fighters with immense attack power and hit points. It's a high risk high reward feature.  
 You can battle the boss with **!boss**  
   
