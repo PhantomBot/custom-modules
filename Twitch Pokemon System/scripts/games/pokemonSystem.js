@@ -9,7 +9,8 @@
                 bosses: 1
             },
             totalWaifus = 0,
-            navigatorImg = $.lang.get('waifugames.alert.navigator');
+            navigatorImg = $.lang.get('waifugames.alert.navigator'),
+            hpScale = (2000 + ($.users.length * 100));
 
         //load();
 
@@ -251,7 +252,7 @@
             if ($.inidb.GetInteger(username, 'pHitPoints', id) <= 0) {
                 return 0;
             } else {
-                return ($.inidb.HasKey(username, 'pHitPoints', id) ? ($.inidb.GetInteger(username, 'pHitPoints', id) >= 2000 ? 2000 : $.inidb.GetInteger(username, 'pHitPoints', id)) : 0);
+                return ($.inidb.HasKey(username, 'pHitPoints', id) ? ($.inidb.GetInteger(username, 'pHitPoints', id) >= 2000 ? scaleHP : $.inidb.GetInteger(username, 'pHitPoints', id)) : 0);
             }
         }
 
@@ -930,7 +931,7 @@
             if (bossHP <= 0) {
                 $.inidb.set('boss', 'id', bosses);
                 $.inidb.SetInteger('boss', 'pharem', bosses, 1);
-                $.inidb.SetInteger('boss', 'pHitPoints', bosses, 2000);
+                $.inidb.SetInteger('boss', 'pHitPoints', bosses, scaleHP);
                 $.inidb.SetInteger('boss', 'pAttack', bosses, $.randRange(200, 600));
                 $.inidb.SetInteger('boss', 'pDefense', bosses, $.randRange(800, 1000));
                 $.inidb.SetInteger('boss', 'pLove', bosses, 100);
@@ -1032,8 +1033,8 @@
                     winMsg = $.lang.get('pwaifugames.boss.win', player1, replace(waifu1), player2, '[Boss] ' + replace(waifu2), $.getPointsString(getBReward()));
 
                     for (i in $.users) {
-                        $.inidb.incr(username, 'pcandy', 10);
-                        $.inidb.incr('points', username, (getBReward()));
+                        $.inidb.incr($.users[i][0], 'candy', 10);
+                        $.inidb.incr('points', $.users[i][0], (getBReward()));
                     }
 
                     $.inidb.incr(username, 'pWins', 1);
