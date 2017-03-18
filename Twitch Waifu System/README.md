@@ -65,11 +65,11 @@ When a player's waifu HP reaches 0 it means that waifu is now K.O.'d and can't f
 
 **Note:** If you'd like to add or customize the attacks for the waifu, just edit them in the lang file. It will choose 1 of the many attacks for battle. 
 ___
-##**Bosses**
+##**Bosses**##
 Bosses are the big tough fighters with immense attack power and hit points. It's a high risk high reward feature.  
 You can battle the boss with **!boss**  
   
-A boss will be generate with **2500 HP** and **Attack 200-800** including **Defense 600-800**. Who ever defeats the boss will be rewarded and a new boss will be generated when someone types **!boss**  
+A boss will be generate with **2000 HP** and Attack including Defense scale base on level of your waifu. Who ever defeats the boss will be rewarded and a new boss will be generated when someone types **!boss**  
 Default rewards for defeating the boss is: **10,000 points and 10 candy.**  
   
 You can edit the boss names through the lang file.
