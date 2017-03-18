@@ -1043,9 +1043,11 @@
             if ($.inidb.GetInteger(opponent, 'wHitPoints', id2) <= 0) {
                 winMsg = $.lang.get('waifugames.boss.win', player1, replace2(waifu1), player2, '[Boss] ' + replace2(waifu2), $.getPointsString(getBReward()));
 
-                for (i in $.users) {
-                      $.inidb.incr(username, 'candy', 10);
-                      $.inidb.incr('points', username, (getBReward()));
+                var keys = $.users[0];
+
+                for (i in keys) {
+                  $.inidb.incr(keys[i], 'candy', 10);
+                  $.inidb.incr('points', keys[i], (getBReward()));
                 }
 
                 $.inidb.incr(username, 'wWins', 1);
@@ -1256,7 +1258,7 @@
 
         if (command.equalsIgnoreCase('candy')) {
             if (args.length == 0) {
-              useCandy(sender, 1, getRandomOwnedIdFromUser(sender));
+              waifuProfile(sender);
             } else if (args.length == 1) {
               useCandy(sender, 1, args.join(' '));
             } else {
