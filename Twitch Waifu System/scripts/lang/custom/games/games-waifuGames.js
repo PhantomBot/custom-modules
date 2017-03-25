@@ -11,7 +11,7 @@ $.lang.register('waifugames.level.max', '$1 $2 has been healed, but can\'t level
 $.lang.register('waifugames.level.exceed', '$1 Using $2 Candy on $3 will exceed the 120000 EXP limit!');
 $.lang.register('waifugames.candy.get', '$1 you have $2 Candy! Each candy restores a character\'s HP and increases EXP by: 100.');
 $.lang.register('waifugames.candy.missing', 'You don\'t have that waifu!');
-$.lang.register('waifugames.candy.use', '$1 increased $2\'s EXP by $3! [EXP: $4] - (HP:$5 - Level: $6, Atk: $7, Def: $8). $9 candy left!');
+$.lang.register('waifugames.candy.use', '$1 $2 EXP was increased by $3! [EXP: $4] - (HP:$5 - Level: $6, Atk: $7, Def: $8). $9 candy left!');
 $.lang.register('waifugames.candy.nostock', '$1 you don\'t have any candy left!');
 $.lang.register('waifugames.candy.enough', '$1 you don\'t have that much candy!');
 $.lang.register('waifugames.giftcandy.success', '$1 gifted $2 $3 candy!');
@@ -32,6 +32,7 @@ $.lang.register('waifugames.online.discord', '$1 you can\'t use that command whe
 $.lang.register('waifugames.rare.chance', '[EVENT] A pack of rare waifus are near! Now\'s your chance to seduce one! (Chance: 95%) Type !seduce');
 $.lang.register('waifugames.rare.over', '[EVENT] The event is over! The Rare waifus have fled!');
 $.lang.register('waifugames.buywaifu.new', '$1 bought $2 #$3, $4');
+$.lang.register('waifugames.genwaifu.new', '$1 received $2 #$3, lvl: $4, ATK: $5 DEF: $6, $7!');
 $.lang.register('waifugames.harem.null', '$1 you must specify a waifu.');
 $.lang.register('waifugames.harem.repeat', '$1 that waifu is already in your harem!');
 $.lang.register('waifugames.harem.owned', '$1 you don\'t own that waifu!');
@@ -74,7 +75,7 @@ $.lang.register('waifugames.catch.rare', 'Latest [Rare] Waifu caught: $3 #$4 by 
 
 //Stream notification images in the web/alerts folder (mp3 with the name name as the image will work too)
 $.lang.register('waifugames.alert.navigator', 'rare.png');
-$.lang.register('waifugames.alert.navigator2', 'ssr.png');
+$.lang.register('waifugames.alert.navigator2', 'rare.png');
 $.lang.register('waifugames.alert.navigator3', 'ssr.png');
 $.lang.register('waifugames.alert.boss', 'boss.png');
 $.lang.register('waifugames.alert.rarechance', 'rarechance.gif');
@@ -87,7 +88,7 @@ $.lang.register('waifugames.catchmiss.5', '$1 you found $2 #$3 undressing in the
 $.lang.register('waifugames.catchmiss.6', '$1 you spotted $2 #$3 but it was just an illusion! $4');
 $.lang.register('waifugames.catchmiss.7', '$2 #$3 hugged $1 and said "Let\'s stay Friends!" $4');
 $.lang.register('waifugames.catchmiss.8', '$2 #$3 was too busy eating dangos to listen to $1. $4');
-$.lang.register('waifugames.catchmiss.9', '$1 tried to approach $2 $3 during battle to ask her out. $2 $3 got scared and shot $1 in the head. Nisu Shot! $4');
+$.lang.register('waifugames.catchmiss.9', '$1 tried to approach $2 $3 to ask her out. $2 $3 got scared and shot $1 in the head. Nisu Shot! $4');
 
 $.lang.register('waifugames.fight.1', '$1 [HP:$2] received $3, and with $4 $5 $6 [HP:$7]! $8');
 $.lang.register('waifugames.fight.2', '$1 [HP:$2] received $3, and $5 $6 [HP:$7] with $4! $8');
