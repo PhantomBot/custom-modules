@@ -7,9 +7,9 @@
 
 Command | Description
 ------------ | -------------
-**!clipsseting savetofile** | Toggles if clips are saved in a text file. It will be saved in `./addons/clips.txt`
-**!clipsseting savetodiscord** | Toggles if clips should be posted in Discord.
-**!clipsseting discordchannel** | Sets the channel clips are to be posted in Discord.
+**!clipssetting savetofile** | Toggles if clips are saved in a text file. It will be saved in `./addons/clips.txt`
+**!clipssetting savetodiscord** | Toggles if clips should be posted in Discord.
+**!clipssetting discordchannel** | Sets the channel clips are to be posted in Discord.
 
 --------------
 
