@@ -7,7 +7,7 @@ $.lang.register('waifugames.marry.already', '$1 you are already married to $2!')
 $.lang.register('waifugames.exist.404', '$1 that waifu does not exist!');
 $.lang.register('waifugames.profile.success', '$1 Progress: $2% - Collected ($3/$4) waifus and has $5 Candy. Score: [Won: $6 | Lost: $7 | Bosses: $8]');
 $.lang.register('waifugames.reset.stats', '$1 your win and loss stats have been reset!');
-$.lang.register('waifugames.level.max', '$1 $2 has been healed, but can\'t level any further. Max level 100!');
+$.lang.register('waifugames.level.max', '$1 $2 has been healed!');
 $.lang.register('waifugames.level.exceed', '$1 Using $2 Candy on $3 will exceed the 120000 EXP limit!');
 $.lang.register('waifugames.candy.get', '$1 you have $2 Candy! Each candy restores a character\'s HP and increases EXP by: 100.');
 $.lang.register('waifugames.candy.missing', 'You don\'t have that waifu!');
@@ -61,14 +61,13 @@ $.lang.register('waifugames.bossreward.get', 'The current reward for defeating B
 $.lang.register('waifugames.bossreward.set', 'The reward for defeating Bosses has been set to: $1!');
 $.lang.register('waifugames.player.nohp', '$1\'s ($2) is K.O.\'d and can\'t fight! Heal her with !candy <amount> <name>.');
 $.lang.register('waifugames.boss.win', '$1\'s ($2) defeated $4 and everyone was rewarded: $5! +10 (Candy)');
-$.lang.register('waifugames.boss.loss', '($2) deafeated $3\'s ($4)!');
+$.lang.register('waifugames.boss.loss', '($2) defeated $3\'s ($4)!');
 $.lang.register('waifugames.win.fight', '$1\'s ($2) K.O.\'d $3\'s ($4) and won $5! +1 (Candy)');
 $.lang.register('waifugames.win.draw', '$1\'s ($2) and $3\'s ($4) knocked each other out!');
 $.lang.register('waifugames.fight.boss', '[BOSS FIGHT]');
-$.lang.register('waifugames.fight.miss', 'missed');
-$.lang.register('waifugames.fight.crit', '(Critical Dmg!)');
-$.lang.register('waifugames.fight.dmg', 'inflicted $1 damage on');
-$.lang.register('waifugames.fight.dmgrec', '$1 damage');
+$.lang.register('waifugames.fight.critical', 'CRITICAL HIT! inflicted $1 damage on');
+$.lang.register('waifugames.fight.dmg', 'inflicting $1 damage');
+$.lang.register('waifugames.fight.dmgrec', 'while receiving $1 damage');
 $.lang.register('waifugames.catch.own', '$1 seduced another +$2: $3 #$4. $5');
 $.lang.register('waifugames.catch.new', '$1 seduced +$2: $3 #$4. $5');
 $.lang.register('waifugames.catch.rare', 'Latest [Rare] Waifu caught: $3 #$4 by $1!');
@@ -87,11 +86,24 @@ $.lang.register('waifugames.catchmiss.4', '$1 $2 #$3 kicked you in the crotch, b
 $.lang.register('waifugames.catchmiss.5', '$1 you found $2 #$3 undressing in the bathroom. She slaps you before running away! $4');
 $.lang.register('waifugames.catchmiss.6', '$1 you spotted $2 #$3 but it was just an illusion! $4');
 $.lang.register('waifugames.catchmiss.7', '$2 #$3 hugged $1 and said "Let\'s stay Friends!" $4');
-$.lang.register('waifugames.catchmiss.8', '$2 #$3 was too busy eating dangos to listen to $1. $4');
-$.lang.register('waifugames.catchmiss.9', '$1 tried to approach $2 $3 to ask her out. $2 $3 got scared and shot $1 in the head. Nisu Shot! $4');
+$.lang.register('waifugames.catchmiss.8', '$2 #$3 was too busy eating dangos to listen. $4');
+$.lang.register('waifugames.catchmiss.9', '$1 tried to approach $2 #$3 to ask her out. $2 $3 got scared and shot $1 Nisu Shot! $4');
+$.lang.register('waifugames.catchmiss.10', '$1 $2 #$3 was too busy to deal with you! $4');
 
-$.lang.register('waifugames.fight.1', '$1 [HP:$2] received $3, and with $4 $5 $6 [HP:$7]! $8');
-$.lang.register('waifugames.fight.2', '$1 [HP:$2] received $3, and $5 $6 [HP:$7] with $4! $8');
+$.lang.register('waifugames.fight.block.1', 'while blocking any incoming damage');
+$.lang.register('waifugames.fight.block.2', ', but deflected $1\'s attack');
+$.lang.register('waifugames.fight.block.3', ', but negated incoming damage with her breasts');
+$.lang.register('waifugames.fight.block.4', ', but negated incoming damage with her ass');
+$.lang.register('waifugames.fight.block.5', ', but dodged incoming damage by dancing');
+
+$.lang.register('waifugames.fight.miss.1', ' and missed');
+$.lang.register('waifugames.fight.miss.2', ' and tripped');
+$.lang.register('waifugames.fight.miss.3', ' and sneezed');
+$.lang.register('waifugames.fight.miss.4', ' and fell asleep');
+$.lang.register('waifugames.fight.miss.5', ' and panicked');
+$.lang.register('waifugames.fight.miss.6', ' and dropped her wallet');
+
+$.lang.register('waifugames.fight.1', '$1 [HP:$2] used $3 on $4 [HP:$5] $6 $7! $8');
 
 $.lang.register('waifugames.attack.1', 'a pillow');
 $.lang.register('waifugames.attack.2', 'the Kamehameha');
@@ -106,13 +118,13 @@ $.lang.register('waifugames.attack.9', 'a slap');
 $.lang.register('waifugames.attack.10', 'a hug');
 $.lang.register('waifugames.attack.11', 'ZA WARUDO');
 $.lang.register('waifugames.attack.12', 'POWA BOMB');
-$.lang.register('waifugames.attack.13', 'Internet Memes');
+$.lang.register('waifugames.attack.13', 'a kiss');
 $.lang.register('waifugames.attack.14', 'Omnislash');
 $.lang.register('waifugames.attack.15', 'Spirit Bomb');
 $.lang.register('waifugames.attack.16', 'Destructo Disc');
 $.lang.register('waifugames.attack.16', 'Final Flash');
 $.lang.register('waifugames.attack.17', 'a wet T-Shirt');
-$.lang.register('waifugames.attack.18', 'Magician\'s Redo');
+$.lang.register('waifugames.attack.18', 'Ziodyne');
 $.lang.register('waifugames.attack.19', 'EXPLOSION');
 
 $.lang.register('waifugames.bosses.1', 'Alucard =Boss=');
