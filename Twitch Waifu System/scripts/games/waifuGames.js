@@ -513,6 +513,10 @@
     function updateBattleStats(username, array, id, isDecr) {
         var rnd;
 
+        if (getLevel(username, id) > 99) {
+            return;
+        }
+
         $.inidb.setAutoCommit(false);
         for (var i = 0; i < array.length; i++) {
             rnd = $.randRange(0, 1);
@@ -523,10 +527,6 @@
                     $.inidb.decr(username, array[i], getWaifuId(id), rnd);
                 }
             }
-        }
-
-        if (getLevel(username, id) >= 100) {
-            return;
         }
 
         $.inidb.incr(username, 'harem', getWaifuId(id), 5);
@@ -564,7 +564,7 @@
             candy = '',
             candy2 = '',
             candyDrop = $.randRange(1, 2);
-        rare = '';
+            rare = '';
 
 
         if (chance >= 4 && candyDrop > 1) {
@@ -795,9 +795,9 @@
             $.inidb.decr('points', sender, ((price * amount) - price));
             $.say($.lang.get('waifugames.candy.buy', $.whisperPrefix(sender), amount, $.getPointsString(price * amount), getCandy(sender)));
         } else {
-            amount = 1;
+            amount = ($.inidb.get('points', sender) / price);
             $.inidb.incr(sender, 'candy', amount);
-            $.say($.lang.get('waifugames.candy.buy', $.whisperPrefix(sender), amount, $.getPointsString(price), getCandy(sender)));
+            $.say($.lang.get('waifugames.candy.buy', $.whisperPrefix(sender), Math.floor(amount), $.getPointsString(price * Math.floor(amount)), getCandy(sender)));
         }
 
     }
@@ -859,11 +859,14 @@
      * @param {Number|String} id
      */
     function releaseWaifu(username, id) {
-
-
         if ($.inidb.GetInteger(username, 'harem', getWaifuId(id)) > 0) {
-            $.say($.lang.get('waifugames.harem.release404', replace(getWaifu(id))));
-            return;
+          if ($.inidb.get(username, 'married') == getWaifuId(id)) {
+              $.inidb.del(username, 'married');
+          }
+
+          if ($.inidb.GetInteger(username, 'harem', getWaifuId(id)) == 1) {
+              $.inidb.RemoveKey(username, 'harem', getWaifuId(id));
+          }
         }
 
         if ($.inidb.GetInteger(username, 'waifus', getWaifuId(id)) >= 1) {
@@ -874,6 +877,7 @@
             $.inidb.RemoveKey(username, 'wDefense', getWaifuId(id));
             $.inidb.RemoveKey(username, 'wLove', getWaifuId(id));
             $.inidb.RemoveKey(username, 'wLewdness', getWaifuId(id));
+            $.inidb.RemoveKey(username, 'buffed', getWaifuId(id));
             $.say($.lang.get('waifugames.harem.release', replace(getWaifu(id))));
         } else {
             $.say($.lang.get('waifugames.harem.release404', replace(getWaifu(id))));
@@ -916,7 +920,7 @@
             return;
         }
 
-        if (!$.inidb.GetString(username, 'buffed', getWaifuId(id)) == 1) {
+        if (!$.inidb.GetString(username, 'buffed', getWaifuId(id)) > 0) {
             if (getWaifu(id).includes('[Rare]')) {
                 atk = $.randRange(1, 20), def = $.randRange(1, 20), love = $.randRange(1, 30), exp = 0;
             }
@@ -931,8 +935,8 @@
         }
 
 
-        $.inidb.SetString(username, 'harem', getWaifuId(id), 1);
-        $.inidb.SetString(username, 'buffed', getWaifuId(id), 1);
+        $.inidb.SetInteger(username, 'harem', getWaifuId(id), 1);
+        $.inidb.SetInteger(username, 'buffed', getWaifuId(id), 1);
         $.inidb.SetInteger(username, 'wEXP', getWaifuId(id), exp);
         $.inidb.incr(username, 'wAttack', getWaifuId(id), atk);
         $.inidb.incr(username, 'wDefense', getWaifuId(id), def);
@@ -1043,9 +1047,10 @@
             $.inidb.set('boss', 'id', bosses);
             $.inidb.SetInteger('boss', 'harem', bosses, 1);
             $.inidb.SetInteger('boss', 'wHitPoints', bosses, hpScale);
-            $.inidb.SetInteger('boss', 'wAttack', bosses, $.randRange(200, 600));
-            $.inidb.SetInteger('boss', 'wDefense', bosses, $.randRange(800, 1000));
+            $.inidb.SetInteger('boss', 'wAttack', bosses, $.randRange(600, 6000));
+            $.inidb.SetInteger('boss', 'wDefense', bosses, $.randRange(800, 8000));
             $.inidb.SetInteger('boss', 'wLove', bosses, 100);
+            $.inidb.SetInteger('boss', 'wEXP', bosses, 120000);
         }
         return bosses;
     }
@@ -1078,8 +1083,7 @@
             attack = $.lang.get('waifugames.attack.' + random1),
             dmg,
             dmgRec,
-            critical1,
-            critical2,
+            critical,
             dmgMsg = '',
             winMsg = '';
 
@@ -1100,11 +1104,17 @@
             return;
         }
 
-        critical1 = $.randRange(0,5);
-        critical2 = $.randRange(0,6);
-        dmg = Math.floor(Math.abs((0.5 * (getAttack(username, id) / getDefense(opponent, id2)) * (getLevel(username, id) / getLevel(opponent, id2)) * critical1)));
-        dmgRec = Math.floor(Math.abs((0.5 * (getAttack(opponent, id2) / getDefense(username, id)) * (getLevel(username, id) / getLevel(opponent, id2)) * critical2)));
+        critical = $.randRange(0,15);
+        dmg = Math.floor(Math.abs((20 * (getAttack(username, id) / getDefense(opponent, id2)) * (getLevel(username, id) / getLevel(opponent, id2)) * critical)));
+        dmgRec = Math.floor(Math.abs((4 * (getAttack(opponent, id2) / getDefense(username, id)) * (getLevel(username, id) / getLevel(opponent, id2)) * critical)));
 
+                if (dmg > 9999) {
+                  dmg = 999;
+                }
+
+                if (dmgRec > 9999) {
+                  dmgRec = 9999;
+                }
         if (getHitPoints(username, id) < 1) {
             $.say($.lang.get('waifugames.player.nohp', player1, replace2(waifu1)));
             return;
@@ -1181,8 +1191,7 @@
             attack = $.lang.get('waifugames.attack.' + random1),
             dmg,
             dmgRec,
-            critical1,
-            critical2,
+            critical,
             dmgMsg = '',
             winMsg = '';
 
@@ -1209,7 +1218,7 @@
         }
 
         if (getTotalUserHarems(opponent) <= 0) {
-            $.say($.lang.get('waifugames.harem.fight4042'));
+            $.say($.lang.get('waifugames.harem.fight4042', getWaifu(id), action));
             return;
         } else {
             if (getTotalUserHarems(username) <= 0) {
@@ -1217,10 +1226,17 @@
                 return;
             }
         }
-        critical1 = $.randRange(0,5);
-        critical2 = $.randRange(0,6);
-        dmg = Math.floor(Math.abs((0.5 * (getAttack(username, id) / getDefense(opponent, id2)) * (getLevel(username, id) / getLevel(opponent, id2)) * critical1)));
-        dmgRec = Math.floor(Math.abs((0.5 * (getAttack(opponent, id2) / getDefense(username, id)) * (getLevel(username, id) / getLevel(opponent, id2)) * critical2)));
+        critical = $.randRange(0,10);
+        dmg = Math.floor(Math.abs((0.6 * (getAttack(username, id) / getDefense(opponent, id2)) * (getLevel(username, id) / getLevel(opponent, id2)) * critical)));
+        dmgRec = Math.floor(Math.abs((0.6 * (getAttack(opponent, id2) / getDefense(username, id)) * (getLevel(username, id) / getLevel(opponent, id2)) * critical)));
+
+        if (dmg > 9999) {
+          dmg = 9999;
+        }
+
+        if (dmgRec > 9999) {
+          dmgRec = 9999;
+        }
 
         if (getHitPoints(username, id) < 1) {
             $.say($.lang.get('waifugames.player.nohp', player1, replace2(waifu1)));
