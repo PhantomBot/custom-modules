@@ -17,7 +17,7 @@
 		}
 
 		if (saveToFile === true) {
-			$.writeToFile('[' + $.logging.getLogTimeString() + '] ' + username + ': ' + clip, './addons/clips.txt', true);
+			$.writeToFile('[' + $.logging.getLogTimeString() + '] ' + username + ': ' + clip + ' (TimeStamp: ' + $.inidb.get('panelstats', 'streamUptime') + ')', './addons/clips.txt', true);
 		}
 	}
 
@@ -28,7 +28,7 @@
 	 * @return {String} 
 	 */
 	function getClipName(message) {
-		return message.match(clipRegex)[2]
+		return message.match(clipRegex)[2];
 	}
 
 	/*
