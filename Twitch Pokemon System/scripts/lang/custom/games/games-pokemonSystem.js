@@ -78,6 +78,9 @@ $.lang.register('waifugames.catch.nrare', '/me LEGENDARY! +$1 ');
 $.lang.register('waifugames.catch.srare', '/me S LEGENDARY! +$1 ');
 $.lang.register('waifugames.catch.ssrare', '/me SS LEGENDARY! +$1 ');
 
+$.lang.register('waifugames.function.google', 'http://google.com/images?q=');
+$.lang.register('waifugames.function.characterlist', 'Pokémon #');
+
 //Stream notification images in the web/alerts folder (mp3 with the name name as the image will work too)
 $.lang.register('waifugames.alert.navigator', 'rare.png');
 $.lang.register('waifugames.alert.navigator2', 'rare.png');
@@ -108,7 +111,7 @@ $.lang.register('waifugames.fight.miss.2', ', and tripped');
 $.lang.register('waifugames.fight.miss.3', ', and sneezed');
 $.lang.register('waifugames.fight.miss.4', ', and fell asleep');
 $.lang.register('waifugames.fight.miss.5', ' and panicked');
-$.lang.register('waifugames.fight.miss.6', ', and dropped her wallet');
+$.lang.register('waifugames.fight.miss.6', ', and fell in a well');
 $.lang.register('waifugames.fight.miss.7', ', and dozed off thinking about the good ol\' days');
 $.lang.register('waifugames.fight.miss.8', ', and realized that she left the stove on');
 
