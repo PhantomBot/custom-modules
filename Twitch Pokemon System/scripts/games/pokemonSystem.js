@@ -1663,36 +1663,36 @@
      * @event initReady
      */
     $.bind('initReady', function() {
-        if ($.bot.isModuleEnabled('./games/waifuGames.js')) {
-            $.registerChatCommand('./games/waifuGames.js', 'pokedex', 7);
-            $.registerChatCommand('./games/waifuGames.js', 'profile', 7);
-            $.registerChatCommand('./games/waifuGames.js', 'catch', 7);
-            $.registerChatCommand('./games/waifuGames.js', 'battle', 7);
-            $.registerChatCommand('./games/waifuGames.js', 'boss', 7);
-            $.registerChatCommand('./games/waifuGames.js', 'attribute', 7);
-            $.registerChatCommand('./games/waifuGames.js', 'forcecatch', 7);
-            $.registerChatCommand('./games/waifuGames.js', 'forcefight', 7);
-            $.registerChatCommand('./games/waifuGames.js', 'forceboss', 7);
-            $.registerChatCommand('./games/waifuGames.js', 'candy', 7);
-            $.registerChatCommand('./games/waifuGames.js', 'buycandy', 7);
-            $.registerChatCommand('./games/waifuGames.js', 'giftpokemon', 7);
-            $.registerChatCommand('./games/waifuGames.js', 'giftcandy', 7);
-            $.registerChatCommand('./games/waifuGames.js', 'resetpokemon', 7);
-            $.registerChatCommand('./games/waifuGames.js', 'release', 7);
-            $.registerChatCommand('./games/waifuGames.js', 'setpokemon', 7);
-            $.registerChatCommand('./games/waifuGames.js', 'buypokemon', 7);
-            $.registerChatCommand('./games/waifuGames.js', 'team', 7);
-            $.registerChatCommand('./games/waifuGames.js', 'addteam', 7);
-            $.registerChatCommand('./games/waifuGames.js', 'kickteam', 7);
-            $.registerChatCommand('./games/waifuGames.js', 'resetteam', 7);
-            $.registerChatCommand('./games/waifuGames.js', 'pokehelp', 7);
-            $.registerChatCommand('./games/waifuGames.js', 'rarechance', 7);
-            $.registerChatCommand('./games/waifuGames.js', 'resetratio', 7);
-            $.registerChatCommand('./games/waifuGames.js', 'pokereward', 1);
-            $.registerChatCommand('./games/waifuGames.js', 'fightreward', 1);
-            $.registerChatCommand('./games/waifuGames.js', 'bossreward', 1);
-            $.registerChatCommand('./games/waifuGames.js', 'resetboss', 1);
-            $.registerChatCommand('./games/waifuGames.js', 'genpokemon', 1);
+        if ($.bot.isModuleEnabled('./games/pokemonSystem.js')) {
+            $.registerChatCommand('./games/pokemonSystem.js', 'pokedex', 7);
+            $.registerChatCommand('./games/pokemonSystem.js', 'profile', 7);
+            $.registerChatCommand('./games/pokemonSystem.js', 'catch', 7);
+            $.registerChatCommand('./games/pokemonSystem.js', 'battle', 7);
+            $.registerChatCommand('./games/pokemonSystem.js', 'boss', 7);
+            $.registerChatCommand('./games/pokemonSystem.js', 'attribute', 7);
+            $.registerChatCommand('./games/pokemonSystem.js', 'forcecatch', 7);
+            $.registerChatCommand('./games/pokemonSystem.js', 'forcefight', 7);
+            $.registerChatCommand('./games/pokemonSystem.js', 'forceboss', 7);
+            $.registerChatCommand('./games/pokemonSystem.js', 'candy', 7);
+            $.registerChatCommand('./games/pokemonSystem.js', 'buycandy', 7);
+            $.registerChatCommand('./games/pokemonSystem.js', 'giftpokemon', 7);
+            $.registerChatCommand('./games/pokemonSystem.js', 'giftcandy', 7);
+            $.registerChatCommand('./games/pokemonSystem.js', 'resetpokemon', 7);
+            $.registerChatCommand('./games/pokemonSystem.js', 'release', 7);
+            $.registerChatCommand('./games/pokemonSystem.js', 'setpokemon', 7);
+            $.registerChatCommand('./games/pokemonSystem.js', 'buypokemon', 7);
+            $.registerChatCommand('./games/pokemonSystem.js', 'team', 7);
+            $.registerChatCommand('./games/pokemonSystem.js', 'addteam', 7);
+            $.registerChatCommand('./games/pokemonSystem.js', 'kickteam', 7);
+            $.registerChatCommand('./games/pokemonSystem.js', 'resetteam', 7);
+            $.registerChatCommand('./games/pokemonSystem.js', 'pokehelp', 7);
+            $.registerChatCommand('./games/pokemonSystem.js', 'rarechance', 7);
+            $.registerChatCommand('./games/pokemonSystem.js', 'resetratio', 7);
+            $.registerChatCommand('./games/pokemonSystem.js', 'pokereward', 1);
+            $.registerChatCommand('./games/pokemonSystem.js', 'fightreward', 1);
+            $.registerChatCommand('./games/pokemonSystem.js', 'bossreward', 1);
+            $.registerChatCommand('./games/pokemonSystem.js', 'resetboss', 1);
+            $.registerChatCommand('./games/pokemonSystem.js', 'genpokemon', 1);
             load();
         }
     });
