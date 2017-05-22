@@ -66,10 +66,35 @@ $.lang.register('waifugames.attack.7.4', 'used Guardian of Alola on $1 [HP:$2]')
 $.lang.register('waifugames.attack.7.5', 'used Moonblast on $1 [HP:$2]');
 $.lang.register('waifugames.attack.7.6', 'used Twinkle Tackle on $1 [HP:$2]');
 
-$.lang.register('waifugames.attack.8.1', 'used Drgon-Type Attack on $1 [HP:$2]');
+$.lang.register('waifugames.attack.8.1', 'used Devastating Drake on $1 [HP:$2]');
+$.lang.register('waifugames.attack.8.2', 'used Dragon Claw on $1 [HP:$2]');
+$.lang.register('waifugames.attack.8.3', 'used Dragon Breath on $1 [HP:$2]');
+$.lang.register('waifugames.attack.8.4', 'used Dragon Pulse on $1 [HP:$2]');
+$.lang.register('waifugames.attack.8.5', 'used Dragon Rage on $1 [HP:$2]');
+$.lang.register('waifugames.attack.8.6', 'used Dragon Rush on $1 [HP:$2]');
 
-$.lang.register('waifugames.attack.9.1', 'used Rock-Type Attack on $1 [HP:$2]');
+$.lang.register('waifugames.attack.9.1', 'used Ancient Power on $1 [HP:$2]');
+$.lang.register('waifugames.attack.9.2', 'used Diamond Storm on $1 [HP:$2]');
+$.lang.register('waifugames.attack.9.3', 'used Head Smash on $1 [HP:$2]');
+$.lang.register('waifugames.attack.9.4', 'used Rock Blast on $1 [HP:$2]');
+$.lang.register('waifugames.attack.9.5', 'used Rock Slide on $1 [HP:$2]');
+$.lang.register('waifugames.attack.9.6', 'used Rock Throw on $1 [HP:$2]');
+$.lang.register('waifugames.attack.9.7', 'used Smack Down on $1 [HP:$2]');
 
-$.lang.register('waifugames.attack.10.1', 'used Ice-Type Attack on $1 [HP:$2]');
+$.lang.register('waifugames.attack.10.1', 'used Aurora Beam on $1 [HP:$2]');
+$.lang.register('waifugames.attack.10.2', 'used Avalanche on $1 [HP:$2]');
+$.lang.register('waifugames.attack.10.3', 'used Blizzard on $1 [HP:$2]');
+$.lang.register('waifugames.attack.10.4', 'used Freeze Shock on $1 [HP:$2]');
+$.lang.register('waifugames.attack.10.5', 'used Frost Breath on $1 [HP:$2]');
+$.lang.register('waifugames.attack.10.6', 'used Ice Ball on $1 [HP:$2]');
+$.lang.register('waifugames.attack.10.7', 'used Ice Beam on $1 [HP:$2]');
+$.lang.register('waifugames.attack.10.8', 'used Ice Punch on $1 [HP:$2]');
 
-$.lang.register('waifugames.attack.11.1', 'used Ghost-Type Attack on $1 [HP:$2]');
+$.lang.register('waifugames.attack.11.1', 'used Grudge on $1 [HP:$2]');
+$.lang.register('waifugames.attack.11.2', 'used Lick on $1 [HP:$2]');
+$.lang.register('waifugames.attack.11.3', 'used Moongeist Beam on $1 [HP:$2]');
+$.lang.register('waifugames.attack.11.4', 'used Never-Ending Nightmare on $1 [HP:$2]');
+$.lang.register('waifugames.attack.11.5', 'used Night Shade on $1 [HP:$2]');
+$.lang.register('waifugames.attack.11.6', 'used Shadow Ball on $1 [HP:$2]');
+$.lang.register('waifugames.attack.11.7', 'used Phantom Force on $1 [HP:$2]');
+$.lang.register('waifugames.attack.11.8', 'used Soul-Stealing 7-Star Strike	 on $1 [HP:$2]');
