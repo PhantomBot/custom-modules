@@ -97,4 +97,4 @@ $.lang.register('waifugames.attack.11.4', 'used Never-Ending Nightmare on $1 [HP
 $.lang.register('waifugames.attack.11.5', 'used Night Shade on $1 [HP:$2]');
 $.lang.register('waifugames.attack.11.6', 'used Shadow Ball on $1 [HP:$2]');
 $.lang.register('waifugames.attack.11.7', 'used Phantom Force on $1 [HP:$2]');
-$.lang.register('waifugames.attack.11.8', 'used Soul-Stealing 7-Star Strike	 on $1 [HP:$2]');
+$.lang.register('waifugames.attack.11.8', 'used Soul-Stealing 7-Star Strike on $1 [HP:$2]');
