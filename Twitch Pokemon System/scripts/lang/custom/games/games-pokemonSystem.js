@@ -78,7 +78,7 @@ $.lang.register('waifugames.catch.nrare', '/me LEGENDARY! +$1 ');
 $.lang.register('waifugames.catch.srare', '/me S LEGENDARY! +$1 ');
 $.lang.register('waifugames.catch.ssrare', '/me SS LEGENDARY! +$1 ');
 
-$.lang.register('waifugames.function.google', 'https://pokemondb.net/search?q=');
+$.lang.register('waifugames.function.google', 'https://pokemondb.net/pokedex/');
 $.lang.register('waifugames.function.characterlist', 'Pokémon #');
 
 //Stream notification images in the web/alerts folder (mp3 with the name name as the image will work too)

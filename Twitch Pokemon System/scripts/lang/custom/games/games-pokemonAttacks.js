@@ -12,7 +12,7 @@ $.lang.register('waifugames.attribute.7', 'Fairy');
 $.lang.register('waifugames.attribute.8', 'Dragon');
 $.lang.register('waifugames.attribute.9', 'Rock');
 $.lang.register('waifugames.attribute.10', 'Ice');
-
+$.lang.register('waifugames.attribute.11', 'Ghost');
 
 $.lang.register('waifugames.attack.1.1', 'threw a pillow at $1 [HP:$2]');
 $.lang.register('waifugames.attack.1.2', 'slapped $1\'s [HP:$2] face');
