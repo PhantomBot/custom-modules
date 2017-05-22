@@ -5,7 +5,7 @@ $.lang.register('waifugames.attribute.usage', '$1 type !attribute <number> <waif
 $.lang.register('waifugames.attribute.1', 'Normal');
 $.lang.register('waifugames.attribute.2', 'Fire');
 $.lang.register('waifugames.attribute.3', 'Water');
-$.lang.register('waifugames.attribute.4', 'Leaf');
+$.lang.register('waifugames.attribute.4', 'Grass');
 $.lang.register('waifugames.attribute.5', 'Electric');
 $.lang.register('waifugames.attribute.6', 'Dark');
 $.lang.register('waifugames.attribute.7', 'Fairy');
@@ -31,19 +31,33 @@ $.lang.register('waifugames.attack.3.3', 'used Waterfall on $1 [HP:$2]');
 $.lang.register('waifugames.attack.3.4', 'used Hydro Pump on $1 [HP:$2]');
 $.lang.register('waifugames.attack.3.5', 'used Typhoon on $1 [HP:$2]');
 
-$.lang.register('waifugames.attack.4.1', 'stabbed $1 [HP:$2] in the stomach multiple times');
-$.lang.register('waifugames.attack.4.2', 'slashed $1 [HP:$2] face using a knife filled with love');
-$.lang.register('waifugames.attack.4.3', 'attempted to saw off $1\'s [HP:$2] limbs');
-$.lang.register('waifugames.attack.4.4', 'electricuted $ [HP:$2]');
-$.lang.register('waifugames.attack.4.5', 'whipped $1 [HP:$2]');
-$.lang.register('waifugames.attack.4.6', 'stomped $1 [HP:$2]');
+$.lang.register('waifugames.attack.4.1', 'used Vinewhip on $1 [HP:$2]');
+$.lang.register('waifugames.attack.4.2', 'used Bullet Seed on $1 [HP:$2]');
+$.lang.register('waifugames.attack.4.3', 'used Leaf Blade on $1 [HP:$2]');
+$.lang.register('waifugames.attack.4.4', 'used Leaf Storm on $1 [HP:$2]');
+$.lang.register('waifugames.attack.4.5', 'used Leaf Tornado on $1 [HP:$2]');
+$.lang.register('waifugames.attack.4.6', 'used Solar Beam on $1 [HP:$2]');
+$.lang.register('waifugames.attack.4.7', 'used Solar Blade on $1 [HP:$2]');
 
-$.lang.register('waifugames.attack.5.1', 'unleashed an explosive punch out of fear on $1 [HP:$2]');
+$.lang.register('waifugames.attack.5.1', 'used 10,000,000 Volt Thunderbolt on $1 [HP:$2]');
+$.lang.register('waifugames.attack.5.2', 'used Bolt Strike on $1 [HP:$2]');
+$.lang.register('waifugames.attack.5.3', 'used Electro Ball on $1 [HP:$2]');
+$.lang.register('waifugames.attack.5.4', 'used Thunder on $1 [HP:$2]');
+$.lang.register('waifugames.attack.5.5', 'used Thunder Punch on $1 [HP:$2]');
+$.lang.register('waifugames.attack.5.6', 'used Thunder Shock on $1 [HP:$2]');
+$.lang.register('waifugames.attack.5.7', 'used ThunderBolt on $1 [HP:$2]');
+$.lang.register('waifugames.attack.5.8', 'used Zing Zap on $1 [HP:$2]');
 
-$.lang.register('waifugames.attack.6.1', 'kissed and hugged $1 [HP:$2]');
-$.lang.register('waifugames.attack.6.2', 'fed $1 [HP:$2] her homemade lunch');
-$.lang.register('waifugames.attack.6.3', 'took $1 [HP:$2] out on a date');
-$.lang.register('waifugames.attack.6.4', 'slapped $1 [HP:$2] with a hand filled with PURE UNTAINTED LOVE');
+$.lang.register('waifugames.attack.6.1', 'used Dark Pulse on $1 [HP:$2]');
+$.lang.register('waifugames.attack.6.2', 'used Dark Void on $1 [HP:$2]');
+$.lang.register('waifugames.attack.6.3', 'used Night Slash on $1 [HP:$2]');
+$.lang.register('waifugames.attack.6.4', 'used Payback on $1 [HP:$2]');
+$.lang.register('waifugames.attack.6.5', 'used Sucker Punch on $1 [HP:$2]');
+$.lang.register('waifugames.attack.6.6', 'used Torment on $1 [HP:$2]');
+$.lang.register('waifugames.attack.6.7', 'used Punishment on $1 [HP:$2]');
+$.lang.register('waifugames.attack.6.8', 'used Power Trip on $1 [HP:$2]');
+$.lang.register('waifugames.attack.6.9', 'used Parting Shot on $1 [HP:$2]');
+$.lang.register('waifugames.attack.6.10', 'used Darkest Lariat on $1 [HP:$2]');
 
 $.lang.register('waifugames.attack.7.1', 'beat $1 [HP: $2] until she bled');
 $.lang.register('waifugames.attack.7.2', 'tied $1 [HP: $2] in tight rope and beat $1 with a metal bat');
