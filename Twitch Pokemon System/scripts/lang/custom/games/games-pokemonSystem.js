@@ -92,19 +92,16 @@ $.lang.register('waifugames.catchmiss.1', '$1 $2 #$3 noticed you and slapped you
 $.lang.register('waifugames.catchmiss.2', '$1 $2 #$3 tried running from you, but fell off a ledge and died! $4');
 $.lang.register('waifugames.catchmiss.3', '$1 $2 #$3 glared at you with disgust while walking away! $4');
 $.lang.register('waifugames.catchmiss.4', '$1 $2 #$3 kicked you in the crotch before running away! $4');
-$.lang.register('waifugames.catchmiss.5', '$1 you found $2 #$3 undressing in the bathroom. She slaps you before running away! $4');
+$.lang.register('waifugames.catchmiss.5', '$1 you found $2 #$3 dancing in the grass. $1 slaps you before running away! $4');
 $.lang.register('waifugames.catchmiss.6', '$1 you spotted $2 #$3 but it was just an illusion! $4');
-$.lang.register('waifugames.catchmiss.7', '$2 #$3 hugged $1 and said "Let\'s stay Friends!" $4');
-$.lang.register('waifugames.catchmiss.8', '$1 $2 #$3 was too busy eating dangos to listen. $4');
-$.lang.register('waifugames.catchmiss.9', '$1 tried to approach $2 #$3 to ask her out, but $5 got scared and shot $1 Nisu Shot! $4');
-$.lang.register('waifugames.catchmiss.10', '$1 $2 #$3 was too busy to deal with you! $4');
+$.lang.register('waifugames.catchmiss.7', '$1 $2 #$3 was too busy eating dangos to listen. $4');
+$.lang.register('waifugames.catchmiss.8', '$1 tried to approach $2 #$3, but $5 got scared and hit $1 with a Tackle! $4');
+$.lang.register('waifugames.catchmiss.9', '$1 $2 #$3 was too busy to deal with you! $4');
 
 $.lang.register('waifugames.fight.block.1', 'while blocking any incoming damage');
 $.lang.register('waifugames.fight.block.2', ', but deflected $1\'s attack');
-$.lang.register('waifugames.fight.block.3', ', but negated incoming damage with her breasts');
-$.lang.register('waifugames.fight.block.4', ', but negated incoming damage with her ass');
-$.lang.register('waifugames.fight.block.5', ', dodging incoming damage with a dance');
-$.lang.register('waifugames.fight.block.6', ', a burst of smoked surrounded $1 avoiding any damage');
+$.lang.register('waifugames.fight.block.3', ', dodging incoming damage with a dance');
+$.lang.register('waifugames.fight.block.4', ', a burst of smoked surrounded $1 avoiding any damage');
 
 $.lang.register('waifugames.fight.miss.1', ' and missed');
 $.lang.register('waifugames.fight.miss.2', ', and tripped');
@@ -113,7 +110,6 @@ $.lang.register('waifugames.fight.miss.4', ', and fell asleep');
 $.lang.register('waifugames.fight.miss.5', ' and panicked');
 $.lang.register('waifugames.fight.miss.6', ', and fell in a well');
 $.lang.register('waifugames.fight.miss.7', ', and dozed off thinking about the good ol\' days');
-$.lang.register('waifugames.fight.miss.8', ', and realized that she left the stove on');
 
 $.lang.register('waifugames.fight.1', '$1 [HP:$2] $3 $6 $7! $8');
 
