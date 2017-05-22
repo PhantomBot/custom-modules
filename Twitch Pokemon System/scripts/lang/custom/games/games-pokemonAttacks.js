@@ -1,5 +1,5 @@
 $.lang.register('waifugames.attribute.success', '$1 you\'ve changed $2\'s attribute to $3!');
-$.lang.register('waifugames.attribute.404', '$1 attributes can only be set 1 through $2! 1=Normal, 2=Fire, 3=Water, 4=Leaf, 5=Electric, 6=Dark, 7=Fairy, 8=Dragon, 9=Rock, 10=Ice.');
+$.lang.register('waifugames.attribute.404', '$1 attributes can only be set 1 through $2! $3');
 $.lang.register('waifugames.attribute.usage', '$1 type !attribute <number> <waifu> to change your character\'s attribute!');
 
 $.lang.register('waifugames.attribute.1', 'Normal');
@@ -59,26 +59,17 @@ $.lang.register('waifugames.attack.6.8', 'used Power Trip on $1 [HP:$2]');
 $.lang.register('waifugames.attack.6.9', 'used Parting Shot on $1 [HP:$2]');
 $.lang.register('waifugames.attack.6.10', 'used Darkest Lariat on $1 [HP:$2]');
 
-$.lang.register('waifugames.attack.7.1', 'beat $1 [HP: $2] until she bled');
-$.lang.register('waifugames.attack.7.2', 'tied $1 [HP: $2] in tight rope and beat $1 with a metal bat');
-$.lang.register('waifugames.attack.7.3', 'tied $1 [HP: $2] in tight rope and beat $1 with a plastic bat');
-$.lang.register('waifugames.attack.7.4', 'kicked, punched, and hugged $1 [HP: $2]');
-$.lang.register('waifugames.attack.7.5', 'kicked, punched, and snuggled $1 [HP: $2]');
-$.lang.register('waifugames.attack.7.6', 'dunked $1 [HP: $2] in hot wax');
+$.lang.register('waifugames.attack.7.1', 'used Dazzling Gleam on $1 [HP:$2]');
+$.lang.register('waifugames.attack.7.2', 'used Fairy Wind on $1 [HP:$2]');
+$.lang.register('waifugames.attack.7.3', 'used Fleur Cannon on $1 [HP:$2]');
+$.lang.register('waifugames.attack.7.4', 'used Guardian of Alola on $1 [HP:$2]');
+$.lang.register('waifugames.attack.7.5', 'used Moonblast on $1 [HP:$2]');
+$.lang.register('waifugames.attack.7.6', 'used Twinkle Tackle on $1 [HP:$2]');
 
-$.lang.register('waifugames.attack.8.1', 'chants EXPLOSION damaging $1 [HP: $2] and the area');
-$.lang.register('waifugames.attack.8.2', 'casted Shiny Ballista on $1 [HP: $2]');
-$.lang.register('waifugames.attack.8.3', 'casts Fallen Down on the helpless $1 [HP: $2]');
-$.lang.register('waifugames.attack.8.4', 'summons Ia Shub-Niggurath, creating a deadly black cyclone attacking $1 [HP: $2] and anything around her');
-$.lang.register('waifugames.attack.8.5', 'casts petrify on $1 [HP: $2] , turning her into stone(for about 2 mins)');
+$.lang.register('waifugames.attack.8.1', 'used Drgon-Type Attack on $1 [HP:$2]');
 
-$.lang.register('waifugames.attack.9.1', 'bumped against a book shielf, causing it to fall on $1 [HP: $2]');
-$.lang.register('waifugames.attack.9.2', 'slipped while cleaning and launched many plasic knives toward $1 [HP: $2]');
-$.lang.register('waifugames.attack.9.3', 'accidently tripped and pressed the nuke $1 [HP: $2] button');
-$.lang.register('waifugames.attack.9.4', 'dropped heavy books on $1 [HP: $2] pinky toe');
+$.lang.register('waifugames.attack.9.1', 'used Rock-Type Attack on $1 [HP:$2]');
 
-$.lang.register('waifugames.attack.10.1', 'performed the Kamehameha wave on $1 [HP: $2]');
-$.lang.register('waifugames.attack.10.2', 'threw a massive Spirit Bomb on to $1 [HP: $2]');
-$.lang.register('waifugames.attack.10.3', 'used Instant Transmission on $1 [HP: $2] to teleport $1 into the sun');
-$.lang.register('waifugames.attack.10.4', 'threw $1 [HP: $2] into a crator and shot dozens of ki blasts destroying the area.');
-$.lang.register('waifugames.attack.10.5', 'used Kaio-ken X10 and summoned a flurry of kicks & punches onto $1 [HP: $2]');
+$.lang.register('waifugames.attack.10.1', 'used Ice-Type Attack on $1 [HP:$2]');
+
+$.lang.register('waifugames.attack.11.1', 'used Ghost-Type Attack on $1 [HP:$2]');
