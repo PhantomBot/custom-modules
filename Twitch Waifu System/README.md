@@ -1,30 +1,30 @@
-# Waifu Games 
+# Waifu Games 1.5.0
 Only works on Phantombot 2.3.5.2 and above versions!  
 
-####**(Instructions):**  
+#### **(Instructions):**  
 1. Shut down your bot and then put:  
 2. Drop *waifuGames.js* in your **scripts>games** folder   
 3. Drop *games-waifuGames.js & games-waifuList.js* in your **scripts>lang>english>games** folder  
 4. Replace the web folder in your root folder of Phantombot with the one that comes with this.
 5. Start the bot backup and test with !waifuhelp  
 
-#**Features**
+# **Features**
 
-##**Seducing Waifus**
+## **Seducing Waifus**
 Type **!seduce** and it will seduce one random Waifu from the list. You have a chance of a waifu getting away and dropping candy.  
 You have a small chance to encounter and catch a rare Waifu. Rare Waifu come with higher stats than common ones.  
 ___
-##**Releasing Waifus**
+## **Releasing Waifus**
 You can release a waifu at any time to reset it's stats, but you will need to catch it again in order to use it.  
 To release a waifu type **!release (name or id)**   
 ___
-##**Trading Waifus**
+## **Trading Waifus**
 This isn't exactly trading, but more like sending a waifu you own to another user. 
 The stats of your waifu will transfer to another player and if he/she already owns that waifu, it will overwrite the stat data **ONLY** if your waifu has higher stats
   
 To transfer a Pokémon just type **!giftwaifu (name) (waifu)**.
 ___
-##**Waifu Lookup**  
+## **Waifu Lookup**  
 You can type **!waifu (name or id)** to look up information about that Pokémon.  
 If that waifu is in your harem the message will show their stats: Level, HP, Atk, Def, and Love.  
 ```
@@ -36,19 +36,19 @@ OR (in team)
 !waifu juri = You own 2 of:  Juri Han #6 (Street Fighter). Level: 1, Atk: 5, Def: 7, Love: 2%
 ```
 ___
-##**Marry your waifu**
+## **Marry your waifu**
 You can marry any waifu in your harem by typing **!setwaifu (waifu)** and if you want to duivorce her just type **!resetwaifu**.  
 Marryinga waifu comes with benefits such as: Increasing the Love level with your waifu and setting it as:
 (**Main Fighter:** Attacks and Defends when a waifu is not specified in battle)  
 **!waifu**  will let you see your married waifu stats otherwise show a random waifu.
 ___
-##**Harems**
+## **Harems**
 A harem is like a team with your favorite waifus. A harem can only have up to ***6 Waifu***.  
 Typing **!harem** will show your entire harem.  
 **!addharem (waifu)** will add a waifu that you **OWN** into your harem.  
 You can remove any character from your team using **!kickharem (waifu)**.
 ___
-##**Battling Waifus**
+## **Battling Waifus**
 Using **!fight (player) (waifu)** you can fight anyone to train and level up your waifus's stats such as: EXP, Attack, Defense, and Love.
 If you type **!fight (player)** it will use a random waifu in your harem.   
 All fights are calculated by you and your opponent's Waifu's stats.  
@@ -65,7 +65,7 @@ When a player's waifu HP reaches 0 it means that waifu is now K.O.'d and can't f
 
 **Note:** If you'd like to add or customize the attacks for the waifu, just edit them in the lang file. It will choose 1 of the many attacks for battle. 
 ___
-##**Bosses**##
+## **Bosses**##
 Bosses are the big tough fighters with immense attack power and hit points. It's a high risk high reward feature.  
 You can battle the boss with **!boss**  
   
@@ -74,11 +74,11 @@ Default rewards for defeating the boss is: **10,000 points and 10 candy.**
   
 You can edit the boss names through the lang file.
 ___
-##**Profile**
+## **Profile**
 Using **!profile** will bring up information such as the amount of waifus you've caught, candy you have and your Win/Lose ratio.   
 You can reset your win/lose ratio using **!resetratio**  
 ___
-##**Candy**
+## **Candy**
 You unlock candy randomly when seducing a waifu. 
 You can check how much candy you've collected by typing **!candy** or **!profile**. 
 Candy can be used to restore a Waifu's HP to 100, increase your Waifus's EXP by 100, Attack by 1-2, Defense by 1-2 and Love by 1% all at once. Maximum 120000 EXP = level 100 
@@ -86,7 +86,7 @@ Candy can be used to restore a Waifu's HP to 100, increase your Waifus's EXP by 
 To use your candy on a waifu just type **!candy (waifu)** or if you want to use more than one on that same waifu type: **!candy (amount) (waifu)**
 
 ___
-##**Rewards**
+## **Rewards**
 You can customize the reward players receive from seducing **Rare Waifus** with **!waifureward (amount)**.    
 Default is 100.
   
