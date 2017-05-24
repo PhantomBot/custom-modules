@@ -1,4 +1,4 @@
-# Pokémon System  <img alt="PokemonSystem" src="http://i.imgur.com/n8bScDc.png" width="100px"/>
+# Pokémon System 1.5.0
 Only works on Phantombot 2.3.5.2 and above versions!  
 
 This is a full rewrite of the Pokémon System script with new features!  
