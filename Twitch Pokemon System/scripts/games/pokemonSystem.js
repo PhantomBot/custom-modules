@@ -529,7 +529,7 @@
      * @return {String}
      */
     function url(str) {
-        return str.replace('\'', '%27').match(reGetUrl)[2] + ' ' + str.replace('\'', '%27').match(reGetUrl)[3];
+        return str.replace('\'', '%27').match(reGetUrl)[2];
     }
 
     /*
