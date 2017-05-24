@@ -525,7 +525,7 @@
     /*
      * @function url
      *
-     * @param {String} str
+     * @param {String} str get
      * @return {String}
      */
     function url(str) {
