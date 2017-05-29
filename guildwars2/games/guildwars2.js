@@ -8,6 +8,9 @@
  *
  *          - CHANGELOG -
  *
+ *    V3.3.1
+ *    - Fixed !gw2 rank returning wrong pvp standings when called with an integer for a specific season.
+ *
  *    V3.2.2
  *    - Fixed username letter case resolve in responds.
  *    - Added !gw2 birthday/bday - Checks if any of the characters had birthday on the last three days.
@@ -339,24 +342,24 @@
                 var pips;
                 var repeats;
                 var UUIDs = JSON.parse(_getJSON('https://api.guildwars2.com/v2/pvp/seasons'));
-                for (i = 0; i < Object.keys(UUIDs).length; i++) {
-                    if (args[1]) {
-                        if (args[1].match(/^[1-9]+$/)) {
-                            var season = (parseInt(args[1]) - 1);
-                            if (season == i) {
-                                league = GW2_leagues[parseInt(data[season].best.division)];
-                                tier = GW2_tiers[parseInt(data[season].best.tier)];
-                                pips = data[season].best.points;
-                                if (league.match('legendary')) {
-                                    repeats = data[season].best.repeats;
-                                    $.say($.lang.get('guildwars2.rank.peaked.legendary', username, args[1], repeats + '× ' + $.lang.get('guildwars2.leagues.' + league), tier, pips));
-                                    return;
-                                }
-                                $.say($.lang.get('guildwars2.rank.peaked.normal', username, args[1], $.lang.get('guildwars2.leagues.' + league), tier, pips));
+                if (args[1] && args[1].match(/^[1-9]+$/)) {
+                    var seasonID = UUIDs[parseInt(args[1] - 1)];
+                    for (i = 0; i < data.length; i++) {
+                        if (data[i].season_id == seasonID) {
+                            league = GW2_leagues[parseInt(data[i].best.division)];
+                            tier = GW2_tiers[parseInt(data[i].best.tier)];
+                            pips = data[i].best.points;
+                            if (league.match('legendary')) {
+                                repeats = data[i].best.repeats;
+                                $.say($.lang.get('guildwars2.rank.peaked.legendary', username, args[1], $.lang.get('guildwars2.leagues.' + league) + ' (×' + repeats + ')', tier, pips));
                                 return;
                             }
+                            $.say($.lang.get('guildwars2.rank.peaked.normal', username, args[1], $.lang.get('guildwars2.leagues.' + league), tier, pips));
+                            return;
                         }
                     }
+                }
+                for (i = 0; i < Object.keys(UUIDs).length; i++) {
                     var currSeason = JSON.parse(_getJSON('https://api.guildwars2.com/v2/pvp/seasons?id=' + UUIDs[i]));
                     if (String(currSeason.active) == 'true') {
                         for (i = 0; i < Object.keys(data).length; i++) {
@@ -366,7 +369,7 @@
                                 pips = data[i].current.points;
                             if (league.match('legendary')) {
                                 repeats = data[i].current.repeats;
-                                $.say($.lang.get('guildwars2.rank.current.legendary', username, repeats + '× ' + $.lang.get('guildwars2.leagues.' + league), tier, pips));
+                                $.say($.lang.get('guildwars2.rank.current.legendary', username, $.lang.get('guildwars2.leagues.' + league) + ' (×' + repeats + ')', tier, pips));
                                 return;
                             }
                                 $.say($.lang.get('guildwars2.rank.current.normal', username, $.lang.get('guildwars2.leagues.' + league), tier, pips));
