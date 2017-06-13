@@ -5,13 +5,21 @@ $.lang.register('guildwars2.setkey.404', 'Invalid GW2 API Key! Make sure you cop
 
 $.lang.register('guildwars2.apikey.404', 'No GW2 api key specified! Usage: !gw2 setkey [apikey]');
 
+// Structured PvP season 1 to 4
 $.lang.register('guildwars2.leagues.amber', 'Amber');
 $.lang.register('guildwars2.leagues.emerald', 'Emerald');
 $.lang.register('guildwars2.leagues.sapphire', 'Sapphire');
 $.lang.register('guildwars2.leagues.ruby', 'Ruby');
 $.lang.register('guildwars2.leagues.diamond', 'Diamond');
+
+// Structured PvP season 5 and beyond
+$.lang.register('guildwars2.leagues.bronze', 'Bronze');
+$.lang.register('guildwars2.leagues.silver', 'Silver');
+$.lang.register('guildwars2.leagues.gold', 'Gold');
+$.lang.register('guildwars2.leagues.platinum', 'Platinum');
 $.lang.register('guildwars2.leagues.legendary', 'Legendary');
 
+// Common slang abbreviations to shorten command calls that can have a profession as user input parameter
 $.lang.register('guildwars2.professions.elementalist', 'elementalist, tempest, ele, temp');
 $.lang.register('guildwars2.professions.engineer', 'engineer, scrapper, engi');
 $.lang.register('guildwars2.professions.guardian', 'guardian, dragonhunter, guard, dh');
@@ -31,11 +39,14 @@ $.lang.register('guildwars2.world_population.full', 'full');
 $.lang.register('guildwars2.session_gold.lost', '「Guild Wars²」 $1 lost $2 in the past 5 minutes!');
 $.lang.register('guildwars2.session_gold.earned', '「Guild Wars²」 $1 earned $2 in the past 5 minutes!');
 $.lang.register('guildwars2.session_deaths.deaths', '「Guild Wars²」 $1 died $2 time(s) in the past 5 minutes!');
-$.lang.register('guildwars2.rank.peaked.legendary', '$1 peaked season $2 in $3, tier $4 with $5 pip(s)!');
-$.lang.register('guildwars2.rank.peaked.normal', '$1 peaked season $2 in $3, tier $4 with $5 pip(s)!');
-$.lang.register('guildwars2.rank.current.legendary', '$1 is currently in $2, tier $3 with $4 pip(s)!');
-$.lang.register('guildwars2.rank.current.normal', '$1 is currently in $2, tier $3 with $4 pip(s)!');
+$.lang.register('guildwars2.rank.peaked.legendary.old', '$1 peaked season $2 in $3, tier $4 with $5 pip(s)!');
+$.lang.register('guildwars2.rank.peaked.normal.old', '$1 peaked season $2 in $3, tier $4 with $5 pip(s)!');
+$.lang.register('guildwars2.rank.peaked.legendary', '$1 peaked season $2 in $3, tier $4 with a rating of $5!');
+$.lang.register('guildwars2.rank.peaked.normal', '$1 peaked season $2 in $3, tier $4 with a rating of $5!');
+$.lang.register('guildwars2.rank.current.legendary', '$1 is currently in $2, tier $3 with a rating of $4!');
+$.lang.register('guildwars2.rank.current.normal', '$1 is currently in $2, tier $3 with a rating of $4!');
 $.lang.register('guildwars2.rank.404', 'No ongoing PvP season or season not found! Try: !gw2 rank [number for past seasons]');
+$.lang.register('guildwars2.rank.404.placement','$1 did not play a total of 10 ranked season games and has therefore not aquired a ranking.');
 $.lang.register('guildwars2.stats.profession', '$1 has played $2 match(es) as $3 with a current win rate of $4\%!');
 $.lang.register('guildwars2.stats.ranked', '$1 has reached rank $2 and has played $3 ranked match(es) with a current W/L ratio of $4!');
 $.lang.register('guildwars2.characters', '$1 owns the following characters: $2!');
