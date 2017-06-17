@@ -40,8 +40,8 @@ $.lang.register('guildwars2.session_gold.lost', '「Guild Wars²」 $1 lost $2 i
 $.lang.register('guildwars2.session_gold.earned', '「Guild Wars²」 $1 earned $2 in the past 5 minutes!');
 $.lang.register('guildwars2.session_deaths.deaths', '「Guild Wars²」 $1 died $2 time(s) in the past 5 minutes!');
 $.lang.register('guildwars2.rank.peaked.oldranking', '$1 peaked season $2 in $3, tier $4 with $5 pip(s)!');
-$.lang.register('guildwars2.rank.peaked', '$1 peaked season $2 in $3 $4 with a rating of $5!');
-$.lang.register('guildwars2.rank.current', '$1 is currently in $2 $3 with a matchmaking rating of $4');
+$.lang.register('guildwars2.rank.peaked', '$1 peaked season $2 in $3 with a rating of $4!');
+$.lang.register('guildwars2.rank.current', '$1 is currently in $2 with a matchmaking rating of $3');
 $.lang.register('guildwars2.rank.current.next', '「$1 ᴍᴍʀ left for a rank promotion to $2 」');
 $.lang.register('guildwars2.rank.404', 'No ongoing PvP season or season not found! Try: !gw2 rank [number for past seasons]');
 $.lang.register('guildwars2.rank.404.placement','$1 did not play a total of 10 ranked season games and has therefore not aquired a ranking.');
