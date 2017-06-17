@@ -228,8 +228,8 @@
 
     /**
      * @function number_format
-     * @param {String} url
-     * @returns {JSON}
+     * @param {Number} number, {Integer} decimals, {String} dec_point, {String} thousands_sep
+     * @returns {String}
      */
     function number_format( number, decimals, dec_point, thousands_sep ) { 
         var n = number, c = isNaN(decimals = Math.abs(decimals)) ? 2 : decimals;
