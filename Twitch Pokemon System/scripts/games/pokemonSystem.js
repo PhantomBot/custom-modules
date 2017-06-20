@@ -881,6 +881,7 @@
         } else {
             amount = ($.inidb.get('points', sender) / price);
             $.inidb.incr(sender, 'candy', amount);
+            $.inidb.decr('points', sender, ((price * amount) - price));
             $.say($.lang.get('waifugames.candy.buy', $.whisperPrefix(sender), Math.floor(amount), $.getPointsString(price * Math.floor(amount)), getCandy(sender)));
         }
 
@@ -1260,10 +1261,7 @@
             if ($.inidb.GetInteger(opponent, 'wHitPoints', id2) <= 0) {
                 winMsg = $.lang.get('waifugames.boss.win', $.userPrefix(username), replace2(getWaifu(id)), '[Boss] ' + bossName, $.getPointsString(getBReward()));
 
-                for (i in $.users) {
-                    $.inidb.incr($.users[i][0], 'candy', 10);
-                    $.inidb.incr('points', $.users[i][0], (getBReward()));
-                }
+                $.inidb.incr('points', username, (getBReward()));
 
                 $.inidb.incr(username, 'wWins', 1);
                 $.inidb.incr(opponent, 'wLosses', 1);
