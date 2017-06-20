@@ -8,6 +8,10 @@
  *
  *          - CHANGELOG -
  *
+ *    V3.5.2
+ *    - !gw2 rank now calculates & displays how much rating points are needed for a rank promotion.
+ *    - Karma is now displayed with a thousands separator.
+ *
  *    V3.4.3
  *    - Updated !gw2 rank [digit] to support both ranking systems ie. the system prior to season 5 and after.
  *    - Updated !gw2 rank to detect if 10 ranked placement matches have been done or not. Also works for past seasons.
@@ -161,7 +165,13 @@
     var GW2_apiURL = 'https://api.guildwars2.com';
     var GW2_coinformat = ($.inidb.exists('settings', 'gw2_coinformat') ? parseInt($.inidb.get('settings', 'gw2_coinformat')) : 1);
     var GW2_leagues_old = ['amber', 'emerald', 'sapphire', 'ruby', 'diamond', 'legendary'];
-    var GW2_leagues = ['bronze', 'silver', 'gold', 'platinum', 'legendary'];
+    var GW2_leagues = {
+        'bronze': {0: 899}, 
+        'silver': {900: 1199}, 
+        'gold': {1200: 1499}, 
+        'platinum': {1500: 1799}, 
+        'legendary': {1800: 2100}
+    };
     var GW2_tiers = ['Ⅰ', 'Ⅱ', 'Ⅲ', 'Ⅳ', 'Ⅴ', 'Ⅵ', 'Ⅶ', 'Ⅷ', 'Ⅸ', 'Ⅹ'];
     var GW2_professions = ['elementalist', 'engineer', 'guardian', 'mesmer', 'necromancer', 'ranger', 'revenant', 'thief', 'warrior'];
     var GW2_toggle_goldcounter = 0;
@@ -220,6 +230,19 @@
             }
         }
         return Math.round(c) + 'c';
+    }
+
+    /**
+     * @function number_format
+     * @param {Number} number, {Integer} decimals, {String} dec_point, {String} thousands_sep
+     * @returns {String}
+     */
+    function number_format( number, decimals, dec_point, thousands_sep ) { 
+        var n = number, c = isNaN(decimals = Math.abs(decimals)) ? 2 : decimals;
+        var d = dec_point == undefined ? "," : dec_point;
+        var t = thousands_sep == undefined ? "." : thousands_sep, s = n < 0 ? "-" : "";
+        var i = parseInt(n = Math.abs(+n || 0).toFixed(c)) + "", j = (j = i.length) > 3 ? j % 3 : 0;
+        return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
     }
 
     /**
@@ -344,10 +367,9 @@
             if (action.equalsIgnoreCase('rank')) {
                 data = JSON.parse(_getJSON(GW2_apiURL + '/v2/pvp/standings?access_token=' + GW2_apiKey));
                 var league;
-                var tier;
                 var mmr;
-                var repeats;
-                var oldSystem;
+                var skillRates;
+                var nextRank;
                 var UUIDs = JSON.parse(_getJSON('https://api.guildwars2.com/v2/pvp/seasons'));
                 if (args[1] && args[1].match(/^[1-9]+$/)) {
                     var seasonID = UUIDs[parseInt(args[1] - 1)];
@@ -356,25 +378,25 @@
                             var oldSystem = parseInt(args[1]) < 5 ? true : false;
                             if (oldSystem) {
                                 league = GW2_leagues_old[parseInt(data[i].best.division)];
-                                tier = GW2_tiers[parseInt(data[i].best.tier)];
+                                var tier = GW2_tiers[parseInt(data[i].best.tier)];
                                 var pips = data[i].best.points;
                                 if (league.match('legendary')) {
-                                    repeats = data[i].best.repeats;
-                                    $.say($.lang.get('guildwars2.rank.peaked.legendary.old', username, args[1], $.lang.get('guildwars2.leagues.' + league) + ' (×' + repeats + ')', tier, pips));
+                                    var repeats = data[i].best.repeats;
+                                    $.say($.lang.get('guildwars2.rank.peaked.oldranking', username, args[1], $.lang.get('guildwars2.leagues.' + league) + ' (×' + repeats + ')', tier, pips));
                                     return;
                                 }
-                                $.say($.lang.get('guildwars2.rank.peaked.normal.old', username, args[1], $.lang.get('guildwars2.leagues.' + league), tier, pips));
+                                $.say($.lang.get('guildwars2.rank.peaked.oldranking', username, args[1], $.lang.get('guildwars2.leagues.' + league), tier, pips));
                                 return;
                             } else {
-                                league = GW2_leagues[parseInt(data[i].best.division)];
-                                tier = GW2_tiers[parseInt(data[i].best.tier)];
                                 mmr = parseInt(data[i].current.rating);
-                                if (league.match('legendary')) {
-                                    repeats = data[i].best.repeats;
-                                    $.say($.lang.get('guildwars2.rank.peaked.legendary', username, args[1], $.lang.get('guildwars2.leagues.' + league) + ' (×' + repeats + ')', tier, mmr));
-                                    return;
+                                for (k = 0; k < Object.keys(GW2_leagues).length; k++) {
+                                    skillRates = Object.keys(GW2_leagues).map(function(key){ return GW2_leagues[key]; });
+                                    nextRank = Object.keys(skillRates[k]).map(function(key){ return skillRates[k][key]; })[0];
+                                    if (Object.keys(skillRates[k])[0] <= mmr && nextRank >= mmr) {
+                                        league = Object.keys(GW2_leagues)[k];
+                                    }
                                 }
-                                $.say($.lang.get('guildwars2.rank.peaked.normal', username, args[1], $.lang.get('guildwars2.leagues.' + league), tier, mmr));
+                                $.say($.lang.get('guildwars2.rank.peaked', username, args[1], $.lang.get('guildwars2.leagues.' + league), mmr));
                                 return;
                             }
                         }
@@ -389,16 +411,28 @@
                     if (String(currSeason.active) == 'true') {
                         for (i = 0; i < Object.keys(data).length; i++) {
                             if (data[i].season_id == currSeason.id) {
-                                league = GW2_leagues[parseInt(data[i].current.division)];
-                                tier = GW2_tiers[parseInt(data[i].current.tier)];
-                                mmr = data[i].current.rating;
-                            if (league.match('legendary')) {
-                                repeats = data[i].current.repeats;
-                                $.say($.lang.get('guildwars2.rank.current.legendary', username, $.lang.get('guildwars2.leagues.' + league) + ' (×' + repeats + ')', tier, mmr));
-                                return;
-                            }
-                                $.say($.lang.get('guildwars2.rank.current.normal', username, $.lang.get('guildwars2.leagues.' + league), tier, mmr));
-                                return;
+
+                                mmr = parseInt(data[i].current.rating);
+                                
+                                for (k = 0; k < Object.keys(GW2_leagues).length; k++) {
+                                    
+                                    skillRates = Object.keys(GW2_leagues).map(function(key){ return GW2_leagues[key]; });
+                                    nextRank = Object.keys(skillRates[k]).map(function(key){ return skillRates[k][key]; })[0];
+                                    
+                                    if (Object.keys(skillRates[k])[0] <= mmr && nextRank >= mmr) {
+                                        league = Object.keys(GW2_leagues);
+
+                                        if (league[k] === 'legendary') {
+                                            $.say($.lang.get('guildwars2.rank.current', username, $.lang.get('guildwars2.leagues.' + league[k]), mmr));
+                                            return;
+                                        };
+
+                                        var mmrLeft = (nextRank < mmr) ? (mmr - nextRank) : (nextRank - mmr);
+                                        $.say($.lang.get('guildwars2.rank.current', username, $.lang.get('guildwars2.leagues.' + league[k]), mmr) + ' ' 
+                                            + $.lang.get('guildwars2.rank.current.next', mmrLeft + 1, $.lang.get('guildwars2.leagues.' + league[k + 1])));
+                                        return;
+                                    }
+                                }
                             }
                         }
                         $.say($.lang.get('guildwars2.rank.404.placement', username));
@@ -518,7 +552,7 @@
                         rawKarma = data[i].value;
                     }
                 }
-                $.say($.lang.get('guildwars2.wallet', username, CalcCoins(coins), rawKarma));
+                $.say($.lang.get('guildwars2.wallet', username, CalcCoins(coins), number_format(rawKarma, 0)));
                 return;
             }
 
