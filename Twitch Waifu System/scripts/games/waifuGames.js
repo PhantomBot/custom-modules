@@ -733,7 +733,12 @@
                 $.inidb.SetString(receiver.toLowerCase(), 'buffed', getWaifuId(id), 0);
                 $.inidb.SetInteger(receiver.toLowerCase(), 'wAttribute', getWaifuId(id), getAttribute(username, getWaifuId(id)));
             }
+            
+            if ($.inidb.GetInteger(username, 'harem', getWaifuId(id)) == 1) {
+                $.inidb.RemoveKey(username, 'harem', getWaifuId(id));
+            }
             $.inidb.decr(username, 'waifus', id, 1);
+            
         } else {
             $.say($.lang.get('waifugames.giftwaifu.404', $.userPrefix(username, true)));
         }
@@ -948,7 +953,7 @@
                 $.inidb.del(username, 'married');
             }
 
-            if ($.inidb.GetInteger(username, 'harem', getWaifuId(id)) == 1) {
+            if ($.inidb.GetInteger(username, 'harem', getWaifuId(id)) > 0) {
                 $.inidb.RemoveKey(username, 'harem', getWaifuId(id));
             }
         }
