@@ -1,17 +1,17 @@
-$.lang.register('waifugames.waifuhelp', 'Usage: !waifu, !profile, !seduce, !setwaifu <waifu>, !resetwaifu, !buywaifu <waifu>, !giftwaifu <name> <waifu>, !harem, !addharem <waifu>, !kickharem <waifu>, !resetharem, !fight <name> <waifu>, !candy <waifu>, !buycandy (amount), !waifureward, !bossreward (amount), !resetratio, !giftcandy (name) (amount), !release (waifu).');
+$.lang.register('waifugames.waifuhelp', 'Basic Usage: !waifu, !profile, !seduce, !harem, !addharem <waifu>, !kickharem <waifu>, !resetharem, !fight <name> <waifu>, !candy <waifu>.');
 $.lang.register('waifugames.split.success', '$1 divorced $2!');
 $.lang.register('waifugames.split.404', '$1 you are not married yet!');
-$.lang.register('waifugames.marry.success', '$1 you married $2! She is now your Main Waifu.');
+$.lang.register('waifugames.marry.success', '$1 you now married to $2! Congratulations!');
 $.lang.register('waifugames.marry.null', '$1 you must specify a waifu you own, !setwaifu <waifu>.');
 $.lang.register('waifugames.marry.already', '$1 you are already married to $2!');
 $.lang.register('waifugames.exist.404', '$1 that waifu does not exist!');
 $.lang.register('waifugames.profile.success', '$1 Progress: $2% - Collected ($3/$4) Waifus. Candy: $5.  Record: [Won: $6 | Lost: $7 | Bosses: $8]');
 $.lang.register('waifugames.reset.stats', '$1 your record has been reset!');
 $.lang.register('waifugames.level.max', '$1 $2 has been healed!');
-$.lang.register('waifugames.level.exceed', '$1 Using $2 Candy on $3 will exceed the 120000 EXP limit!');
+$.lang.register('waifugames.level.exceed', '$1 Using $2 Candy on $3 will exceed the $4 EXP limit!');
 $.lang.register('waifugames.candy.get', '$1 you have $2 Candy! Each candy restores a character\'s HP and increases a random stat.');
 $.lang.register('waifugames.candy.missing', '$1 you don\'t have $2!');
-$.lang.register('waifugames.candy.use', '$1 increases $2\'s [EXP: +$3, Atk: +$4, Def: +$5] = (HP: 100 - Level: $6, Atk: $7, Def: $8). $9 candy left!');
+$.lang.register('waifugames.candy.use', '$1 increases $2\'s [+EXP: $3, +Atk: $4, +Def: $5] = (HP: 100 - Level: $6, Atk: $7, Def: $8). $9 candy left!');
 $.lang.register('waifugames.candy.useall', '$1 you healed: $2!');
 $.lang.register('waifugames.candy.nostock', '$1, you don\'t have enough candy! Candy: $2!');
 $.lang.register('waifugames.candy.enough', '$1 you don\'t have that much candy! Candy: $2!');
@@ -24,7 +24,7 @@ $.lang.register('waifugames.checkwaifu.stats', 'HP:$1 - Level: $2, Atk: $3, Def:
 $.lang.register('waifugames.giftwaifu.nouser', '$1 you must specify a user, !giftwaifu <name> <waifu>');
 $.lang.register('waifugames.giftwaifu.404', '$1 you don\'t own enough of that waifu or it does not exist.');
 $.lang.register('waifugames.giftwaifu.success', '$1 sent waifu: $2 to $3. $4');
-$.lang.register('waifugames.waifu.levelup', '/me [LEVEL UP] $2\'s $3 is now [level: $1] [Atk: +$4, Def: +$5]');
+$.lang.register('waifugames.waifu.levelup', '/me [LEVEL UP!] $2\'s $3 is now level:: $1 [+Atk: $4, +Def: $5]');
 $.lang.register('waifugames.random.0', '$1 you haven\'t collected any waifus. Start collecting waifus with !seduce.');
 $.lang.register('waifugames.random.success', 'Random Waifu: $2 #$3. $4!');
 $.lang.register('waifugames.random.married', '$1 you are married to $2 #$3. HP:$4 - Level: $5, Atk: $6, Def: $7, Love: $8%. $9');
@@ -35,11 +35,11 @@ $.lang.register('waifugames.rare.over', '[EVENT] The event is over! The Rare wai
 $.lang.register('waifugames.buywaifu.new', '$1 bought $2 #$3, $4');
 $.lang.register('waifugames.genwaifu.new', '$1 received $2 #$3, lvl: $4, ATK: $5 DEF: $6, $7!');
 $.lang.register('waifugames.harem.null', '$1 you must specify a waifu.');
-$.lang.register('waifugames.harem.protect', '[Anti-Bully Ranger]: $1\'s Harem lvl is: $2! $3, you\'re not within correct level range to fight $1.');
+$.lang.register('waifugames.harem.protect', '[Anti-Bully Ranger]: $1\'s Harem lvl is: $2! $3, you\'re not within the level-range to attack $1.');
 $.lang.register('waifugames.harem.repeat', '$1 that waifu is already in your harem!');
 $.lang.register('waifugames.harem.owned', '$1 you don\'t own that waifu!');
 $.lang.register('waifugames.harem.success', '$1 you\'ve added $2 to your harem!');
-$.lang.register('waifugames.harem.get', '[Harem Level: $1], $2 your current harem is: $3.');
+$.lang.register('waifugames.harem.get', '[Team Lvl: $1], $2 your current harem is: $3.');
 $.lang.register('waifugames.harem.denied', 'You\'ve hit the maximum of 6 waifus in your harem! !kickharem <waifu> to make room.');
 $.lang.register('waifugames.harem.kick', 'kicked $1 from the harem!');
 $.lang.register('waifugames.harem.kick404', '$1 that waifu is not in your harem!');
@@ -77,11 +77,38 @@ $.lang.register('waifugames.fight.dmgrec', 'receiving $1 damage');
 $.lang.register('waifugames.fight.expgain', ' Both waifus gained: +$1 EXP');
 $.lang.register('waifugames.catch.merge', '$1 seduced and merged #$2 $3. $3 becomes $3+$4. Gained: Atk +5 / Def +5 granted! $5');
 $.lang.register('waifugames.catch.own', '$1 seduced another: $3 #$4. $5');
-$.lang.register('waifugames.catch.new', '$1 seduced +$2: $3 #$4. $5');
+$.lang.register('waifugames.catch.new', '$1 seduced $3 #$4. $5');
 $.lang.register('waifugames.catch.rare', 'Latest [Rare] Waifu caught: $3 #$4 by $1!');
 $.lang.register('waifugames.catch.nrare', '/me RARE! +$1 ');
 $.lang.register('waifugames.catch.srare', '/me S RARE! +$1 ');
 $.lang.register('waifugames.catch.ssrare', '/me SS RARE! +$1 ');
+$.lang.register('waifugames.maxexp.get', 'Current max EXP: $1 EXP');
+$.lang.register('waifugames.maxexp.set', 'You set the Max EXP to:  $1 EXP');
+$.lang.register('waifugames.harem.dead', '$1\'s harem can\'t fight until at least one character is healed! !candy <waifu>');
+
+$.lang.register('waifugames.atk.common1', '1');
+$.lang.register('waifugames.atk.common2', '5');
+
+$.lang.register('waifugames.atk.rare1', '5');
+$.lang.register('waifugames.atk.rare2', '15');
+
+$.lang.register('waifugames.atk.srare1', '15');
+$.lang.register('waifugames.atk.srare2', '25');
+
+$.lang.register('waifugames.atk.ssrare1', '25');
+$.lang.register('waifugames.atk.ssrare2', '35');
+
+$.lang.register('waifugames.def.common1', '1');
+$.lang.register('waifugames.def.common2', '5');
+
+$.lang.register('waifugames.def.rare1', '5');
+$.lang.register('waifugames.def.rare2', '15');
+
+$.lang.register('waifugames.def.srare1', '15');
+$.lang.register('waifugames.def.srare2', '25');
+
+$.lang.register('waifugames.def.ssrare1', '25');
+$.lang.register('waifugames.def.ssrare2', '35');
 
 $.lang.register('waifugames.function.google', 'http://google.com/images?q=');
 $.lang.register('waifugames.function.characterlist', 'Waifu #');
