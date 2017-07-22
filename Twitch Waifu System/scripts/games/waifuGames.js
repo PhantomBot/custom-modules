@@ -1060,8 +1060,13 @@
 
         consoleLn('Added: #' + number + ' Waifuid: ' + getWaifuId(id));
 
+        // Check to make sure that the user is asks for the id, if not, get the id. - scania
+        if (isNaN(parseInt(id))) {
+            id = getWaifuId(id);
+        }
+
         $.inidb.SetInteger(username, 'haremList', number, id);
-        $.inidb.SetInteger(username, 'harem', id, number);
+        $.inidb.SetInteger(username, 'harem', id, parseInt(number));
         $.say($.lang.get('waifugames.harem.success', $.userPrefix(username, true), replace(getWaifu(id))) + ' List ID: ' + number);
     }
 
