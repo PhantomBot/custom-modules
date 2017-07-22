@@ -1047,17 +1047,21 @@
             $.say($.lang.get('waifugames.harem.denied'));
             return;
         }
+
+        // increase the amount of harems the user has by one. - scania
+        $.inidb.incr(username, 'haremAmount', 1);
+
         var number = $.inidb.get(username, 'haremAmount');
 
-        if ($.inidb.get(username, 'haremAmount') == 0) {
-            $.inidb.incr(username, 'haremAmount', 1);
-        }
+        // Removed this, it is not needed twice. - scania
+        //if ($.inidb.get(username, 'haremAmount') == 0) {
+        //    $.inidb.incr(username, 'haremAmount', 1);
+        //}
 
         consoleLn('Added: #' + number + ' Waifuid: ' + getWaifuId(id));
 
-        $.inidb.incr(username, 'haremAmount', 1);
-        $.inidb.SetInteger(username, 'haremList', number, getWaifuId(id));
-        $.inidb.SetInteger(username, 'harem', getWaifuId(id), number);
+        $.inidb.SetInteger(username, 'haremList', number, id);
+        $.inidb.SetInteger(username, 'harem', id, number);
         $.say($.lang.get('waifugames.harem.success', $.userPrefix(username, true), replace(getWaifu(id))) + ' List ID: ' + number);
     }
 
