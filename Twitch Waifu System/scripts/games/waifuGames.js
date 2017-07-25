@@ -999,8 +999,9 @@
                 $.inidb.del(username, 'married');
             }
 
-            if ($.inidb.GetInteger(username, 'harem', getWaifuId(id)) == 1) {
+            if ($.inidb.GetInteger(username, 'harem', getWaifuId(id)) > 0) {
                 $.inidb.RemoveKey(username, 'harem', getWaifuId(id));
+                $.inidb.RemoveKey(username, 'haremList', $.inidb.GetInteger(username, 'harem', id));
             }
         }
 
