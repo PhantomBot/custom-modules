@@ -1129,7 +1129,7 @@
                 isMarried = true;
             }
 
-            array.push(replace2($.lang.get('waifugames.waifu.' + keys[i])) + getBonus(sender, keys[i]) + (isMarried ? '(M)' : '') + ' [HP:' + getHitPoints(sender, keys[i]) + ']');
+            array.push(replace2($.lang.get('waifugames.waifu.' + keys[i])) + getBonus(sender, keys[i]) + (isMarried ? '(M)' : '') + ' #' + keys[i] + [HP:' + getHitPoints(sender, keys[i]) + ']');
         }
 
         if (array.length > 0) {
@@ -1351,8 +1351,8 @@
             $.inidb.decr(username, 'wHitPoints', id, dmgRec);
 
             if (getHitPoints(opponent, id2) < 1) {
-            handleEXPGain(username, id, (parseInt(expRange) * parseInt(getLevel(username, id)) / 4 )); 
-            expReward = (parseInt(expRange) * parseInt(getLevel(username, id)) / 8 );
+            handleEXPGain(username, id, (parseInt(expRange) * parseInt(getLevel(username, id))+3 / 2 ); 
+            expReward = Math.floor((parseInt(expRange) * parseInt(getLevel(username, id))+3 / 2 ));
            } else {
             handleEXPGain(username, id, parseInt(expRange));
             expReward = expRange;
@@ -1374,7 +1374,6 @@
                 }
 
                 $.inidb.incr(username, 'wWins', 1);
-                $.inidb.incr(opponent, 'wLosses', 1);
                 $.inidb.incr(username, 'wBosses', 1);
                 $.inidb.RemoveSection('boss', 'harem');
                 $.inidb.del('boss', 'id');
