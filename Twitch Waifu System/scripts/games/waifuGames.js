@@ -958,6 +958,8 @@
 
         if (hasWaifu(sender, id)) {
             stats = $.lang.get('waifugames.checkwaifu.stats', getHitPoints(sender, id), getLevel(sender, id), getAttack(sender, id), getDefense(sender, id), getLove(sender, id), $.lang.get('waifugames.attribute.' + getAttribute(sender, id)));
+        } else {
+            stats = '';
         }
 
         $.say($.lang.get('waifugames.checkwaifu.success', $.userPrefix(sender, true), getUserWaifuCount(sender, id), replace3(getWaifu(id)) + getBonus(sender, id), id, stats, $.shortenURL.getShortURL(link)));
@@ -1104,8 +1106,9 @@
 
         if ($.inidb.GetInteger(username, 'harem', getWaifuId(id)) >= 1) {
             $.inidb.RemoveKey(username, 'harem', getWaifuId(id));
-            $.inidb.decr(username, 'haremAmount', 1);
             $.inidb.RemoveKey(username, 'haremList', $.inidb.GetInteger(username, 'harem', getWaifuId(id)));
+            $.inidb.decr(username, 'haremAmount', 1);
+
             $.say($.lang.get('waifugames.harem.kick', replace(getWaifu(id))));
             reloadUserHarems(username);
         } else {
@@ -1130,7 +1133,7 @@
                 isMarried = true;
             }
 
-            array.push(replace2($.lang.get('waifugames.waifu.' + keys[i])) + getBonus(sender, keys[i]) + (isMarried ? '(M)' : '') + ' #' + keys[i] + [HP:' + getHitPoints(sender, keys[i]) + ']');
+            array.push(replace2($.lang.get('waifugames.waifu.' + keys[i])) + getBonus(sender, keys[i]) + (isMarried ? '(M)' : '') + ' #' + keys[i] + '[HP:' + getHitPoints(sender, keys[i]) + ']');
         }
 
         if (array.length > 0) {
@@ -1352,8 +1355,8 @@
             $.inidb.decr(username, 'wHitPoints', id, dmgRec);
 
             if (getHitPoints(opponent, id2) < 1) {
-            handleEXPGain(username, id, (parseInt(expRange) * parseInt(getLevel(username, id))+3 / 2 ); 
-            expReward = Math.floor((parseInt(expRange) * parseInt(getLevel(username, id))+3 / 2 ));
+            handleEXPGain(username, id, (parseInt(expRange) * parseInt(getLevel(username, id)) / 2 )); 
+            expReward = Math.floor((parseInt(expRange) * parseInt(getLevel(username, id)) / 2 ));
            } else {
             handleEXPGain(username, id, parseInt(expRange));
             expReward = expRange;
