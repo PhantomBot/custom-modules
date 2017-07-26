@@ -3,19 +3,20 @@ $.lang.register('waifugames.attribute.get', '$1 attributes can only be set 1 thr
 $.lang.register('waifugames.attribute.404', '$1 attributes can only be set 1 through $2!');
 $.lang.register('waifugames.attribute.usage', '$1 type !attribute <number> <waifu> to change your character\'s attribute!');
 
-$.lang.register('waifugames.attribute.0', 'Normal');
-$.lang.register('waifugames.attribute.1', 'Normal');
+$.lang.register('waifugames.attribute.0', 'None');
+$.lang.register('waifugames.attribute.1', 'Default');
 $.lang.register('waifugames.attribute.2', 'Lewd');
 $.lang.register('waifugames.attribute.3', 'Fighter');
 $.lang.register('waifugames.attribute.4', 'Crazy');
 $.lang.register('waifugames.attribute.5', 'Afraid');
-$.lang.register('waifugames.attribute.6', 'Love');
+$.lang.register('waifugames.attribute.6', 'Lovey Dovey');
 $.lang.register('waifugames.attribute.7', 'Sadistic');
-$.lang.register('waifugames.attribute.8', 'Magician');
+$.lang.register('waifugames.attribute.8', 'Mahou Shoujo');
 $.lang.register('waifugames.attribute.9', 'Klutz');
 $.lang.register('waifugames.attribute.10', 'DBZ');
 $.lang.register('waifugames.attribute.11', 'Gundam');
 $.lang.register('waifugames.attribute.12', 'BeyBlade');
+//$.lang.register('waifugames.attribute.13', 'Random'); Needs to be coded.
 
 $.lang.register('waifugames.attack.0.1', 'threw a pillow at $1 [HP:$2]');
 $.lang.register('waifugames.attack.0.2', 'slapped $1\'s [HP:$2] face');
