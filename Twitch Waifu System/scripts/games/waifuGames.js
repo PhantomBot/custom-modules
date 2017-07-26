@@ -7,6 +7,7 @@
             fight: 1,
             miss: 1,
             block: 1,
+            bosses: 1,
             fail: 1,
             attribute: 1,
         },
@@ -15,7 +16,7 @@
         navigatorImg2 = $.lang.get('waifugames.alert.navigator2'),
         navigatorImg3 = $.lang.get('waifugames.alert.navigator3'),
         levelAddedUserArray = [], /// Added this
-        hpScale = ($.users.length + 2000),
+        hpScale = 2000,
         maxEXP = $.inidb.get('settings', 'maxEXP');
 
     // load();
@@ -956,11 +957,9 @@
             link = (google + url(waifu)),
             stats = '';
 
-        if (hasWaifu(sender, id)) {
+        if (getUserWaifuCount(sender, id) > 0) {
             stats = $.lang.get('waifugames.checkwaifu.stats', getHitPoints(sender, id), getLevel(sender, id), getAttack(sender, id), getDefense(sender, id), getLove(sender, id), $.lang.get('waifugames.attribute.' + getAttribute(sender, id)));
-        } else {
-            stats = '';
-        }
+        } 
 
         $.say($.lang.get('waifugames.checkwaifu.success', $.userPrefix(sender, true), getUserWaifuCount(sender, id), replace3(getWaifu(id)) + getBonus(sender, id), id, stats, $.shortenURL.getShortURL(link)));
     }
@@ -1200,14 +1199,14 @@
 
 
     function generateBoss(sender) {
-        var bosses = $.randRange(1, 5),
+        var bosses = $.randRange(1, responses.bosses - 1),
             bossHP = $.inidb.GetInteger('boss', 'wHitPoints', $.inidb.get('boss', 'id'));
 
         if (bossHP <= 0) {
             $.inidb.set('boss', 'id', bosses);
             $.inidb.SetInteger('boss', 'harem', bosses, 1);
-            $.inidb.SetInteger('boss', 'wHitPoints', bosses, parseInt(hpScale));
-            $.inidb.SetInteger('boss', 'wEXP', bosses, parseInt(maxEXP));
+            $.inidb.SetInteger('boss', 'wHitPoints', bosses, hpScale);
+            $.inidb.SetInteger('boss', 'wEXP', bosses, 9999999);
         }
         return bosses;
     }
