@@ -1681,8 +1681,8 @@
         $.inidb.incr(username, 'wDefense', id, randomStatDef);
         $.inidb.incr(username, 'wLove', id, $.randRange(0, 1));
         $.inidb.decr(username, 'candy', amount);
-        $.inidb.decr('points', username, 50 * amount);
-        $.say($.lang.get('waifuGames.candy.use', $.whisperPrefix(username), replace(getWaifu(id)), 50 * amount, randomStatAtk, randomStatDef, getLevel(username, id), getAttack(username, id), getDefense(username, id), getCandy(username), $.lang.get('waifugames.attribute.' + getAttribute(username, id))));
+        $.inidb.decr('points', username, parseInt($.inidb.get('pricecom', buycandy)) * amount);
+        $.say($.lang.get('waifuGames.candy.use', $.whisperPrefix(username), replace(getWaifu(id)), parseInt($.inidb.get('pricecom', buycandy)) * amount, randomStatAtk, randomStatDef, getLevel(username, id), getAttack(username, id), getDefense(username, id), getCandy(username), $.lang.get('waifugames.attribute.' + getAttribute(username, id))));
 
     }
 
