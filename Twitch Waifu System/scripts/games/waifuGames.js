@@ -926,11 +926,12 @@
 
         if (amount >= 1 && $.inidb.get('points', sender) >= price * amount) {
             $.inidb.incr(sender, 'candy', amount);
-            $.inidb.decr('points', sender, ((price * amount) - price));
+            $.inidb.decr('points', sender, parseInt(price * amount - price));
             $.say($.lang.get('waifugames.candy.buy', $.whisperPrefix(sender), amount, $.getPointsString(price * amount), getCandy(sender)));
         } else {
             amount = ($.inidb.get('points', sender) / price);
             $.inidb.incr(sender, 'candy', amount);
+            $.inidb.decr('points', sender, parseInt(price * amount - price));
             $.say($.lang.get('waifugames.candy.buy', $.whisperPrefix(sender), Math.floor(amount), $.getPointsString(price * Math.floor(amount)), getCandy(sender)));
         }
 
@@ -1681,8 +1682,7 @@
         $.inidb.incr(username, 'wDefense', id, randomStatDef);
         $.inidb.incr(username, 'wLove', id, $.randRange(0, 1));
         $.inidb.decr(username, 'candy', amount);
-        $.inidb.decr('points', username, parseInt($.inidb.get('pricecom', buycandy)) * amount);
-        $.say($.lang.get('waifuGames.candy.use', $.whisperPrefix(username), replace(getWaifu(id)), parseInt($.inidb.get('pricecom', buycandy)) * amount, randomStatAtk, randomStatDef, getLevel(username, id), getAttack(username, id), getDefense(username, id), getCandy(username), $.lang.get('waifugames.attribute.' + getAttribute(username, id))));
+        $.say($.lang.get('waifuGames.candy.use', $.whisperPrefix(username), replace(getWaifu(id)), 50 * amount, randomStatAtk, randomStatDef, getLevel(username, id), getAttack(username, id), getDefense(username, id), getCandy(username), $.lang.get('waifugames.attribute.' + getAttribute(username, id))));
 
     }
 
