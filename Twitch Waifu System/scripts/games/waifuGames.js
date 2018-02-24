@@ -1066,7 +1066,7 @@
             id = getWaifuId(id);
         }
 
-        consoleLn('Added: #' + number + ' Waifuid: ' + getWaifuId(id));
+        $.consoleLn('Added: #' + number + ' Waifuid: ' + getWaifuId(id));
 
         $.inidb.SetInteger(username, 'haremList', number, id);
         $.inidb.SetInteger(username, 'harem', id, number);
@@ -1283,23 +1283,23 @@
         //$.inidb.SetInteger(username, 'harem', getWaifuId(id), haremnumber);
 
         if (action > 0) {
-            consoleLn('Action: ' + action);
-            consoleLn('Character ID: ' + $.inidb.GetInteger(username, 'haremList', action));
+            $.consoleLn('Action: ' + action);
+            $.consoleLn('Character ID: ' + $.inidb.GetInteger(username, 'haremList', action));
             id = $.inidb.GetInteger(username, 'haremList', parseInt(action));
 
         } else {
             for (i in keys) {
 
-                consoleLn('HP: ' + getHitPoints(username, $.inidb.GetInteger(username, 'haremList', keys[i])));
+                $.consoleLn('HP: ' + getHitPoints(username, $.inidb.GetInteger(username, 'haremList', keys[i])));
 
                 if (getHitPoints(username, $.inidb.GetInteger(username, 'haremList', keys[i])) <= 0) {
-                    consoleLn('continue;');
+                    $.consoleLn('continue;');
                     continue;
                 }
-                consoleLn('HP: ' + getHitPoints(username, $.inidb.GetInteger(username, 'haremList', keys[i])));
+                $.consoleLn('HP: ' + getHitPoints(username, $.inidb.GetInteger(username, 'haremList', keys[i])));
 
                 if (getHitPoints(username, $.inidb.GetInteger(username, 'haremList', keys[i])) > 0) {
-                    consoleLn('ID: ' + $.inidb.GetInteger(username, 'haremList', keys[i]));
+                    $.consoleLn('ID: ' + $.inidb.GetInteger(username, 'haremList', keys[i]));
                     id = $.inidb.GetInteger(username, 'haremList', keys[i]);
                     break;
                 }
@@ -1441,23 +1441,23 @@
             i2;
 
         if (action > 0) {
-            consoleLn('Action: ' + action);
-            consoleLn('Character ID: ' + $.inidb.GetInteger(username, 'haremList', action));
+            $.consoleLn('Action: ' + action);
+            $.consoleLn('Character ID: ' + $.inidb.GetInteger(username, 'haremList', action));
             id = $.inidb.GetInteger(username, 'haremList', parseInt(action));
 
         } else {
             for (i in keys) {
 
-                consoleLn('HP: ' + getHitPoints(username, $.inidb.GetInteger(username, 'haremList', keys[i])));
+                $.consoleLn('HP: ' + getHitPoints(username, $.inidb.GetInteger(username, 'haremList', keys[i])));
 
                 if (getHitPoints(username, $.inidb.GetInteger(username, 'haremList', keys[i])) <= 0) {
-                    consoleLn('continue;');
+                    $.consoleLn('continue;');
                     continue;
                 }
-                consoleLn('HP: ' + getHitPoints(username, $.inidb.GetInteger(username, 'haremList', keys[i])));
+                $.consoleLn('HP: ' + getHitPoints(username, $.inidb.GetInteger(username, 'haremList', keys[i])));
 
                 if (getHitPoints(username, $.inidb.GetInteger(username, 'haremList', keys[i])) > 0) {
-                    consoleLn('ID: ' + $.inidb.GetInteger(username, 'haremList', keys[i]));
+                    $.consoleLn('ID: ' + $.inidb.GetInteger(username, 'haremList', keys[i]));
                     id = $.inidb.GetInteger(username, 'haremList', keys[i]);
                     break;
                 }
@@ -1471,17 +1471,17 @@
         }
 
         for (i2 in keys) {
-            consoleLn('HP: ' + getHitPoints(opponent, $.inidb.GetInteger(opponent, 'haremList', keys2[i2])));
-            consoleLn(typeof getHitPoints(opponent, $.inidb.GetInteger(opponent, 'haremList', keys2[i2])));
+            $.consoleLn('HP: ' + getHitPoints(opponent, $.inidb.GetInteger(opponent, 'haremList', keys2[i2])));
+            $.consoleLn(typeof getHitPoints(opponent, $.inidb.GetInteger(opponent, 'haremList', keys2[i2])));
 
 
             if (getHitPoints(opponent, $.inidb.GetInteger(opponent, 'haremList', keys2[i2])) <= 0) {
-                consoleLn('continue;');
+                $.consoleLn('continue;');
                 continue;
             }
 
             if (getHitPoints(opponent, $.inidb.GetInteger(opponent, 'haremList', keys2[i2])) > 0) {
-                consoleLn('ID: ' + $.inidb.GetInteger(opponent, 'haremList', keys2[i2]));
+                $.consoleLn('ID: ' + $.inidb.GetInteger(opponent, 'haremList', keys2[i2]));
                 id2 = $.inidb.GetInteger(opponent, 'haremList', keys2[i2]);
                 break;
             }
