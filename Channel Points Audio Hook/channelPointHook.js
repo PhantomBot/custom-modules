@@ -170,8 +170,11 @@
         if (rewardID.equals(clip1ID)) {
             if (clip1Toggle === true) {
                 $.consoleDebug('clip1RunStart');
-                // $.say('!audiohook play ' + clip1Hook);
-                $.alertspollssocket.triggerAudioPanel(clip1Hook);
+                if (!$.audioHookExists(clip1Hook)) {
+                    $.say($.lang.get('channelpointshook.audiohook.failed'));
+                } else {
+                    $.alertspollssocket.triggerAudioPanel(clip1Hook);
+                }
                 return;
             }
         }

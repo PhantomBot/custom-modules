@@ -3,6 +3,7 @@ $.lang.register('channelpointshook.info', 'PhantomBot can be configured to play 
 $.lang.register('channelpointshook.usage', 'Usage: !channelpointshook [info / usage / clip1]');
 $.lang.register('channelpointshook.current', 'channel points audio hook redemptions currently enabled for$1. Use "channelpointshook usage" for command usage or "!channelpointshook info" for what this command is all about.');
 $.lang.register('channelpointshook.config.failed', 'no channel point redemption was detected. Please try again.');
+$.lang.register('channelpointshook.audiohook.failed', 'The referenced audio hook is not valid and is not in the audio hooks database. Please check and try again.');
 
 $.lang.register('channelpointshook.clip1.info', 'audio hook 1 is not enabled. When the audio hook redemption is claimed, the user will have a set audio hook played for them. To configure please use "!channelpointshook clip1 config" or for more info please use "!channelpointshook clip1 usage".');
 $.lang.register('channelpointshook.clip1.current', 'audio hook 1 is registered to $1 and the user will have the hook $2 played for each redemtion. To change please use "!channelpointshook clip1 [config / hook]"');
