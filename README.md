@@ -1,4 +1,4 @@
-# <img alt="PhantomBot" src="https://phantombot.tv/img/new-logo-dark-v2.png" width="600px"/>
+# <img alt="PhantomBot" src="https://phantombot.github.io/PhantomBot/common/images/brand.png" width="600px"/>
 
 # Community Provided Custom Modules for PhantomBot
 These are custom modules made by the PhantomBot Community.
